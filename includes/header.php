@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require "../config/config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +15,25 @@
 </head>
 <body>
 <header>
-    <a href="/ITE4/DAYiary/">DAYiary</a>
+    <a href="/ITE4/DAYiary/dayiary/">DAYiary</a>
     <ul>
-        <li>
-            <a href="/ITE4/DAYiary/dayiary/login.php">Login</a>
-        </li>
-        <li>
-            <a href="/ITE4/DAYiary/dayiary/register.php">Register</a>
-        </li>
+        <?php if(!isset($_SESSION['email'])) { ?>
+            <li>
+                <a href="/ITE4/DAYiary/dayiary/login.php">Login</a>
+            </li>
+            <li>
+                <a href="/ITE4/DAYiary/dayiary/register.php">Register</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                Hello, <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?>
+            </li>
+            <li>
+                <a href="/ITE4/DAYiary/dayiary/profile.php">Profile</a>
+            </li>
+            <li>
+                <a href="/ITE4/DAYiary/dayiary/logout.php">Logout</a>
+            </li>
+        <?php } ?>
     <ul>
 </header>

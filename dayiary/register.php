@@ -1,7 +1,6 @@
 <?php 
-    require "../config/config.php";
-    
-    // session_start();
+    $title = "Register";
+    require_once "../includes/header.php";
     
     if(isset($_POST['fname'])) {
         $fname = $_POST['fname'];
@@ -55,17 +54,16 @@
                     echo '<script>alert("'.$conn->error.'")</script>';
                 } else {
                     echo '<script>alert("Registration Successful.")</script>'; 
+                    $_SESSION['email'] = $email;
+                    $_SESSION['fname'] = $fname;
+                    $_SESSION['lname'] = $lname;
+                    header("location:./index.php");
                 }
             } else {
                 echo '<script>alert("Email already used.")</script>'; 
             }
         }
     }
-?>
-
-<?php 
-    $title = "Register";
-    require_once "../includes/header.php";
 ?>
 
 <div class="container">
