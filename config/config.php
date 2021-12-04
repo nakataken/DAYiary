@@ -4,7 +4,7 @@
     $pass = "";
     $db_name = "dayiary_db";
     $conn = new mysqli($server, $user, $pass, $db_name);
-    if($conn->connected_error) {
+    if($conn->connect_error) {
         die('Connection Failed'.$conn->connect_error);
     }
 ?>

@@ -10,13 +10,13 @@
 </head>
 <body>
 <header>
-    <a href="">DAYiary</a>
+    <a href="/ITE4/DAYiary/">DAYiary</a>
     <ul>
         <li>
-            <a href="../dayiary/login.php">Login</a>
+            <a href="/ITE4/DAYiary/dayiary/login.php">Login</a>
         </li>
         <li>
-            <a href="../dayiary/signup.php">Signup</a>
+            <a href="/ITE4/DAYiary/dayiary/register.php">Register</a>
         </li>
     <ul>
 </header>
