@@ -38,29 +38,32 @@
                 $passError.="Your Password Must Contain At Least 1 Lowercase Letter!";
                 $passValidated = false;
             } else {
-                $encrypted = password_hash($pass, PASSWORD_DEFAULT);
+                // $encrypted = password_hash($pass, PASSWORD_DEFAULT);
                 $passValidated = true;
             }
         } else {
             $passError.="Password didn't match.";
             $passValidated = false;
         }
-        // $verify = password_verify($plaintext_password, $hash);
+        
         if($emailValidated && $passValidated) {
             $check_sql = "SELECT email FROM user_table where email='$email'";
             if($rs=$conn->query($check_sql)) {
-                $insert_sql = "INSERT INTO user_table SET email='$email',password='$encrypted',fname='$fname',lname='$lname',birthdate='$bdate'";
-                if(!$conn->query($insert_sql)) {
-                    echo '<script>alert("'.$conn->error.'")</script>';
+                if($rs->num_rows==0) {
+                    $insert_sql = "INSERT INTO user_table SET email='$email',password='$pass',fname='$fname',lname='$lname',birthdate='$bdate'";
+                    if(!$conn->query($insert_sql)) {
+                        echo '<script>alert("'.$conn->error.'")</script>';
+                    } else {
+                        echo '<script>alert("Registration Successful.")</script>'; 
+                        $_SESSION['email'] = $email;
+                        $_SESSION['fname'] = $fname;
+                        $_SESSION['lname'] = $lname;
+                        header("location:./index.php");
+                    }
                 } else {
-                    echo '<script>alert("Registration Successful.")</script>'; 
-                    $_SESSION['email'] = $email;
-                    $_SESSION['fname'] = $fname;
-                    $_SESSION['lname'] = $lname;
-                    header("location:./index.php");
+                    $emailError.="gamit na email";
+                    $emailValidated = false; 
                 }
-            } else {
-                echo '<script>alert("Email already used.")</script>'; 
             }
         }
     }
