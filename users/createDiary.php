@@ -7,22 +7,26 @@
     }
 
     // Ibahin nalang design, temporary lang yung table
-    if(isset($_POST['content'])) {
-        $user_id = $_SESSION['id'];
-        $content = $_POST['content'];
-        $status = $_POST['status'];
-        
-        $check_sql = "SELECT id FROM user_table where id='$user_id'";
-        if($rs=$conn->query($check_sql)) {
-            if($rs->num_rows!=0) {
-                $insert_sql = "INSERT INTO diary_table SET user_id='$user_id',content='$content',status='$status'";
-                if(!$conn->query($insert_sql)) {
-                    echo '<script>alert("'.$conn->error.'")</script>';
-                } else {
-                    echo '<script>alert("You have successfully created new entry.")</script>'; 
+    if(isset($_SESSION['id'])) {
+        if(isset($_POST['content'])) {
+            $user_id = $_SESSION['id'];
+            $content = $_POST['content'];
+            $status = $_POST['status'];
+            
+            $check_sql = "SELECT id FROM user_table where id='$user_id'";
+            if($rs=$conn->query($check_sql)) {
+                if($rs->num_rows!=0) {
+                    $insert_sql = "INSERT INTO diary_table SET user_id='$user_id',content='$content',status='$status'";
+                    if(!$conn->query($insert_sql)) {
+                        echo '<script>alert("'.$conn->error.'")</script>';
+                    } else {
+                        echo '<script>alert("You have successfully created new entry.")</script>'; 
+                    }
                 }
             }
         }
+    } else {
+        header("location:./login.php");
     }
 ?>
 

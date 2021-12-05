@@ -6,27 +6,30 @@
     $createdAt;
     $content = "";
     $status = "";
-
-    if(!isset($_GET['token'])) {
-        header("location:./index.php");
-    } else {
-        $select_sql = "SELECT * FROM diary_table WHERE ID=".$_GET['token'];
-        if($rs=$conn->query($select_sql)) {
-            if($row=$rs->fetch_assoc()) {
-                $createdAt = $row['CREATED_AT'];
-                $content = $row['CONTENT'];
-                $status = $row['STATUS'];
-            }
-        }
-    }
-
-    if(isset($_POST['content'])) {
-        $update_sql = 'UPDATE diary_table SET CONTENT="'.$_POST['content'].'", STATUS="'.$_POST['status'].'", MODIFIED_AT="'.$date.'" WHERE ID='.$_GET['token'];
-        if($conn->query($update_sql)) {
+    if(isset($_SESSION['id'])) {
+        if(!isset($_GET['token'])) {
             header("location:./index.php");
         } else {
-            echo $conn->error;
+            $select_sql = "SELECT * FROM diary_table WHERE ID=".$_GET['token'];
+            if($rs=$conn->query($select_sql)) {
+                if($row=$rs->fetch_assoc()) {
+                    $createdAt = $row['CREATED_AT'];
+                    $content = $row['CONTENT'];
+                    $status = $row['STATUS'];
+                }
+            }
         }
+
+        if(isset($_POST['content'])) {
+            $update_sql = 'UPDATE diary_table SET CONTENT="'.$_POST['content'].'", STATUS="'.$_POST['status'].'", MODIFIED_AT="'.$date.'" WHERE ID='.$_GET['token'];
+            if($conn->query($update_sql)) {
+                header("location:./index.php");
+            } else {
+                echo $conn->error;
+            }
+        }
+    } else {
+        header("location:./login.php");
     }
 ?>
 
