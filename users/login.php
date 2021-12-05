@@ -1,6 +1,7 @@
 <?php 
     $title = "Login";
     require_once "../includes/header.php";
+    $errorMessage = "";
 
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
@@ -10,19 +11,17 @@
             if($row=$rs->fetch_assoc()) {
                 $decrypted = password_verify($pass,$row['password']);
                 if($decrypted) {
-                    $validated = true;
-                    echo "Verified";
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['fname'] = $row['fname'];
                     $_SESSION['lname'] = $row['lname'];
                     header("location:./index.php");
                 } else {
-                    $validated = false;
+                    $errorMessage = "You have entered an invalid username or password";
                 }
+            } else {
+                $errorMessage = "You have entered an invalid username or password";
             }
-        }
-    } else {
-        $validated = false;
+        } 
     }
 ?>
 
@@ -39,9 +38,9 @@
                     <label for="pass">Password</label>
                     <input type="password" name="pass" class="form-control" required>
                 </div>
-                <!-- <?php if(isset($validated) && !$validated) {?>
-                    <p class="text-danger"> <?php echo "Email or Password basta mali"; ?></p>
-                <?php } ?> -->
+                <?php if(isset($errorMessage)) {?>
+                    <p class="text-danger"> <?php echo $errorMessage; ?></p>
+                <?php } ?>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
