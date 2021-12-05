@@ -81,7 +81,7 @@
                     <input type="text" name="lname" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="fname">Birthdate</label>
+                    <label for="bdate">Birthdate</label>
                     <input id="datefield" type="date" name="bdate" class="form-control" max="" required>
                 </div>
                 <div class="form-group">
