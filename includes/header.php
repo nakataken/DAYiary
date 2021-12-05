@@ -15,24 +15,24 @@
 </head>
 <body>
 <header>
-    <a href="/ITE4/DAYiary/dayiary/">DAYiary</a>
+    <a href="/DAYiary/users/">DAYiary</a>
     <ul>
         <?php if(!isset($_SESSION['email'])) { ?>
             <li>
-                <a href="/ITE4/DAYiary/dayiary/login.php">Login</a>
+                <a href="/DAYiary/users/login.php">Login</a>
             </li>
             <li>
-                <a href="/ITE4/DAYiary/dayiary/register.php">Register</a>
+                <a href="/DAYiary/users/register.php">Register</a>
             </li>
         <?php } else { ?>
             <li>
                 Hello, <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?>
             </li>
             <li>
-                <a href="/ITE4/DAYiary/dayiary/profile.php">Profile</a>
+                <a href="/DAYiary/users/profile.php">Profile</a>
             </li>
             <li>
-                <a href="/ITE4/DAYiary/dayiary/logout.php">Logout</a>
+                <a href="/DAYiary/users/logout.php">Logout</a>
             </li>
         <?php } ?>
     <ul>

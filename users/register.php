@@ -38,7 +38,7 @@
                 $passError.="Your Password Must Contain At Least 1 Lowercase Letter!";
                 $passValidated = false;
             } else {
-                // $encrypted = password_hash($pass, PASSWORD_DEFAULT);
+                $encrypted = password_hash($pass, PASSWORD_DEFAULT);
                 $passValidated = true;
             }
         } else {
@@ -50,7 +50,7 @@
             $check_sql = "SELECT email FROM user_table where email='$email'";
             if($rs=$conn->query($check_sql)) {
                 if($rs->num_rows==0) {
-                    $insert_sql = "INSERT INTO user_table SET email='$email',password='$pass',fname='$fname',lname='$lname',birthdate='$bdate'";
+                    $insert_sql = "INSERT INTO user_table SET email='$email',password='$encrypted',fname='$fname',lname='$lname',birthdate='$bdate'";
                     if(!$conn->query($insert_sql)) {
                         echo '<script>alert("'.$conn->error.'")</script>';
                     } else {

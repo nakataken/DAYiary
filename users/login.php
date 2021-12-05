@@ -6,11 +6,10 @@
         $email = $_POST['email'];
         $pass = $_POST['pass'];
         $check_sql = "SELECT email, fname, lname, password FROM user_table where email='$email'";
-        // Insert encryption and decryption
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
-                // $decrypted = password_verify("Kennakata0130_",'$2y$10$biHoplRuJk29Z6rAg/KNIOKg8sLqSs5Tyd2bVFPZZce');
-                if($pass == $row['password']) {
+                $decrypted = password_verify($pass,$row['password']);
+                if($decrypted) {
                     $validated = true;
                     echo "Verified";
                     $_SESSION['email'] = $row['email'];
