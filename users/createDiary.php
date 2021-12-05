@@ -6,9 +6,10 @@
         header("location:./login.php");
     }
 
+    // Ibahin nalang design, temporary lang yung table
     if(isset($_POST['content'])) {
         $user_id = $_SESSION['id'];
-        $content = encryptContent($_POST['content']);
+        $content = $_POST['content'];
         $status = $_POST['status'];
         
         $check_sql = "SELECT id FROM user_table where id='$user_id'";
@@ -24,23 +25,14 @@
         }
     }
 
-    function encryptContent($content) {
-        $ciphering = "BF-CBC";
-        $iv_length = openssl_cipher_iv_length($ciphering);
-        $options = 0;
-        $encryption_iv = random_bytes($iv_length);
-        $encryption_key = openssl_digest(php_uname(), 'MD5', TRUE);
-        $encryption = openssl_encrypt($content, $ciphering,$encryption_key, $options, $encryption_iv);
-        return $encryption;
-    }
-    // function decryptContent($content) {
+    // function encryptContent($content) {
     //     $ciphering = "BF-CBC";
     //     $iv_length = openssl_cipher_iv_length($ciphering);
     //     $options = 0;
-    //     $decryption_iv = random_bytes($iv_length);
-    //     $decryption_key = openssl_digest(php_uname(), 'MD5', TRUE);
-    //     $decryption = openssl_decrypt ($content, $ciphering,$decryption_key, $options, $encryption_iv);
-    //     return $decryption;
+    //     $encryption_iv = random_bytes($iv_length);
+    //     $encryption_key = openssl_digest(php_uname(), 'MD5', TRUE);
+    //     $encryption = openssl_encrypt($content, $ciphering,$encryption_key, $options, $encryption_iv);
+    //     return $encryption;
     // }
 ?>
 

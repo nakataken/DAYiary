@@ -1,7 +1,7 @@
 <?php
     session_start();
     require "../config/config.php";
-    
+
     if(isset($_SESSION['adminEmail'])) {
         $email = $_SESSION['adminEmail'];
         $check_sql = "SELECT id,fname,lname FROM admin_table where email='$email'";
