@@ -24,16 +24,6 @@
             }
         }
     }
-
-    // function encryptContent($content) {
-    //     $ciphering = "BF-CBC";
-    //     $iv_length = openssl_cipher_iv_length($ciphering);
-    //     $options = 0;
-    //     $encryption_iv = random_bytes($iv_length);
-    //     $encryption_key = openssl_digest(php_uname(), 'MD5', TRUE);
-    //     $encryption = openssl_encrypt($content, $ciphering,$encryption_key, $options, $encryption_iv);
-    //     return $encryption;
-    // }
 ?>
 
 <div class="container">
@@ -52,6 +42,7 @@
                 <div class="mb-3">
                     <label for="status" class="form-label">Status:</label> 
                     <ul>
+                        <li><input type="radio" name="status" value="Heart"> Heart</li>
                         <li><input type="radio" name="status" value="Happy"> Happy</li>
                         <li><input type="radio" name="status" value="Sad"> Sad</li>
                         <li><input type="radio" name="status" value="Neutral"> Neutral</li>

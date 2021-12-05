@@ -13,9 +13,8 @@
         if($rs->num_rows>0) {
             while($rows=$rs->fetch_assoc()) {
                 $num++;
-                // $content = decryptContent($rows['CONTENT']);
                 $content = $rows['CONTENT'];
-                $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td></tr>';
+                $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td><a class="btn btn-sm btn-primary" href="./editDiary.php?token='.$rows['ID'].'">Edit</a><a class="btn btn-sm btn-danger" href="./deleteDiary.php?token='.$rows['ID'].'">Delete</a></td></tr>';
             }
         } else {
             $output = '<tr><td class="text-center" colspan="5">No diary found!</td></tr>';
@@ -35,6 +34,7 @@
                     <th>Date</th>
                     <th>Content</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </thead>
                 <?php echo $output;?>
             </table>
