@@ -5,6 +5,6 @@ Document Link: https://docs.google.com/document/d/1akNJNZQDjCLCccyVERdqegXE_IOgM
 
 1) Clone/download project folder and place inside "C:\xampp\htdocs\"
 2) Clone/download db file "dayiary_db". (please check db branch.)
-3) Import db file at phpMyAdmin
+3) Import db file to phpMyAdmin
 
 *Will change code for db connection and path upon uploading on web hosting service
