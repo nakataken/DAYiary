@@ -12,6 +12,16 @@
                 $_SESSION['adminLname'] = $row['lname'];
             }
         }
+
+        $total_user_sql = "SELECT * FROM user_table";
+        if($rs=$conn->query($total_user_sql)) {
+            $totalUsers = $rs->num_rows;
+        }
+        $total_diary_sql = "SELECT * FROM diary_table";
+        if($rs=$conn->query($total_diary_sql)) {
+            $totalDiaries = $rs->num_rows;
+        }
+
     } else {
         header("location:./login.php");
     }
@@ -30,9 +40,19 @@
 <body>
     <ul>
         <li>
+            DAYiary
+        </li>
+        <li>
             <a href="./logout.php">Logout</a>
         </li>
     </ul>
     <h1>DASHBOARD</h1>
+    <?php if(isset($totalUsers)) { ?>
+        <p>Total Users - <?php echo $totalUsers; ?></p>
+    <?php } ?>
+    <?php if(isset($totalDiaries)) { ?>
+        <p>Total Diary Entries - <?php echo $totalDiaries; ?></p>
+    <?php } ?>
+    <h1>Users Table</h1>
 </body>
 </html>
