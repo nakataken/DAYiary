@@ -1,6 +1,6 @@
 <?php 
     $title = "Login";
-    require_once "../includes/header.php";
+    require_once "./includes/header.php";
     $errorMessage = "";
 
     if(isset($_POST['email'])) {
@@ -45,4 +45,4 @@
     </div>
 </div>
 
-<?php require_once "../includes/footer.php"; ?>
+<?php require_once "./includes/footer.php"; ?>

@@ -1,6 +1,6 @@
 <?php 
     $title = "Create Diary";
-    require_once "../includes/header.php";
+    require_once "./includes/header.php";
     
     if(!isset($_SESSION['email'])) {
         header("location:./login.php");
@@ -60,4 +60,4 @@
     document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 </script>
 
-<?php require_once "../includes/footer.php"; ?>
+<?php require_once "./includes/footer.php"; ?>

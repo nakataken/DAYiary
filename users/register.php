@@ -1,6 +1,6 @@
 <?php 
     $title = "Register";
-    require_once "../includes/header.php";
+    require_once "./includes/header.php";
     
     if(isset($_POST['fname'])) {
         $fname = $_POST['fname'];
@@ -128,4 +128,4 @@
     document.getElementById("datefield").setAttribute("max", today);
 </script>
 
-<?php require_once "../includes/footer.php"; ?>
+<?php require_once "./includes/footer.php"; ?>
