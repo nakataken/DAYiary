@@ -1,6 +1,18 @@
 <?php
     session_start();
     require "../config/config.php";
+
+    if(isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $check_sql = "SELECT id,fname,lname FROM user_table where email='$email'";
+        if($rs=$conn->query($check_sql)) {
+            if($row=$rs->fetch_assoc()) {
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['fname'] = $row['fname'];
+                $_SESSION['lname'] = $row['lname'];
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>

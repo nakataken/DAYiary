@@ -7,4 +7,6 @@
     }
 ?>
 
+<a href="/DAYiary/users/createDiary.php">Create Diary</a>
+
 <?php require_once "../includes/footer.php"; ?>

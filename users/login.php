@@ -6,14 +6,12 @@
     if(isset($_POST['email'])) {
         $email = $_POST['email'];
         $pass = $_POST['pass'];
-        $check_sql = "SELECT email, fname, lname, password FROM user_table where email='$email'";
+        $check_sql = "SELECT email, password FROM user_table where email='$email'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
                 $decrypted = password_verify($pass,$row['password']);
                 if($decrypted) {
                     $_SESSION['email'] = $row['email'];
-                    $_SESSION['fname'] = $row['fname'];
-                    $_SESSION['lname'] = $row['lname'];
                     header("location:./index.php");
                 } else {
                     $errorMessage = "You have entered an invalid username or password";

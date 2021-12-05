@@ -56,8 +56,6 @@
                     } else {
                         echo '<script>alert("Registration Successful.")</script>'; 
                         $_SESSION['email'] = $email;
-                        $_SESSION['fname'] = $fname;
-                        $_SESSION['lname'] = $lname;
                         header("location:./index.php");
                     }
                 } else {
@@ -89,9 +87,11 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" class="form-control" required>
-                    <?php if(isset($emailError)) {?>
+                    <div>
+                        <?php if(isset($emailError)) {?>
                         <p class="text-danger"> <?php echo $emailError; ?></p>
                     <?php } ?>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="pass">Password</label>
@@ -101,9 +101,11 @@
                     <label for="confPass">Confirm Password</label>
                     <input type="password" name="confPass" class="form-control" required>
                 </div>
-                <?php if(isset($passError)) {?>
+                <div>
+                    <?php if(isset($passError)) {?>
                     <p class="text-danger"> <?php echo $passError; ?></p>
                 <?php } ?>
+                </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
         </div>
