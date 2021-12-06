@@ -44,28 +44,28 @@
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Diary Content</label>
-                    <textarea name="content" id="content" cols="100" rows="5"><?php echo $content; ?></textarea>
+                    <textarea name="content" id="content" cols="100" rows="5" required><?php echo $content; ?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status:</label> 
                     <ul>
                         <?php if($status=="Heart") { ?>
-                            <li><input type="radio" name="status" value="Heart" checked> Heart</li>
+                            <li><input type="radio" name="status" value="Heart" checked required> Heart</li>
                             <li><input type="radio" name="status" value="Happy"> Happy</li>
                             <li><input type="radio" name="status" value="Sad"> Sad</li>
                             <li><input type="radio" name="status" value="Neutral"> Neutral</li>
                         <?php } else if($status=="Happy") { ?>
-                            <li><input type="radio" name="status" value="Heart" > Heart</li>
+                            <li><input type="radio" name="status" value="Heart" required> Heart</li>
                             <li><input type="radio" name="status" value="Happy" checked> Happy</li>
                             <li><input type="radio" name="status" value="Sad"> Sad</li>
                             <li><input type="radio" name="status" value="Neutral"> Neutral</li>
                         <?php } else if($status=="Sad") { ?>
-                            <li><input type="radio" name="status" value="Heart"> Heart</li>
+                            <li><input type="radio" name="status" value="Heart" required> Heart</li>
                             <li><input type="radio" name="status" value="Happy"> Happy</li>
                             <li><input type="radio" name="status" value="Sad" checked> Sad</li>
                             <li><input type="radio" name="status" value="Neutral" > Neutral</li>
                         <?php } else { ?>
-                            <li><input type="radio" name="status" value="Heart"> Heart</li>
+                            <li><input type="radio" name="status" value="Heart" required> Heart</li>
                             <li><input type="radio" name="status" value="Happy"> Happy</li>
                             <li><input type="radio" name="status" value="Sad"> Sad</li>
                             <li><input type="radio" name="status" value="Neutral" checked> Neutral</li>

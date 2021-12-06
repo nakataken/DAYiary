@@ -41,12 +41,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Diary Content</label>
-                    <textarea name="content" id="content" cols="100" rows="5"></textarea>
+                    <textarea name="content" id="content" cols="100" rows="5" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="status" class="form-label">Status:</label> 
                     <ul>
-                        <li><input type="radio" name="status" value="Heart"> Heart</li>
+                        <li><input type="radio" name="status" value="Heart" required> Heart</li>
                         <li><input type="radio" name="status" value="Happy"> Happy</li>
                         <li><input type="radio" name="status" value="Sad"> Sad</li>
                         <li><input type="radio" name="status" value="Neutral"> Neutral</li>
