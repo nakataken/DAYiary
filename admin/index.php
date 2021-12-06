@@ -25,47 +25,47 @@
         }
 
         // Bar Chart
-        $totalDay = [];
-        $dayLabel = [];
-        for($i=0;$i<7;$i++) {
-            $day =$i." days";
-            $totalDay[] = getTotalDiary($day);
-        }
-        for($i=0;$i<7;$i++) {
-            $day =$i." days";
-            $dayLabel[] = getDay($day);
-        }
+        // $totalDay = [];
+        // $dayLabel = [];
+        // for($i=0;$i<7;$i++) {
+        //     $day =$i." days";
+        //     $totalDay[] = getTotalDiary($day);
+        // }
+        // for($i=0;$i<7;$i++) {
+        //     $day =$i." days";
+        //     $dayLabel[] = getDay($day);
+        // }
         
     } else {
         header("location:./login.php");
     }
 
-    function getTotalDiary($num_of_day) {
-        require "../config/config.php";
+    // function getTotalDiary($num_of_day) {
+    //     require "../config/config.php";
 
-        $date = date_create(date("Y/m/d"));
-        if($num_of_day!="0 days") {
-            date_sub($date,date_interval_create_from_date_string($num_of_day));
-        }
+    //     $date = date_create(date("Y/m/d"));
+    //     if($num_of_day!="0 days") {
+    //         date_sub($date,date_interval_create_from_date_string($num_of_day));
+    //     }
 
-        $total_diary_day = "SELECT * FROM diary_table WHERE CREATED_AT = '".date_format($date,"Y-m-d")."'";
+    //     $total_diary_day = "SELECT * FROM diary_table WHERE CREATED_AT = '".date_format($date,"Y-m-d")."'";
 
-        if($rs=$conn->query($total_diary_day)) {
-            $totalDay = $rs->num_rows;
-        } else {
-            $totalDay = 0;
-        }
+    //     if($rs=$conn->query($total_diary_day)) {
+    //         $totalDay = $rs->num_rows;
+    //     } else {
+    //         $totalDay = 0;
+    //     }
 
-        return $totalDay;
-    }
+    //     return $totalDay;
+    // }
 
-    function getDay($num_of_day) {
-        $date = date_create(date("Y/m/d"));
-        if($num_of_day!="0 days") {
-            date_sub($date,date_interval_create_from_date_string($num_of_day));
-        }
-        return date_format($date,"Y-m-d");
-    }
+    // function getDay($num_of_day) {
+    //     $date = date_create(date("Y/m/d"));
+    //     if($num_of_day!="0 days") {
+    //         date_sub($date,date_interval_create_from_date_string($num_of_day));
+    //     }
+    //     return date_format($date,"Y-m-d");
+    // }
 ?>
 
 
@@ -77,10 +77,11 @@
     <p>Total Diary Entries - <?php echo $totalDiaries; ?></p>
 <?php } ?>
 
-<div>
+<!-- <div>
     <canvas id="diaryEntries"></canvas>
-</div>
+</div> -->
 
+<!-- <script src="../public/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <?php require_once "./includes/footer.php"; ?>
