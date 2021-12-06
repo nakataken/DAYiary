@@ -1,6 +1,8 @@
 <?php
     session_start();
     require "../config/config.php";
+    $title = "Dashboard";
+    require_once "./includes/header.php";
 
     if(isset($_SESSION['adminEmail'])) {
         $email = $_SESSION['adminEmail'];
@@ -22,37 +24,63 @@
             $totalDiaries = $rs->num_rows;
         }
 
+        // Bar Chart
+        $totalDay = [];
+        $dayLabel = [];
+        for($i=0;$i<7;$i++) {
+            $day =$i." days";
+            $totalDay[] = getTotalDiary($day);
+        }
+        for($i=0;$i<7;$i++) {
+            $day =$i." days";
+            $dayLabel[] = getDay($day);
+        }
+        
     } else {
         header("location:./login.php");
     }
+
+    function getTotalDiary($num_of_day) {
+        require "../config/config.php";
+
+        $date = date_create(date("Y/m/d"));
+        if($num_of_day!="0 days") {
+            date_sub($date,date_interval_create_from_date_string($num_of_day));
+        }
+
+        $total_diary_day = "SELECT * FROM diary_table WHERE CREATED_AT = '".date_format($date,"Y-m-d")."'";
+
+        if($rs=$conn->query($total_diary_day)) {
+            $totalDay = $rs->num_rows;
+        } else {
+            $totalDay = 0;
+        }
+
+        return $totalDay;
+    }
+
+    function getDay($num_of_day) {
+        $date = date_create(date("Y/m/d"));
+        if($num_of_day!="0 days") {
+            date_sub($date,date_interval_create_from_date_string($num_of_day));
+        }
+        return date_format($date,"Y-m-d");
+    }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Dashboard</title>
-    <link rel="stylesheet" href="../public/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-    <ul>
-        <li>
-            DAYiary
-        </li>
-        <li>
-            <a href="./logout.php">Logout</a>
-        </li>
-    </ul>
-    <h1>DASHBOARD</h1>
-    <?php if(isset($totalUsers)) { ?>
-        <p>Total Users - <?php echo $totalUsers; ?></p>
-    <?php } ?>
-    <?php if(isset($totalDiaries)) { ?>
-        <p>Total Diary Entries - <?php echo $totalDiaries; ?></p>
-    <?php } ?>
-    <h1>Users Table</h1>
-</body>
-</html>
+
+<h1>DASHBOARD</h1>
+<?php if(isset($totalUsers)) { ?>
+    <p>Total Users - <?php echo $totalUsers; ?></p>
+<?php } ?>
+<?php if(isset($totalDiaries)) { ?>
+    <p>Total Diary Entries - <?php echo $totalDiaries; ?></p>
+<?php } ?>
+
+<div>
+    <canvas id="diaryEntries"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<?php require_once "./includes/footer.php"; ?>
