@@ -4,15 +4,13 @@
     require "../config/config.php";
     $errorMessage = "";
 
-    if(isset($_POST['email'])) {
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-        $check_sql = "SELECT email, password FROM admin_table where email='$email'";
+    if(isset($_POST['username'])) {
+        $check_sql = "SELECT USERNAME, PASSWORD FROM admin_table WHERE USERNAME='".$_POST['username']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
-                $decrypted = password_verify($pass,$row['password']);
+                $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);
                 if($decrypted) {
-                    $_SESSION['adminEmail'] = $row['email'];
+                    $_SESSION['adminUsername'] = $row['USERNAME'];
                     header("location:./index.php");
                 } else {
                     $errorMessage = "You have entered an invalid username or password";
@@ -41,8 +39,8 @@
                 <h2>Login</h2>
                 <form method="POST">
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" required>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pass">Password</label>

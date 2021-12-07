@@ -3,21 +3,19 @@
     require_once "./includes/header.php";
     $errorMessage = "";
 
-    if(isset($_POST['email'])) {
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-        $check_sql = "SELECT email, password FROM user_table where email='$email'";
+    if(isset($_POST['username'])) {
+        $check_sql = "SELECT USERNAME, PASSWORD FROM user_table where USERNAME='".$_POST['username']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
-                $decrypted = password_verify($pass,$row['password']);
+                $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);
                 if($decrypted) {
-                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['username'] = $row['USERNAME'];
                     header("location:./index.php");
                 } else {
-                    $errorMessage = "You have entered an invalid username or password";
+                    $errorMessage = "You have entered an invalid username or password.";
                 }
             } else {
-                $errorMessage = "You have entered an invalid username or password";
+                $errorMessage = "You have entered an invalid username or password.";
             }
         } 
     }
@@ -29,8 +27,8 @@
             <h2>Login</h2>
             <form method="POST">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" required>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="pass">Password</label>

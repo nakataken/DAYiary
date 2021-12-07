@@ -56,7 +56,7 @@
                             <li><input type="radio" name="status" value="Neutral"> Neutral</li>
                         <?php } else if($status=="Happy") { ?>
                             <li><input type="radio" name="status" value="Heart" required> Heart</li>
-                            <li><input type="radio" name="status" value="Happy" checked> Happy</li>
+                            <li><input type="radio" name="status" value="Happy" che cked> Happy</li>
                             <li><input type="radio" name="status" value="Sad"> Sad</li>
                             <li><input type="radio" name="status" value="Neutral"> Neutral</li>
                         <?php } else if($status=="Sad") { ?>

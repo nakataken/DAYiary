@@ -3,13 +3,14 @@
     require_once "./includes/header.php";
 
     if(isset($_SESSION['id'])) {
-        $select_sql = "SELECT * FROM user_table WHERE id =".$_SESSION['id'];
+        $select_sql = "SELECT * FROM user_table WHERE ID =".$_SESSION['id'];
+        $date = date('Y-m-d');
+
         if($rs=$conn->query($select_sql)) {
             if($row=$rs->fetch_assoc()) {
-                $fname = $row['FNAME'];
-                $lname = $row['LNAME'];
+                $name = $row['NAME'];
                 $bdate = $row['BIRTHDATE'];
-                $email = $row['EMAIL'];
+                $username = $row['USERNAME'];
                 $pass = $row['PASSWORD'];
             }
         }
@@ -23,7 +24,7 @@
             if($decrypted) {
                 $newPass = true;
             } else {
-                $passError = "You have entered an invalid username or password.";
+                $passError = "You have entered an invalid password.";
             }
         }
 
@@ -58,9 +59,10 @@
             }
 
             if($passValidated) {
-                $update_sql = 'UPDATE user_table SET PASSWORD="'.$encrypted.'" WHERE ID='.$_SESSION['id'];
+                $update_sql = 'UPDATE user_table SET PASSWORD="'.$encrypted.'", MODIFIED_AT="'.$date.'" WHERE ID='.$_SESSION['id'];
                 echo $update_sql;
                 if($conn->query($update_sql)) { 
+                    echo '<script>alert("Password changed successfully.")</script>'; 
                     header("location:./profile.php");
                 } else {
                     echo $conn->error;
@@ -73,10 +75,9 @@
 ?>
 
 <div>
-    <p><?php echo $fname; ?></p>
-    <p><?php echo $lname; ?></p>
+    <p><?php echo $name; ?></p>
     <p><?php echo $bdate; ?></p>
-    <p><?php echo $email; ?></p>
+    <p><?php echo $username; ?></p>
     <form method="POST">
         <input type="hidden" name="changePass" value="changePass">
         <button type="submit">Change Password</button>

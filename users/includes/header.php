@@ -2,14 +2,12 @@
     session_start();
     require "../config/config.php";
 
-    if(isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];
-        $check_sql = "SELECT id,fname,lname FROM user_table where email='$email'";
+    if(isset($_SESSION['username'])) {
+        $check_sql = "SELECT ID, NAME FROM user_table WHERE USERNAME='".$_SESSION['username']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['fname'] = $row['fname'];
-                $_SESSION['lname'] = $row['lname'];
+                $_SESSION['id'] = $row['ID'];
+                $_SESSION['name'] = $row['NAME'];
             }
         }
     }
@@ -29,7 +27,7 @@
 <header>
     <a href="/DAYiary/users/">DAYiary</a>
     <ul>
-        <?php if(!isset($_SESSION['email'])) { ?>
+        <?php if(!isset($_SESSION['username'])) { ?>
             <li>
                 <a href="/DAYiary/users/login.php">Login</a>
             </li>
@@ -38,7 +36,7 @@
             </li>
         <?php } else { ?>
             <li>
-                Hello, <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?>
+                Hello, <?php echo $_SESSION['name']; ?>
             </li>
             <li>
                 <a href="/DAYiary/users/profile.php">Profile</a>

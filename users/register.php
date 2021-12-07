@@ -2,29 +2,14 @@
     $title = "Register";
     require_once "./includes/header.php";
     
-    if(isset($_POST['fname'])) {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
+    if(isset($_POST['username'])) {
+        $name = $_POST['name'];
         $bdate = $_POST['bdate'];
-        $email = $_POST['email'];
-        $pass = "";
-        $confPass = "";
-        $encrypted = "";
-        $emailValidated = false;
-        $passValidated = false;
-        $passError = "";
-        $emailError = "";
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailError.="Not a valid email address.";
-            $emailValidated = false;
-        } else {
-            $emailValidated = true;
-        }
+        $username = $_POST['usernmae'];
+        $pass = $_POST["pass"];
+        $confPass = $_POST["confPass"];
 
         if(!empty($_POST["pass"]) && ($_POST["pass"] == $_POST["confPass"])) {
-            $pass = $_POST["pass"];
-            $confPass = $_POST["confPass"];
             if (strlen($_POST["pass"]) <= 8) {
                 $passError.="Your Password Must Contain At Least 8 Characters!";
                 $passValidated = false;
@@ -46,21 +31,21 @@
             $passValidated = false;
         }
         
-        if($emailValidated && $passValidated) {
-            $check_sql = "SELECT email FROM user_table where email='$email'";
+        if($userValidated && $passValidated) {
+            $check_sql = "SELECT USERNAME FROM user_table where USERNAME='$username'";
             if($rs=$conn->query($check_sql)) {
                 if($rs->num_rows==0) {
-                    $insert_sql = "INSERT INTO user_table SET email='$email',password='$encrypted',fname='$fname',lname='$lname',birthdate='$bdate'";
+                    $insert_sql = "INSERT INTO user_table SET NAME='$name',USERNAME='$username',password='$encrypted',birthdate='$bdate'";
                     if(!$conn->query($insert_sql)) {
                         echo '<script>alert("'.$conn->error.'")</script>';
                     } else {
                         echo '<script>alert("Registration Successful.")</script>'; 
-                        $_SESSION['email'] = $email;
+                        $_SESSION['username'] = $username;
                         header("location:./index.php");
                     }
                 } else {
-                    $emailError.="gamit na email";
-                    $emailValidated = false; 
+                    $userError.="Username already used.";
+                    $userValidated = false; 
                 }
             }
         }
@@ -73,23 +58,19 @@
             <h2>Register</h2>
             <form method="POST">
                 <div class="form-group">
-                    <label for="fname">First Name</label>
-                    <input type="text" name="fname" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="lname">Last Name</label>
-                    <input type="text" name="lname" class="form-control" required>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="bdate">Birthdate</label>
                     <input id="datefield" type="date" name="bdate" class="form-control" max="" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" required>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required>
                     <div>
-                        <?php if(isset($emailError)) {?>
-                        <p class="text-danger"> <?php echo $emailError; ?></p>
+                        <?php if(isset($userError)) {?>
+                        <p class="text-danger"> <?php echo $userError; ?></p>
                     <?php } ?>
                     </div>
                 </div>

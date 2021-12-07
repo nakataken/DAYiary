@@ -2,7 +2,7 @@
     $title = "Home";
     require_once "./includes/header.php";
     
-    if(!isset($_SESSION['email'])) {
+    if(!isset($_SESSION['username'])) {
         header("location:./login.php");
     }
 
@@ -25,7 +25,7 @@
     } else {
         $num = 0;
         $output = "";
-        $view_sql = "SELECT * FROM diary_table WHERE user_id=".$_SESSION['id'];
+        $view_sql = "SELECT * FROM diary_table WHERE USER_ID=".$_SESSION['id'];
         if($rs=$conn->query($view_sql)) {
             if($rs->num_rows>0) {
                 while($rows=$rs->fetch_assoc()) {

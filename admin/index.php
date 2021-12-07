@@ -4,14 +4,11 @@
     $title = "Dashboard";
     require_once "./includes/header.php";
 
-    if(isset($_SESSION['adminEmail'])) {
-        $email = $_SESSION['adminEmail'];
-        $check_sql = "SELECT id,fname,lname FROM admin_table where email='$email'";
+    if(isset($_SESSION['adminUsername'])) {
+        $check_sql = "SELECT ID FROM admin_table where USERNAME='".$_SESSION['adminUsername']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
-                $_SESSION['adminId'] = $row['id'];
-                $_SESSION['adminFname'] = $row['fname'];
-                $_SESSION['adminLname'] = $row['lname'];
+                $_SESSION['adminId'] = $row['ID'];
             }
         }
 

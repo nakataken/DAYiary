@@ -2,7 +2,7 @@
     $title = "Create Diary";
     require_once "./includes/header.php";
     
-    if(!isset($_SESSION['email'])) {
+    if(!isset($_SESSION['username'])) {
         header("location:./login.php");
     }
 
@@ -13,10 +13,10 @@
             $content = $_POST['content'];
             $status = $_POST['status'];
             
-            $check_sql = "SELECT id FROM user_table where id='$user_id'";
+            $check_sql = "SELECT ID FROM user_table where ID='$user_id'";
             if($rs=$conn->query($check_sql)) {
                 if($rs->num_rows!=0) {
-                    $insert_sql = "INSERT INTO diary_table SET user_id='$user_id',content='$content',status='$status'";
+                    $insert_sql = "INSERT INTO diary_table SET USER_ID='$user_id',CONTENT='$content',STATUS='$status'";
                     if(!$conn->query($insert_sql)) {
                         echo '<script>alert("'.$conn->error.'")</script>';
                     } else {
