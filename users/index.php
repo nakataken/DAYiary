@@ -1,3 +1,15 @@
+<script language="JavaScript" type="text/javascript">
+    $(document).ready(function(){
+        $("a.delete").click(function(e){
+            if(!confirm('Are you sure?')){
+                e.preventDefault();
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+
 <?php 
     $title = "Home";
     require_once "./includes/header.php";
@@ -31,7 +43,7 @@
                 while($rows=$rs->fetch_assoc()) {
                     $num++;
                     $content = $rows['CONTENT'];
-                    $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td><a class="btn btn-sm btn-primary" href="./editDiary.php?token='.$rows['ID'].'">Edit</a><a class="btn btn-sm btn-danger" href="./deleteDiary.php?token='.$rows['ID'].'">Delete</a></td></tr>';
+                    $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td><a class="btn btn-sm btn-primary" href="./editDiary.php?token='.$rows['ID'].'">Edit</a><a class="btn btn-sm btn-danger delete" href="./deleteDiary.php?token='.$rows['ID'].'">Delete</a></td></tr>';
                 }
             } else {
                 $output = '<tr><td class="text-center" colspan="5">No diary found!</td></tr>';
