@@ -12,10 +12,13 @@
             }
         }
 
+        // Total Users
         $total_user_sql = "SELECT * FROM user_table";
         if($rs=$conn->query($total_user_sql)) {
             $totalUsers = $rs->num_rows;
         }
+
+        // Total Diary Entries
         $total_diary_sql = "SELECT * FROM diary_table";
         if($rs=$conn->query($total_diary_sql)) {
             $totalDiaries = $rs->num_rows;
@@ -32,6 +35,25 @@
             $day =$i." days";
             $dayLabel[] = getDay($day);
         }
+
+        // Pie Chart
+        $total_status_heart = "SELECT * FROM diary_table WHERE STATUS='Heart'";
+        if($rs=$conn->query($total_status_heart)) {
+            $totalHeart = $rs->num_rows;
+        }
+        $total_status_happy = "SELECT * FROM diary_table WHERE STATUS='Happy'";
+        if($rs=$conn->query($total_status_happy)) {
+            $totalHappy = $rs->num_rows;
+        }
+        $total_status_sad = "SELECT * FROM diary_table WHERE STATUS='Sad'";
+        if($rs=$conn->query($total_status_sad)) {
+            $totalSad = $rs->num_rows;
+        }
+        $total_status_neutral = "SELECT * FROM diary_table WHERE STATUS='Neutral'";
+        if($rs=$conn->query($total_status_neutral)) {
+            $totalNeutral = $rs->num_rows;
+        }
+
     } else {
         header("location:./login.php");
     }
@@ -76,34 +98,38 @@
     <?php } ?>
 </div>
 
+<!-- Line Chart -->
 <div class="container">
     <div class="" style="width:1000px; height:500px;">
-        <canvas id="diaryEntries" width="100" height="50"></canvas>
+        <canvas id="lineChart" width="100" height="50"></canvas>
     </div>
 </div>
 
+<!-- Script for Line Chart -->
 <script>
     let dayLabel = <?php echo json_encode($dayLabel); ?>;
     let totalDay = <?php echo json_encode($totalDay); ?>;
 
-    const data = {
-    labels: dayLabel.reverse(),
+    const lineData = {
+        labels: dayLabel.reverse(),
         datasets: [{
-            label: 'Daily diary entries for Week',
+            label: "DAILY DIARY ENTRIES IN A WEEK",
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: totalDay.reverse(),
         }]
     };
-    const config = {
+    const lineConfig = {
         type: 'line',
-        data: data,
-        options: {}
+        data: lineData,
+        options: { 
+            responsive: true
+        }
     };
 
-    const myChart = new Chart(
-        document.getElementById('diaryEntries'),
-        config
+    const lineChart = new Chart(
+        document.getElementById('lineChart'),
+        lineConfig
     );
 </script>
 
