@@ -1,0 +1,10 @@
+@import './variables';
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name);
+}
+
+body{ 
+    background-color: $color1;
+}
+
