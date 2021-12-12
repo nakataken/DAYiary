@@ -1,11 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat&display=swap');
+
+// font-family: 'Hammersmith One', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+
+
 $color1:#554D9B;
 $color2:#EF9697;
 $color3:#FFC7C5;
 $background-color: #EBEAF1;
 $text-color:#524B4B;
-$temp: #FFFFFF;
+$plain: #FFFFFF;
+$i: unquote("!important");
+
+
+$screen-size:(
+    "regular": 480px,
+    "medium": 767px,
+    "large": 1390px,
+    
+);
 
 $font-weight:(
     "regular": 400,
     "medium":500,
+    "large": 600,
 );
+
+
+$font-size:(
+    "h1":2rem,
+    "h2":1.2rem,
+    "lbl":1.2rem,
+    "btn":1.2rem, //19px
+    "reg":1rem, //16px
+);
+
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name);
+}
+@function fontsize($fontsize-name){
+    @return map-get($font-size, $fontsize-name);
+}
+
+@function screen($screensize-name){
+    @return map-get($screen-size, $screensize-name);
+}
+
+
+@mixin flex_start{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+@mixin input-field{
+    background-color: $plain;
+    border: solid 0px $color1;
+    border-radius: 25px;
+}
+
+@mixin primary-btn ($weight-name,$fontsize-name){
+    color: $background-color;
+    background-color: $color1;
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight: weight($weight-name);
+    font-size: fontsize($fontsize-name);
+    border-radius: 25px;
+}
+
+@mixin title-text($color-name, $weight-name, $fontsize-name){
+    font-family: 'Hammersmith One', sans-serif;
+    color: $color-name;
+    font-weight: weight($weight-name);
+    font-size: fontsize($fontsize-name);
+}

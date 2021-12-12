@@ -1,10 +1,86 @@
+@import './resets';
 @import './variables';
 
-@function weight($weight-name){
-    @return map-get($font-weight, $weight-name);
+
+
+.main{ 
+    background-color: $background-color;
 }
 
-body{ 
-    background-color: $color1;
+//navigation bar
+nav{
+    .logo{
+        height: 40px;
+    }
+    ul{
+        li{
+           a{ 
+               @include title-text($color1 !important, small, h2);
+            }
+            
+        }
+        button{
+            color: $background-color $i;
+            background-color: $color1 $i;
+            font-family: 'Hammersmith One', sans-serif;
+            font-weight: weight(small);
+            font-size: fontsize(h2 $i);
+            border-radius: 25px $i;
+        }
+    }
+    
+
 }
 
+
+//registration form
+
+.reg-div{
+
+    background-color: $background-color;
+    min-height: 80vh !important;
+
+    .right-div{
+    //    @include flex_start();
+        h1{
+            @include title-text($color1, large, h1);
+        }
+        h2{
+            @include title-text($color2, small, h2);
+
+            a{
+                text-decoration: none;
+                color: $color1;
+            }
+        }
+
+        .form-group{
+            label{
+                @include title-text($color1, small, lbl);
+            }
+            .form-control, input, textarea{
+                @include input-field();
+            }
+            input:focus, textarea:focus{
+                outline: none !important;
+            }
+            .error-meessage{
+                color: red;
+                font-size: fontsize(reg);
+            }
+        }
+        button{
+            @include primary-btn(small,btn);
+        }
+    }
+    
+}
+
+
+._1{
+    background-color: $color1 !important;
+}
+
+._2{
+    background-color: red;
+}

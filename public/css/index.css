@@ -1,3 +1,77 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: #EBEAF1;
+}
+
+nav .logo {
+  height: 40px;
+}
+nav ul li a {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B !important;
+  font-size: 1.2rem;
+}
+nav ul button {
+  color: #EBEAF1 !important;
+  background-color: #554D9B !important;
+  font-family: "Hammersmith One", sans-serif;
+  border-radius: 25px !important;
+}
+
+.reg-div {
+  background-color: #EBEAF1;
+  min-height: 80vh !important;
+}
+.reg-div .right-div h1 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.reg-div .right-div h2 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #EF9697;
+  font-size: 1.2rem;
+}
+.reg-div .right-div h2 a {
+  text-decoration: none;
+  color: #554D9B;
+}
+.reg-div .right-div .form-group label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+}
+.reg-div .right-div .form-group .form-control, .reg-div .right-div .form-group input, .reg-div .right-div .form-group textarea {
+  background-color: #FFFFFF;
+  border: solid 0px #554D9B;
+  border-radius: 25px;
+}
+.reg-div .right-div .form-group input:focus, .reg-div .right-div .form-group textarea:focus {
+  outline: none !important;
+}
+.reg-div .right-div .form-group .error-meessage {
+  color: red;
+  font-size: 1rem;
+}
+.reg-div .right-div button {
+  color: #EBEAF1;
   background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+
+._1 {
+  background-color: #554D9B !important;
+}
+
+._2 {
+  background-color: red;
 }/*# sourceMappingURL=index.css.map */
