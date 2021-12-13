@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,6 +12,10 @@
 
 nav .logo {
   height: 40px;
+}
+nav ul li {
+  line-height: 40px;
+  text-align: center;
 }
 nav ul li a {
   font-family: "Hammersmith One", sans-serif;
@@ -68,10 +73,113 @@ nav ul button {
   border-radius: 25px;
 }
 
+.home-div {
+  background-color: #FFFFFF;
+  min-height: 70vh;
+}
+.home-div .right-div h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+}
+.home-div .right-div h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #EF9697;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-size: 1.5rem !important;
+}
+.home-div .right-div button {
+  color: #EBEAF1;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+
+.create-div {
+  background-color: #EBEAF1;
+  min-height: 80vh;
+}
+.create-div .top-div {
+  background-color: #554D9B;
+  border-radius: 25px;
+}
+.create-div .top-div h2 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.create-div .bot-div .character {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: #FFC7C5;
+  overflow: hidden !important;
+}
+.create-div .bot-div h3 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+}
+.create-div .bot-div h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #524B4B;
+  font-size: 1rem;
+}
+.create-div .bot-div textarea {
+  background-color: #FFFFFF;
+  border: solid 0px #554D9B;
+  border-radius: 25px;
+}
+.create-div .bot-div ul {
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  list-style-type: none;
+}
+.create-div .bot-div ul li {
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden !important;
+}
+.create-div .bot-div ul li:hover {
+  background-color: #FFC7C5;
+}
+.create-div .bot-div ul img {
+  height: 25px;
+  width: 25px;
+}
+.create-div .bot-div ul label {
+  z-index: 1;
+  height: 100% !important;
+}
+.create-div .bot-div ul input {
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.create-div .bot-div ul .react_selected {
+  background-color: #554D9B !important;
+}
+.create-div .bot-div .save-btn {
+  color: #EBEAF1;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+
 ._1 {
   background-color: #554D9B !important;
 }
 
 ._2 {
-  background-color: red;
+  background-color: pink;
 }/*# sourceMappingURL=index.css.map */

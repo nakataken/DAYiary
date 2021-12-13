@@ -3,22 +3,29 @@
     require_once "./includes/header.php";
     $errorMessage = "";
 
-    if(isset($_POST['username'])) {
-        $check_sql = "SELECT USERNAME, PASSWORD FROM user_table where USERNAME='".$_POST['username']."'";
-        if($rs=$conn->query($check_sql)) {
-            if($row=$rs->fetch_assoc()) {
-                $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);
-                if($decrypted) {
-                    $_SESSION['username'] = $row['USERNAME'];
-                    header("location:./index.php");
+    if(!isset($_SESSION['username'])) {
+        if(isset($_POST['username'])) {
+            
+            $check_sql = "SELECT USERNAME, PASSWORD FROM user_table where USERNAME='".$_POST['username']."'";
+            if($rs=$conn->query($check_sql)) {
+                if($row=$rs->fetch_assoc()) {
+                    $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);
+                    if($decrypted) {
+                        $_SESSION['username'] = $row['USERNAME'];
+                        header("location:./index.php");
+                    } else {
+                        $errorMessage = "You have entered an invalid username or password.";
+                    }
                 } else {
                     $errorMessage = "You have entered an invalid username or password.";
                 }
-            } else {
-                $errorMessage = "You have entered an invalid username or password.";
-            }
+            } 
         } 
+    }else{
+        header("location:./index.php");
     }
+    
+    
 ?>
 <div class="reg-div container-fluid d-flex flex-row align-items-center mt-5">
     <div class="container col-lg-6 d-lg-block d-none">

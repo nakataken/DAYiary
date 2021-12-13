@@ -1,57 +1,62 @@
 <?php 
-error_reporting(0);
 
     $title = "Register";
     require_once "./includes/header.php";
+    if(!isset($_SESSION['username'])){
+        if(isset($_POST['username'])) {
+            $name = $_POST['name'];
+            $bdate = $_POST['bdate'];
+            $username = $_POST['username'];
+            $pass = $_POST["pass"];
+            $confPass = $_POST["confPass"];
     
-    if(isset($_POST['username'])) {
-        $name = $_POST['name'];
-        $bdate = $_POST['bdate'];
-        $username = $_POST['username'];
-        $pass = $_POST["pass"];
-        $confPass = $_POST["confPass"];
-
-        if(!empty($_POST["pass"]) && ($_POST["pass"] == $_POST["confPass"])) {
-            if (strlen($_POST["pass"]) <= 8) {
-                $passError.="Your Password Must Contain At Least 8 Characters!";
-                $passValidated = false;
-            } elseif(!preg_match("#[0-9]+#",$pass)) {
-                $passError.="Your Password Must Contain At Least 1 Number!";
-                $passValidated = false;
-            } elseif(!preg_match("#[A-Z]+#",$pass)) {
-                $passError.="Your Password Must Contain At Least 1 Capital Letter!";
-                $passValidated = false;
-            } elseif(!preg_match("#[a-z]+#",$pass)) {
-                $passError.="Your Password Must Contain At Least 1 Lowercase Letter!";
-                $passValidated = false;
-            } else {
-                $encrypted = password_hash($pass, PASSWORD_DEFAULT);
-                $passValidated = true;
-            }
-        } else {
-            $passError.="Password didn't match.";
-            $passValidated = false;
-        }
-        
-        if($userValidated && $passValidated) {
-            $check_sql = "SELECT USERNAME FROM user_table where USERNAME='$username'";
-            if($rs=$conn->query($check_sql)) {
-                if($rs->num_rows==0) {
-                    $insert_sql = "INSERT INTO user_table SET NAME='$name',USERNAME='$username',password='$encrypted',birthdate='$bdate'";
-                    if(!$conn->query($insert_sql)) {
-                        echo '<script>alert("'.$conn->error.'")</script>';
-                    } else {
-                        echo '<script>alert("Registration Successful.")</script>'; 
-                        $_SESSION['username'] = $username;
-                        header("location:./index.php");
-                    }
+            if(!empty($_POST["pass"]) && ($_POST["pass"] == $_POST["confPass"])) {
+                if (strlen($_POST["pass"]) <= 8) {
+                    $passError.="Your Password Must Contain At Least 8 Characters!";
+                    $passValidated = false;
+                } elseif(!preg_match("#[0-9]+#",$pass)) {
+                    $passError.="Your Password Must Contain At Least 1 Number!";
+                    $passValidated = false;
+                } elseif(!preg_match("#[A-Z]+#",$pass)) {
+                    $passError.="Your Password Must Contain At Least 1 Capital Letter!";
+                    $passValidated = false;
+                } elseif(!preg_match("#[a-z]+#",$pass)) {
+                    $passError.="Your Password Must Contain At Least 1 Lowercase Letter!";
+                    $passValidated = false;
                 } else {
-                    $userError.="Username already used.";
-                    $userValidated = false; 
+                    $encrypted = password_hash($pass, PASSWORD_DEFAULT);
+                    $userValidated = $passValidated = true;
+                }
+            } else {
+                $passError.="Password didn't match.";
+                $passValidated = false;
+            }
+            
+            if($userValidated && $passValidated) {
+                $check_sql = "SELECT USERNAME FROM user_table where USERNAME='$username'";
+                if($rs=$conn->query($check_sql)) {
+                    if($rs->num_rows==0) {
+                        $insert_sql = "INSERT INTO user_table SET NAME='$name',USERNAME='$username',password='$encrypted',birthdate='$bdate'";
+                        if(!$conn->query($insert_sql)) {
+                            echo '<script>alert("'.$conn->error.'")</script>';
+                        } else {
+                            echo '<script>alert("Registration Successful.")</script>'; 
+                            $_SESSION['username'] = $username;
+                            header("location:./index.php");
+                        }
+                    } else {
+                        $userError.="Username already used.";
+                        $userValidated = false; 
+                    }
                 }
             }
         }
+     
     }
+    else{
+       header("location:./index.php");
+    }
+    
 
 ?>
 

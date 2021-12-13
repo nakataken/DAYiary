@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 // font-family: 'Hammersmith One', sans-serif;
 // font-family: 'Montserrat', sans-serif;
 
@@ -10,8 +10,13 @@ $color3:#FFC7C5;
 $background-color: #EBEAF1;
 $text-color:#524B4B;
 $plain: #FFFFFF;
-$i: unquote("!important");
 
+
+$f1:'Hammersmith One', sans-serif;
+$f2:'Montserrat', sans-serif;
+
+$i: unquote("!important");
+$bool: false;
 
 $screen-size:(
     "regular": 480px,
@@ -24,23 +29,38 @@ $font-weight:(
     "regular": 400,
     "medium":500,
     "large": 600,
+    "bold": 800,
 );
 
 
 $font-size:(
+    "tle":2.5rem,
     "h1":2rem,
     "h2":1.2rem,
     "lbl":1.2rem,
     "btn":1.2rem, //19px
     "reg":1rem, //16px
+    "h":1.5rem,
 );
 
+
+
+@function pow($circle: true) {
+    @if $circle {
+      $color_bg: $color1;
+    }
+    @return $color_bg;
+}
 
 @function weight($weight-name){
     @return map-get($font-weight, $weight-name);
 }
 @function fontsize($fontsize-name){
     @return map-get($font-size, $fontsize-name);
+}
+
+@function fontstyle($fontstyle-name){
+    @return map-get($font-style, $fontstyle-name);
 }
 
 @function screen($screensize-name){
@@ -71,8 +91,8 @@ $font-size:(
     border-radius: 25px;
 }
 
-@mixin title-text($color-name, $weight-name, $fontsize-name){
-    font-family: 'Hammersmith One', sans-serif;
+@mixin title-text($color-name, $weight-name, $fontsize-name, $fontstyle-name){
+    font-family: $fontstyle-name;
     color: $color-name;
     font-weight: weight($weight-name);
     font-size: fontsize($fontsize-name);
