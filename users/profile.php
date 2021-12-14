@@ -104,6 +104,8 @@
     <?php if(isset($errorMessage)) {?>
         <p class="text-danger"> <?php echo $errorMessage; ?></p>
     <?php } ?>
+    <a class="nav-link" href=""> <button type="submit" class="darkmode btn px-5">Dark</button></a>
+    <a class="nav-link" href="/DAYiary/users/logout.php"> <button type="submit" class="btn px-5">Logout</button></a>
 </div>
 
 <?php require_once "./includes/footer.php"; ?>

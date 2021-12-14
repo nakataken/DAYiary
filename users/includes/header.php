@@ -51,13 +51,13 @@
 
                 <?php } else { ?>
                 <li class="nav-item">
-                    <a class="nav-link mx-3" href="/DAYiary/users/profile.php">My Profile</a>
+                    <a class="nav-link mx-3" href="/DAYiary/users">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a  class="nav-link mx-3"  href="/DAYiary/users/createDiary.php">My Diary</a>
+                    <a  class="nav-link mx-3"  href="/DAYiary/users/createDiary.php">Diary</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/DAYiary/users/logout.php"> <button type="submit" class="btn px-5">Logout</button></a>
+                <a class="nav-link" href="/DAYiary/users/profile.php"> <button type="submit" class="btn px-5">Profile</button></a>
                 </li>
                 <?php } ?>
             </ul>

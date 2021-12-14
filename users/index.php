@@ -13,14 +13,15 @@
 <?php 
     $title = "Home";
     require_once "./includes/header.php";
-    
+    include "display.php";
+
     if(!isset($_SESSION['username'])) {
         header("location:./login.php");
     }
-
-    if(isset($_POST['date'])) {
+    if(isset($_POST['filter'])) {
         $output = "";
         $num = 0;
+        $create = "";
         $select_sql = "SELECT * FROM diary_table WHERE CREATED_AT='".$_POST['date']."' && USER_ID=".$_SESSION['id'];
         
         if($rs=$conn->query($select_sql)) {
@@ -28,10 +29,11 @@
                 while($rows=$rs->fetch_assoc()) {
                     $num++;
                     $content = $rows['CONTENT'];
-                    $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td><a class="btn btn-sm btn-primary" href="./editDiary.php?token='.$rows['ID'].'">Edit</a><a class="btn btn-sm btn-danger" href="./deleteDiary.php?token='.$rows['ID'].'">Delete</a></td></tr>';
+                    $output.= resultdisplay($rows['CREATED_AT'],$content,$rows['STATUS'],$rows['ID']);
                 }
-            } else {
+            } else { 
                 $output = '<tr><td class="text-center" colspan="5">No diary found!</td></tr>';
+  
             }
         }
     } else {
@@ -43,7 +45,7 @@
                 while($rows=$rs->fetch_assoc()) {
                     $num++;
                     $content = $rows['CONTENT'];
-                    $output.='<tr><td>'.$num.'</td><td>'.$rows['CREATED_AT'].'</td><td>'.$content.'</td><td>'.$rows['STATUS'].'</td><td><a class="btn btn-sm btn-primary" href="./editDiary.php?token='.$rows['ID'].'">Edit</a><a class="btn btn-sm btn-danger delete" href="./deleteDiary.php?token='.$rows['ID'].'">Delete</a></td></tr>';
+                    $output.= resultdisplay($rows['CREATED_AT'],$content,$rows['STATUS'],$rows['ID']);
                 }
             } else {
                 $output = '<tr><td class="text-center" colspan="5">No diary found!</td></tr>';
@@ -59,36 +61,32 @@
         <div class="d-flex flex-column  col-xxl-7 col-xl-8 col-lg-10 col-12 mx-auto">
             <h1 class="m-0">Hello, <?php echo $_SESSION['username']; ?>!</h1>
             <h2 class="m-0">have something in mind?</h2>
-            <a href="/DAYiary/users/createDiary.php" class="col-8"><button type="submit" class="btn col-12 mt-3">Write on my Diary</button></a>
+            <a href="/DAYiary/users/createDiary.php" class="col-md-8 col-12"><button type="submit" class="btn col-12 mt-3">Write on my Diary</button></a>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="container-md my-5">
-        <div class="card p-4">
-            <h3 class="card-title m-3">View Diary</h3>
-            <form method="POST">
-                <label for="date">Filter date</label>
-                <input id="datefield" type="date" name="date" class="form-control" max="" onchange="this.form.submit()">
-            </form>
+<div class="records-div container-fluid mt-5">
+    <div class="head-div container d-flex flex-row justify-content-between py-3 px-4 mx-auto ">
+        <h3 class="col-6 my-auto">My Diary</h3>
+     
+        <form method="POST" class="col-lg-4 col-md-6 col-6 d-flex flex-row flex-wrap gx-5 ms-auto">
+            <input  class="col-6 px-3" name="date" id="datefield" type="date" max="" >
             
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <th>Entry #</th>
-                        <th>Date</th>
-                        <th>Content</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </thead>
-                    <?php echo $output;?>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+            <button  class="btn col-5 ms-2" type="submit" name="filter"  onclick="getDatefunction()">Filter</button>
 
+        </form>
+       
+
+    </div>
+    <?php echo $output;?>
+    
+</div>
+<script>
+    function getDatefunction() {
+        document.getElementById("datefield").form.submit();
+    }
+</script>
 <script src="../public/currentDate.js"></script>
 
 <?php require_once "./includes/footer.php"; ?>

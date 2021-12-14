@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,6 +101,115 @@ nav ul button {
   border-radius: 25px;
 }
 
+.records-div .head-div {
+  background-color: #554D9B;
+  border-radius: 35px;
+}
+.records-div .head-div h3 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+.records-div .head-div input {
+  border: none !important;
+  border-radius: 25px;
+  color: #503c3c !important;
+}
+.records-div .head-div .btn {
+  color: #EBEAF1;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1rem;
+  border-radius: 25px;
+  background-color: #FFC7C5;
+  color: #554D9B !important;
+}
+.records-div .display-rec .character {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+}
+.records-div .display-rec .character img {
+  width: 40px;
+  height: 40px;
+}
+.records-div .display-rec h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+}
+.records-div .display-rec h2 {
+  font-family: "Gochi Hand", cursive;
+  color: #503c3c;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 300 !important;
+}
+.records-div .display-rec p {
+  min-height: 10vh;
+  font-family: "Montserrat", sans-serif;
+  color: #503c3c;
+  font-size: 1rem;
+}
+.records-div .display-rec .react {
+  background-color: #FFC7C5;
+  border-radius: 25px;
+  width: 50px;
+}
+.records-div .display-rec .modify img {
+  width: 25px;
+  height: 25px;
+}
+.records-div .display-rec .modify .btn {
+  color: #EBEAF1;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  background-color: #FFC7C5 !important;
+  width: 50px;
+}
+.records-div .display-rec ul {
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  list-style-type: none;
+}
+.records-div .display-rec ul li {
+  background-color: #FFFFFF !important;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden !important;
+  padding: 0.5em !important;
+}
+.records-div .display-rec ul img {
+  height: 25px;
+  width: 25px;
+}
+.records-div .display-rec ul label {
+  height: 100% !important;
+  z-index: 1;
+}
+.records-div .display-rec ul input {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+}
+.records-div .display-rec ul .Heart1, .records-div .display-rec ul .Happy2, .records-div .display-rec ul .Sad3, .records-div .display-rec ul .Neutral4 {
+  background-color: #554D9B !important;
+}
+.records-div .display-rec .save-btn {
+  color: #EBEAF1;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+
 .create-div {
   background-color: #EBEAF1;
   min-height: 80vh;
@@ -121,21 +232,24 @@ nav ul button {
   overflow: hidden !important;
 }
 .create-div .bot-div h3 {
-  font-family: "Hammersmith One", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #554D9B;
+  font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.05em;
   line-height: 1em;
 }
 .create-div .bot-div h2 {
-  font-family: "Montserrat", sans-serif;
-  color: #524B4B;
-  font-size: 1rem;
+  font-family: "Gochi Hand", cursive;
+  color: #503c3c;
+  font-size: 1.5rem;
+  font-weight: 300 !important;
 }
 .create-div .bot-div textarea {
   background-color: #FFFFFF;
   border: solid 0px #554D9B;
   border-radius: 25px;
+  font-style: "Gochi Hand", cursive !important;
 }
 .create-div .bot-div ul {
   background-color: #FFFFFF;
@@ -146,27 +260,36 @@ nav ul button {
   border-radius: 25px;
   position: relative;
   overflow: hidden !important;
+  padding: 0.5em !important;
 }
 .create-div .bot-div ul li:hover {
-  background-color: #FFC7C5;
+  background-color: #554D9B;
+  padding: 0em !important;
+}
+.create-div .bot-div ul li:hover img {
+  height: 30px;
+  width: 30px;
 }
 .create-div .bot-div ul img {
   height: 25px;
   width: 25px;
 }
 .create-div .bot-div ul label {
-  z-index: 1;
   height: 100% !important;
+  z-index: 1;
 }
 .create-div .bot-div ul input {
+  width: 100% !important;
+  height: 100% !important;
   opacity: 0;
   position: absolute;
   z-index: 0;
-  width: 100% !important;
-  height: 100% !important;
 }
 .create-div .bot-div ul .react_selected {
   background-color: #554D9B !important;
+}
+.create-div .bot-div ul .inv {
+  position: relative;
 }
 .create-div .bot-div .save-btn {
   color: #EBEAF1;
