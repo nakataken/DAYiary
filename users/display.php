@@ -1,5 +1,5 @@
 <?php
-    $res="";
+    $result="";
     function resultdisplay($date, $content,$status,$id){
 
         $dateholder = strtotime($date);
