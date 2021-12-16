@@ -257,7 +257,7 @@ nav{
         h3{
             a{
                 @include title-text($color2, medium, h2, $f3);
-            text-decoration: none !important;
+                text-decoration: none !important;
             }
         }
         

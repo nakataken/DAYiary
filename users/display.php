@@ -70,12 +70,8 @@
         $result ='
         <div class="result_message container mx-auto mt-5">
             <h1 class="text-center">Oops! No results found</h1>
-            <a href="/DAYiary/users/createDiary.php">
-                <h2 class="text-center">Want someting more to look back? Write more</h2>
-            </a>
-            <a href="/DAYiary/users/">
-                <h3 class="text-center">back to start</h3>
-            </a>
+           <h2 class="text-center"> <a href="/DAYiary/users/createDiary.php">Want someting more to look back? Write more</a></h2>
+            <h3 class="text-center"><a href="/DAYiary/users/">back to start</a></h3>
             <div class="col-4 mx-auto">
             <img src="../public/img/dayiary_noresult.png" alt="log-illus" class="illus col-12">
             </div>
@@ -96,8 +92,6 @@
             <div class="col-lg-4 col-6 mx-auto">
                 <img src="../public/img/dayiary_noentry.png" alt="log-illus" class="illus col-12">
             </div>
-            
-            
         </div>
         
         ';
@@ -123,8 +117,6 @@
        }
 
   
-                
-          
  </script>
 
 
