@@ -29,7 +29,7 @@
 ?>
 <div class="reg-div container-fluid d-flex flex-row align-items-center mt-5">
     <div class="container col-lg-6 d-lg-block d-none">
-        <img src="../public/img/download(1).png" alt="log-illus" class="">
+        <img src="../public/img/dayiary_login.png" alt="log-illus" class="col-10">
     </div>
     <div class="right-div container d-flex flex-column col-lg-6 col-md-8 col-10 ">
         <div class="d-flex flex-column col-xxl-7 col-xl-8 col-lg-10 col-12  mx-auto">   

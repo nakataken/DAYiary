@@ -7,10 +7,15 @@
     background-color: $background-color;
 }
 
-//navigation tab
+textarea, input, button{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+//header
 nav{
     .logo{
-        height: 40px;
+        height: 50px;
     }
     ul{
         li{
@@ -20,13 +25,36 @@ nav{
                @include title-text($color1 !important, small, h2, $f1);
             }
         }
-        button{
-            color: $background-color $i;
-            background-color: $color1 $i;
+        .profile-btn{
+            color: $color1 $i;
             font-family: 'Hammersmith One', sans-serif;
             font-weight: weight(small);
-            font-size: fontsize(h2 $i);
-            border-radius: 25px $i;
+            font-size: fontsize(h2);
+
+        }
+        .reg-btn{
+            @include primary-btn(small,reg,$color1);
+            color: $background-color !important;
+        }
+        .reg-btn:active{
+            background-color: $color2 !important;
+        }
+        .dropdown{
+            .dropdown-menu{
+                background-color: $background-color !important;
+                border: 1px solid $color1 !important;
+                overflow: hidden !important;
+                li{
+                    a{
+                        @include title-text($color1, small, h2, $f1);
+                    }
+                    a:hover{
+                        background-color: $color2 !important;
+                        transition: 1s;
+                    }
+                }
+                
+            }
         }
     }
 }
@@ -36,7 +64,7 @@ nav{
 .reg-div{
 
     background-color: $background-color;
-    min-height: 80vh !important;
+    min-height: 90vh !important;
 
     .right-div{
     //    @include flex_start();
@@ -68,83 +96,118 @@ nav{
             }
         }
         button{
-            @include primary-btn(small,btn);
+            @include primary-btn(small,btn,$color1);
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
+        button:active{
+            background-color: $color2 !important;
+            color: $color1;
+        }
+        
     }
     
 }
 
 //home
-
 .home-div{
-    background-color: $plain;
-    min-height: 70vh;
+    background-color: $background-color;
+    min-height: 90vh;
+    
     .right-div{
         h1{
-            @include title-text($color1, large, tle, $f2);
+            @include title-text($color1, large, tle, $f1);
             letter-spacing: 0.05em;
         }
         h2{
-            @include title-text($color2, medium, lbl, $f2);
-            font-size: 1.5rem !important;
+            @include title-text($color2, large, h, $f2);
         }
         button{
-            @include primary-btn(small,btn);
+            @include primary-btn(small,btn,$color2);
+            color: $color1 !important;
+            letter-spacing: 0.05em;
+        }
+        button:active{
+            background-color: $color4 !important;
         }
     }
     
 }
 
 .records-div{
+    background-color: $plain;
+    min-height: 90vh;
+
     .head-div{
         background-color: $color1;
         border-radius: 35px;
+        filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         h3{
-            @include title-text($plain, small, h, $f1);
+            @include title-text($color4, small, h, $f1);
         }
         input{
             border: none !important;
-            border-radius: 25px;
+            border-radius: 20px;
             color: $text-color !important;
-
+            outline: none !important;
         }
+        
         .btn{
-            @include primary-btn(small,reg);
-            background-color: $color3;
-            color: $color1 !important;
+            @include primary-btn(small,btn,$color2);
+            color: $color1;
+        }
+        .btn:active{
+            @include primary-btn(small,btn,$color4);
+            color: $color1;
         }
     }
     .display-rec{
-        .character{
-            height: 40px;
-            width: 40px;
-            border-radius: 25px;
-           // background-color: $color3;
-                img{
-                    width: 40px;
-                    height: 40px;
-                }
-        }
-    
+        border-bottom: 1px solid rgba($color: $color1, $alpha: 0.5);
+
         h3{
-            @include title-text($color1, large, h2, $f2);
-            letter-spacing: 0.05em;
+            @include title-text($color1, large, h, $f1);
+            font-weight: 600 !important;
+            letter-spacing: 0.08em;
             line-height: 1em;
         }
     
         h2{
-            @include title-text($text-color, medium, h2, $f3);
-            font-weight: 300 !important;
+            @include title-text($text-color, large, reg, $f2);
+
+        }
+        .dropdown{
+            button{
+                background-color: transparent !important;
+                img{
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+            .dropdown-menu{
+                background-color: $background-color !important;
+                border: none !important;
+                overflow: hidden !important;
+                li{
+                    overflow: hidden !important;
+                    a{
+                        @include title-text($color1, small, lbl, $f2);
+                    }
+                    a:hover{
+                        background-color: $color2 !important;
+                        transition: 1s;
+                    }
+                }
+                
+            }
+            
         }
         p{  
-            min-height: 10vh;
+            min-height: 5vh;
             @include title-text($text-color, small, reg, $f2);
         }
         .react{
-            background-color: $color3;
-            border-radius: 25px;
+            background-color: $background-color;
+            border-radius: 20px;
             width: 50px;
-            
         }
         .modify{
             img{
@@ -152,60 +215,64 @@ nav{
                 height: 25px;
             }
             .btn{
-                @include primary-btn(small,btn);
+                @include primary-btn(small,btn,$color2);
                 background-color: $color3 !important;
                 width: 50px;
             }
 
         }
-        ul{
-            background-color: $plain;
-            border-radius: 25px;
-            list-style-type: none;
-            li{
-                background-color: $plain !important;
-                border-radius: 25px;
-                position: relative;
+        .react_div{
+            background-color: $background-color;
+            border-radius: 20px;
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+            .react-btn{
+                border-radius: 20px;
                 overflow: hidden !important;
                 padding: 0.5em !important;
+                cursor: default  !important;
             }
             img{
                 height: 25px;
                 width: 25px;
-                
             }
-            label{
-                height: 100% !important;
-                z-index: 1;
-            }
-            input{
-                width: 100% !important;
-                height: 100% !important;
-                opacity: 0;
-                position: absolute;
-                z-index: 0;
-            }
-
             .Heart1, .Happy2, .Sad3, .Neutral4{
                 background-color: $color1 !important;
             }
 
         }
-        .save-btn{
-            @include primary-btn(small,btn);
-        }
-    }
+        
 
+    }
+    .result_message{
+        h1{
+            @include title-text($color1, large, tle, $f1);
+        }
+        
+        h2{
+            a{
+                @include title-text($color1, medium, h1, $f3);
+                text-decoration: none !important;
+            }
+        }
+        h3{
+            a{
+                @include title-text($color2, medium, h2, $f3);
+            text-decoration: none !important;
+            }
+        }
+        
+
+    }
 }
 
 //create div
 .create-div{
     background-color: $background-color;
-    min-height: 80vh;
+    min-height: 90vh;
 
     .top-div{
         background-color: $color1;
-        border-radius: 25px;
+        border-radius: 20px;
         h2{
             @include title-text($plain, medium, h1, $f1);
         }
@@ -214,8 +281,8 @@ nav{
         .character{
             height: 40px;
             width: 40px;
-            border-radius: 25px;
-            background-color: $color3;
+            border-radius: 20px;
+            background-color: $color2;
             overflow: hidden !important;
         }
 
@@ -232,33 +299,34 @@ nav{
         
         textarea{
             @include input-field();
-            font-style: $f3 !important;
-
+            background-color: $plain !important;
+          //  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+            
         }
-
+        textarea:focus{
+            outline: none !important;
+        }
         ul{
             background-color: $plain;
-            border-radius: 25px;
+            border-radius: 20px;
             list-style-type: none;
+         //   filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
             li{
-                border-radius: 25px;
+                border-radius: 20px;
                 position: relative;
                 overflow: hidden !important;
                 padding: 0.5em !important;
             }
             li:hover{
-                background-color: $color1;
-                padding: 0em !important;
-                img{
-                    height: 30px;
-                    width: 30px;
-                }
+                background-color: #756FAE;     
             }
             img{
+
                 height: 25px;
                 width: 25px;
-                
+                position: relative;
             }
+
             label{
                 height: 100% !important;
                 z-index: 1;
@@ -272,20 +340,77 @@ nav{
             }
             .react_selected{
                 background-color: $color1 !important;
+                transition: 1s;
             }
-            .inv{
-                position: relative;
+            .Heart1, .Happy2, .Sad3, .Neutral4{
+                background-color: $color1 !important;
             }
+
         }
 
         .save-btn{
-            @include primary-btn(small,btn);
+            @include primary-btn(small,btn, $color1);
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+        }
+        .save-btn:active{
+            @include primary-btn(small,btn,$color2);
         }
       
     }
     
 }
 
+
+//footer
+footer{
+    background-color: $color1;
+    p{
+        @include title-text($background-color, medium, h, $f3);
+        line-height: 0;
+        letter-spacing: 1px;
+    }
+    .initial{
+        width: 40px;
+        height: 40px;
+        border-radius: 25px;
+        background-color: $plain ;
+        text-decoration: none !important;
+        @include title-text($color1, large, h2, $f1);
+        
+    }
+    .initial:hover{
+        background-color: $color2 ;
+        color: $color1;
+        box-shadow: 0px 0px 16px 4px rgba($color: #FFA9DC, $alpha: .8);
+        transition: 1s;
+        animation: pulse 3s linear infinite;
+    }
+
+    h3{
+        @include title-text($color2, medium, h2, $f3);
+        line-height: 0;
+        a{
+            text-decoration: none !important;
+            color: $color4;
+        }
+        a:hover{
+            text-decoration: none !important;
+            color: $color4;
+        }
+    }
+}
+
+@keyframes blinker {
+    10% {
+        opacity: 0.3;
+    }
+    20% {
+        opacity: 0.6;
+    }
+    50% {
+      opacity: 0.9;
+    }
+}
 
 
 

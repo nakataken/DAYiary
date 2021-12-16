@@ -9,11 +9,16 @@
 }
 
 .main {
-  background-color: #EBEAF1;
+  background-color: #F5F5F5;
+}
+
+textarea, input, button {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 nav .logo {
-  height: 40px;
+  height: 50px;
 }
 nav ul li {
   line-height: 40px;
@@ -24,16 +29,41 @@ nav ul li a {
   color: #554D9B !important;
   font-size: 1.2rem;
 }
-nav ul button {
-  color: #EBEAF1 !important;
-  background-color: #554D9B !important;
+nav ul .profile-btn {
+  color: #554D9B !important;
   font-family: "Hammersmith One", sans-serif;
-  border-radius: 25px !important;
+  font-size: 1.2rem;
+}
+nav ul .reg-btn {
+  color: #F5F5F5;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #F5F5F5 !important;
+}
+nav ul .reg-btn:active {
+  background-color: #FFA9DC !important;
+}
+nav ul .dropdown .dropdown-menu {
+  background-color: #F5F5F5 !important;
+  border: 1px solid #554D9B !important;
+  overflow: hidden !important;
+}
+nav ul .dropdown .dropdown-menu li a {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+}
+nav ul .dropdown .dropdown-menu li a:hover {
+  background-color: #FFA9DC !important;
+  transition: 1s;
 }
 
 .reg-div {
-  background-color: #EBEAF1;
-  min-height: 80vh !important;
+  background-color: #F5F5F5;
+  min-height: 90vh !important;
 }
 .reg-div .right-div h1 {
   font-family: "Hammersmith One", sans-serif;
@@ -43,7 +73,7 @@ nav ul button {
 }
 .reg-div .right-div h2 {
   font-family: "Hammersmith One", sans-serif;
-  color: #EF9697;
+  color: #FFA9DC;
   font-size: 1.2rem;
 }
 .reg-div .right-div h2 a {
@@ -56,9 +86,9 @@ nav ul button {
   font-size: 1.2rem;
 }
 .reg-div .right-div .form-group .form-control, .reg-div .right-div .form-group input, .reg-div .right-div .form-group textarea {
-  background-color: #FFFFFF;
+  background-color: #EEEDF0 !important;
   border: solid 0px #554D9B;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 .reg-div .right-div .form-group input:focus, .reg-div .right-div .form-group textarea:focus {
   outline: none !important;
@@ -68,95 +98,139 @@ nav ul button {
   font-size: 1rem;
 }
 .reg-div .right-div button {
-  color: #EBEAF1;
+  color: #F5F5F5;
   background-color: #554D9B;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 20px;
+  box-shadow: none !important;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.reg-div .right-div button:active {
+  background-color: #FFA9DC !important;
+  color: #554D9B;
 }
 
 .home-div {
-  background-color: #FFFFFF;
-  min-height: 70vh;
+  background-color: #F5F5F5;
+  min-height: 90vh;
 }
 .home-div .right-div h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Hammersmith One", sans-serif;
   color: #554D9B;
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 0.05em;
 }
 .home-div .right-div h2 {
   font-family: "Montserrat", sans-serif;
-  color: #EF9697;
-  font-weight: 500;
-  font-size: 1.2rem;
-  font-size: 1.5rem !important;
+  color: #FFA9DC;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 .home-div .right-div button {
-  color: #EBEAF1;
-  background-color: #554D9B;
+  color: #F5F5F5;
+  background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #554D9B !important;
+  letter-spacing: 0.05em;
+}
+.home-div .right-div button:active {
+  background-color: #FFE993 !important;
 }
 
+.records-div {
+  background-color: #DEDFFE;
+  min-height: 90vh;
+}
 .records-div .head-div {
   background-color: #554D9B;
   border-radius: 35px;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
 .records-div .head-div h3 {
   font-family: "Hammersmith One", sans-serif;
-  color: #FFFFFF;
+  color: #FFE993;
   font-size: 1.5rem;
 }
 .records-div .head-div input {
   border: none !important;
-  border-radius: 25px;
+  border-radius: 20px;
   color: #503c3c !important;
+  outline: none !important;
 }
 .records-div .head-div .btn {
-  color: #EBEAF1;
-  background-color: #554D9B;
+  color: #F5F5F5;
+  background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
-  font-size: 1rem;
-  border-radius: 25px;
-  background-color: #FFC7C5;
-  color: #554D9B !important;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #554D9B;
 }
-.records-div .display-rec .character {
-  height: 40px;
-  width: 40px;
-  border-radius: 25px;
+.records-div .head-div .btn:active {
+  color: #F5F5F5;
+  background-color: #FFE993;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #554D9B;
 }
-.records-div .display-rec .character img {
-  width: 40px;
-  height: 40px;
+.records-div .display-rec {
+  border-bottom: 1px solid rgba(85, 77, 155, 0.5);
 }
 .records-div .display-rec h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Hammersmith One", sans-serif;
   color: #554D9B;
   font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em;
   line-height: 1em;
 }
 .records-div .display-rec h2 {
-  font-family: "Gochi Hand", cursive;
+  font-family: "Montserrat", sans-serif;
   color: #503c3c;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.records-div .display-rec .dropdown button {
+  background-color: transparent !important;
+}
+.records-div .display-rec .dropdown button img {
+  height: 25px;
+  width: 25px;
+}
+.records-div .display-rec .dropdown .dropdown-menu {
+  background-color: #F5F5F5 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+.records-div .display-rec .dropdown .dropdown-menu li {
+  overflow: hidden !important;
+}
+.records-div .display-rec .dropdown .dropdown-menu li a {
+  font-family: "Montserrat", sans-serif;
+  color: #554D9B;
   font-size: 1.2rem;
-  font-weight: 300 !important;
+}
+.records-div .display-rec .dropdown .dropdown-menu li a:hover {
+  background-color: #FFA9DC !important;
+  transition: 1s;
 }
 .records-div .display-rec p {
-  min-height: 10vh;
+  min-height: 5vh;
   font-family: "Montserrat", sans-serif;
   color: #503c3c;
   font-size: 1rem;
 }
 .records-div .display-rec .react {
-  background-color: #FFC7C5;
-  border-radius: 25px;
+  background-color: #F5F5F5;
+  border-radius: 20px;
   width: 50px;
 }
 .records-div .display-rec .modify img {
@@ -164,71 +238,73 @@ nav ul button {
   height: 25px;
 }
 .records-div .display-rec .modify .btn {
-  color: #EBEAF1;
-  background-color: #554D9B;
+  color: #F5F5F5;
+  background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
-  border-radius: 25px;
-  background-color: #FFC7C5 !important;
+  border-radius: 20px;
+  box-shadow: none !important;
+  background-color: #B2B0F7 !important;
   width: 50px;
 }
-.records-div .display-rec ul {
-  background-color: #FFFFFF;
-  border-radius: 25px;
-  list-style-type: none;
+.records-div .display-rec .react_div {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
-.records-div .display-rec ul li {
-  background-color: #FFFFFF !important;
-  border-radius: 25px;
-  position: relative;
+.records-div .display-rec .react_div .react-btn {
+  border-radius: 20px;
   overflow: hidden !important;
   padding: 0.5em !important;
+  cursor: default !important;
 }
-.records-div .display-rec ul img {
+.records-div .display-rec .react_div img {
   height: 25px;
   width: 25px;
 }
-.records-div .display-rec ul label {
-  height: 100% !important;
-  z-index: 1;
-}
-.records-div .display-rec ul input {
-  width: 100% !important;
-  height: 100% !important;
-  opacity: 0;
-  position: absolute;
-  z-index: 0;
-}
-.records-div .display-rec ul .Heart1, .records-div .display-rec ul .Happy2, .records-div .display-rec ul .Sad3, .records-div .display-rec ul .Neutral4 {
+.records-div .display-rec .react_div .Heart1, .records-div .display-rec .react_div .Happy2, .records-div .display-rec .react_div .Sad3, .records-div .display-rec .react_div .Neutral4 {
   background-color: #554D9B !important;
 }
-.records-div .display-rec .save-btn {
-  color: #EBEAF1;
-  background-color: #554D9B;
+.records-div .result_message h1 {
   font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 3rem;
+}
+.records-div .result_message h2 a {
+  font-family: "Gochi Hand", cursive;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 2rem;
+  text-decoration: none !important;
+}
+.records-div .result_message h3 a {
+  font-family: "Gochi Hand", cursive;
+  color: #FFA9DC;
+  font-weight: 500;
   font-size: 1.2rem;
-  border-radius: 25px;
+  text-decoration: none !important;
 }
 
 .create-div {
-  background-color: #EBEAF1;
-  min-height: 80vh;
+  background-color: #F5F5F5;
+  min-height: 90vh;
 }
 .create-div .top-div {
   background-color: #554D9B;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 .create-div .top-div h2 {
   font-family: "Hammersmith One", sans-serif;
-  color: #FFFFFF;
+  color: #DEDFFE;
   font-weight: 500;
   font-size: 2rem;
 }
 .create-div .bot-div .character {
   height: 40px;
   width: 40px;
-  border-radius: 25px;
-  background-color: #FFC7C5;
+  border-radius: 20px;
+  background-color: #FFA9DC;
   overflow: hidden !important;
 }
 .create-div .bot-div h3 {
@@ -246,33 +322,32 @@ nav ul button {
   font-weight: 300 !important;
 }
 .create-div .bot-div textarea {
-  background-color: #FFFFFF;
+  background-color: #EEEDF0 !important;
   border: solid 0px #554D9B;
-  border-radius: 25px;
-  font-style: "Gochi Hand", cursive !important;
+  border-radius: 20px;
+  background-color: #DEDFFE !important;
+}
+.create-div .bot-div textarea:focus {
+  outline: none !important;
 }
 .create-div .bot-div ul {
-  background-color: #FFFFFF;
-  border-radius: 25px;
+  background-color: #DEDFFE;
+  border-radius: 20px;
   list-style-type: none;
 }
 .create-div .bot-div ul li {
-  border-radius: 25px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden !important;
   padding: 0.5em !important;
 }
 .create-div .bot-div ul li:hover {
-  background-color: #554D9B;
-  padding: 0em !important;
-}
-.create-div .bot-div ul li:hover img {
-  height: 30px;
-  width: 30px;
+  background-color: #756FAE;
 }
 .create-div .bot-div ul img {
   height: 25px;
   width: 25px;
+  position: relative;
 }
 .create-div .bot-div ul label {
   height: 100% !important;
@@ -287,18 +362,98 @@ nav ul button {
 }
 .create-div .bot-div ul .react_selected {
   background-color: #554D9B !important;
+  transition: 1s;
 }
-.create-div .bot-div ul .inv {
-  position: relative;
+.create-div .bot-div ul .Heart1, .create-div .bot-div ul .Happy2, .create-div .bot-div ul .Sad3, .create-div .bot-div ul .Neutral4 {
+  background-color: #554D9B !important;
 }
 .create-div .bot-div .save-btn {
-  color: #EBEAF1;
+  color: #F5F5F5;
   background-color: #554D9B;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 20px;
+  box-shadow: none !important;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.create-div .bot-div .save-btn:active {
+  color: #F5F5F5;
+  background-color: #FFA9DC;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
 }
 
+footer {
+  background-color: #554D9B;
+}
+footer p {
+  font-family: "Gochi Hand", cursive;
+  color: #F5F5F5;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 0;
+  letter-spacing: 1px;
+}
+footer .initial {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #DEDFFE;
+  text-decoration: none !important;
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+footer .initial:hover {
+  background-color: #FFA9DC;
+  color: #554D9B;
+  box-shadow: 0px 0px 16px 4px rgba(255, 169, 220, 0.8);
+  transition: 1s;
+  -webkit-animation: pulse 3s linear infinite;
+          animation: pulse 3s linear infinite;
+}
+footer h3 {
+  font-family: "Gochi Hand", cursive;
+  color: #FFA9DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 0;
+}
+footer h3 a {
+  text-decoration: none !important;
+  color: #FFE993;
+}
+footer h3 a:hover {
+  text-decoration: none !important;
+  color: #FFE993;
+}
+
+@-webkit-keyframes blinker {
+  10% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes blinker {
+  10% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
 ._1 {
   background-color: #554D9B !important;
 }

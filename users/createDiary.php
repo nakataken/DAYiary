@@ -1,5 +1,6 @@
 <?php 
     $title = "Create Diary";
+    $class_name ="create_diary";
     require_once "./includes/header.php";
     
     if(!isset($_SESSION['username'])) {
@@ -30,13 +31,13 @@
     }
 ?>
 
-<div class="create-div container-fluid d-flex flex-row align-items-center mt-5">
-    <div class="col-12 px-5 mx-auto mt-5">
-        <div class="bot-div col-lg-8 col-12 mx-auto mt-2">
+<div class="create-div container-fluid d-flex flex-row align-items-center ">
+    <div class="col-12 px-5 mx-auto">
+        <div class="bot-div col-lg-8 col-12 mx-auto">
             
             <form  method="POST">
-                <div class="d-flex flex-row mb-3 ">
-                    <div class="character">
+                <div class="d-flex flex-row mb-3 p-0">
+                    <div class="character p-2">
                     </div>
                     <div class="ms-2">
                         <h3 class="my-0"><?php echo $_SESSION['username']; ?></h3>
@@ -50,28 +51,28 @@
                 <div class="d-flex flex-row flex-wrap justify-content-between" >
                     <ul class="d-flex flex-row justify-content-center col-md-4 col-sm-6 col-12 p-0">
                         <li class="react-btn btn  col-3 p-0" id="1" onclick="myFunction(this.id)">
-                            
-                            <label class="col-12 d-flex flex-row align-items-center">
-                                <input class="col-12" type="radio" name="status" value="Happy">
+                            <label class="col-12 d-flex flex-row align-items-center p-0">
+                                <div class="dum"></div>
+                                <input class="col-12" type="radio" name="status" value="Heart">
                                 <img src="../public/img/heart.png" alt="log-illus" class="mx-auto">
+                                
                             </label>
                         </li>
                         <li class="react-btn btn col-3 p-0" id="2" onclick="myFunction(this.id)">
-                            <label class="col-12 d-flex flex-row align-items-center">
+                            <label class="col-12 d-flex flex-row align-items-center p-0">
                                 <input class="col-12" type="radio" name="status" value="Happy">
                                 <img src="../public/img/happy.png" alt="log-illus" class="mx-auto">
                             </label>
                         </li>
                         <li class="react-btn btn col-3 p-0" id="3" onclick="myFunction(this.id)">
-                            <label class="col-12 d-flex flex-row align-items-center">
+                            <label class="col-12 d-flex flex-row align-items-center p-0">
                                 <input class="col-12 p-0" type="radio" name="status" value="Sad">
                                 <img src="../public/img/sad.png" alt="log-illus" class="mx-auto">
                             </label>
                         </li>
                         <li class="react-btn btn col-3 p-0" id="4" onclick="myFunction(this.id)">
-                         
-                            <label class="col-12 d-flex flex-row align-items-center">
-                                <input class="col-12 btn mx-auto" type="radio" name="status" value="Nuetral">
+                            <label class="col-12 d-flex flex-row align-items-center p-0">
+                                <input class="col-12 btn mx-auto" type="radio" name="status" value="Neutral">
                                 <img src="../public/img/neutral.png" alt="log-illus" class="mx-auto">
                 
                             </label>
@@ -79,7 +80,7 @@
                         
                     </ul>     
                     <div class="col-sm-3 col-12">
-                    <input type="submit" name="submit" value="Submit" class="btn save-btn col-12">
+                    <input type="submit" name="submit" value="Save" class="btn save-btn col-12">
 
                     </div>
                 </div>

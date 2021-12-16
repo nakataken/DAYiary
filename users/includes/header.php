@@ -11,6 +11,17 @@
             }
         }
     }
+    $block ="d-block";
+    $toggler ="collapse navbar-collapse";
+    if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php' || $_SERVER['REQUEST_URI'] == '/DAYiary/users/login.php'){
+        $toggler ="";
+        $block ="d-none";
+    }
+    else{
+        $toggler ="collapse navbar-collapse";
+        $block ="d-md-none d-block";
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,42 +38,70 @@
 </head>
 <body class="main">
 <header>
-    <nav class="navbar navbar-expand-md fixed-top  px-5 pt-3">
-        <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-md   px-5 pt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
+            <button  class="<?=$block?> navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon col-12 my-auto"><img src="./../public/img/menu_btn.png" class="mx-auto col-12 my-auto"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto my-auto">
-                <?php if(!isset($_SESSION['username'])) { ?>
-                
-                    <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php'){?>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/DAYiary/users/login.php"> <button type="submit" class="btn px-5">Login</button></a>
-                        </li>
-                    <?php }?>
+            <div class="<?=$toggler?> collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto my-auto d-flex flex-md-row flex-column align-items-end ">
+                    <?php if(!isset($_SESSION['username'])) { ?>
+                        
+                        <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php'){?>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/DAYiary/users/login.php"> <button type="submit" class=" reg-btn btn px-5">Login</button></a>
+                            </li>
 
-                    <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/login.php'){?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/DAYiary/users/register.php"> <button type="submit" class="btn px-5">Register</button></a>
-                        </li>
-                    <?php }?>
+                        <?php }?>
 
-                <?php } else { ?>
-                <li class="nav-item">
-                    <a class="nav-link mx-3" href="/DAYiary/users">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a  class="nav-link mx-3"  href="/DAYiary/users/createDiary.php">Diary</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/DAYiary/users/profile.php"> <button type="submit" class="btn px-5">Profile</button></a>
-                </li>
-                <?php } ?>
-            </ul>
-        
+                        <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/login.php'){?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/DAYiary/users/register.php"> <button type="submit" class="reg-btn btn px-5">Register</button></a>
+                            </li>
+                        <?php }?>
+
+                    <?php } else { ?>
+                    <?php $toggler ="navbar-expand-lg"; ?>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="/DAYiary/users">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link mx-3"  href="/DAYiary/users/createDiary.php">Diary</a>
+                    </li>
+                    <li class="nav-item d-md-block d-none">
+                        <div class="dropdown  ms-auto nav-link">
+                                <button class="profile-btn btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Profile
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end mt-lg-1 mt-2 p-0" aria-labelledby="dropdownMenuButton1">
+                                    <li class=" p-0">
+                                        <a class="dropdown-item"  href="/DAYiary/users/profile.php">
+                                        Settings
+                                        </a>
+                                        <a class="dropdown-item"   href="/DAYiary/users/logout.php" >
+                                        Log out
+                                        </a>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="nav-item d-md-none col-12 border-top border-bottom d-flex flex-column align-items-end">
+                        
+                        <a class="nav-link mx-3"  href="/DAYiary/users/profile.php">
+                        Settings
+                        </a>
+                        <a class="nav-link mx-3 "   href="/DAYiary/users/logout.php" >
+                        Log out
+                        </a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            
+            </div>
         </div>
+        
     </nav>
-  
 </header>

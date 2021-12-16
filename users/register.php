@@ -62,7 +62,9 @@
 
 <div class="reg-div container-fluid  d-flex flex-row align-items-center mt-5">
     <div class="container-fluid col-lg-6 d-lg-block d-none ">
-        <img src="../public/img/download(1).png" alt="log-illus" class="">
+        <div class="col-xl-8 col-lg-10 col-12 mx-auto">
+            <img src="../public/img/dayiary_signup.png" alt="log-illus" class="col-12">
+        </div>
     </div>
     <div class="right-div container col-lg-6 col-8">
         <div class="d-flex flex-column  col-xxl-7 col-xl-8 col-lg-10 col-12 mx-auto">

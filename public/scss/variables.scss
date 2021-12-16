@@ -6,11 +6,12 @@
 
 
 $color1:#554D9B;
-$color2:#EF9697;
-$color3:#FFC7C5;
-$background-color: #EBEAF1;
+$color2:#FFA9DC;
+$color3:#B2B0F7;
+$color4:#FFE993;
+$background-color: #F5F5F5;
 $text-color:#503c3c;
-$plain: #FFFFFF;
+$plain: #DEDFFE;
 
 
 $f1:'Hammersmith One', sans-serif;
@@ -37,7 +38,7 @@ $font-weight:(
 
 
 $font-size:(
-    "tle":2.5rem,
+    "tle":3rem,
     "h1":2rem,
     "h2":1.2rem,
     "lbl":1.2rem,
@@ -80,18 +81,19 @@ $font-size:(
 }
 
 @mixin input-field{
-    background-color: $plain;
+    background-color: #EEEDF0 !important;
     border: solid 0px $color1;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
-@mixin primary-btn ($weight-name,$fontsize-name){
+@mixin primary-btn ($weight-name,$fontsize-name, $color-name){
     color: $background-color;
-    background-color: $color1;
+    background-color: $color-name;
     font-family: 'Hammersmith One', sans-serif;
     font-weight: weight($weight-name);
     font-size: fontsize($fontsize-name);
-    border-radius: 25px;
+    border-radius: 20px;
+    box-shadow: none !important;
 }
 
 @mixin title-text($color-name, $weight-name, $fontsize-name, $fontstyle-name){
