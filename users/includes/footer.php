@@ -1,6 +1,7 @@
     <footer class="container-fluid d-flex flex-column flex-wrap">
-        <a class=" col-lg-1 col-sm-2 col-4 mt-5 mx-auto" href="/DAYiary/users/">
-            <img src="../public/img/logo_white.png" alt="logo" class="logo col-12">
+        
+        <a class=" mt-5 mx-auto " href="/DAYiary/users/">
+            <img src="../public/img/logo_white.png" alt="logo" class="logo">
         </a>
 
         <div class="col-12 mt-5">

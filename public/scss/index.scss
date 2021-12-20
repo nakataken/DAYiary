@@ -111,12 +111,13 @@ nav{
 //home
 .home-div{
     background-color: $background-color;
-    min-height: 90vh;
+    min-height: 95vh;
     
     .right-div{
         h1{
             @include title-text($color1, large, tle, $f1);
             letter-spacing: 0.05em;
+            font-size: 70px !important;
         }
         h2{
             @include title-text($color2, large, h, $f2);
@@ -130,8 +131,15 @@ nav{
             background-color: $color4 !important;
         }
     }
+    .left-div{
+        display: inline-block;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
     
 }
+
 
 .records-div{
     background-color: $plain;
@@ -360,10 +368,98 @@ nav{
     
 }
 
+//profile
+
+.profile-div{
+    min-height: 100vh;
+    .left-div{
+        background-color: $plain;
+        border-radius: 20px;
+        overflow: hidden !important;
+        .top-div{
+            background-color: $color1;
+            .dropdown{
+                button{
+                    background-color: transparent !important;
+                    img{
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
+                .dropdown-menu{
+                    background-color: $background-color !important;
+                    border: none !important;
+                    overflow: hidden !important;
+                    li{
+                        overflow: hidden !important;
+                        a{
+                            @include title-text($color1, small, lbl, $f2);
+                        }
+                        a:hover{
+                            background-color: $color2 !important;
+                            transition: 1s;
+                        }
+                    }
+                    
+                }
+                
+            }
+            .circle{
+                background-color: $color2;
+                width: 150px !important;
+                height: 150px !important;
+                border-radius: 50%;
+             //   border: 4px solid $background-color;
+                h3{
+                    @include title-text( $background-color, medium, tle, $f1);
+                    font-size: 70px !important;
+                    line-height: 0;
+                }
+    
+            }
+            p{
+                @include title-text( $background-color, medium, h1, $f1);
+                line-height: 1.6rem;
+                text-transform: uppercase;
+            }
+        }
+        .bot-div{
+            .name{
+                @include title-text($color1, medium, h, $f1);
+                line-height: 1.6rem;
+                text-transform:uppercase;
+
+            }
+            .date{
+                @include title-text($text-color, medium, h, $f3);
+                line-height: 1.6rem;
+
+            }
+            button{
+                @include primary-btn(small,btn, $color2);
+                color: $color1;
+            }
+            label{
+                @include title-text( $color1, medium, h2, $f1);
+
+            }
+            input{
+                border-radius: 20px !important;
+            }
+
+        }
+
+    }
+}
+
 
 //footer
 footer{
     background-color: $color1;
+
+    .logo{
+        width: 100px;
+    }
     p{
         @include title-text($background-color, medium, h, $f3);
         line-height: 0;
@@ -412,7 +508,11 @@ footer{
     }
 }
 
-
+@keyframes example {
+    0%   {transform: translateY(0px)}
+    50%  {transform: translateY(10px)}
+    100% {transform: translateY(0px)}
+}
 
 ._1{
     background-color: $color1 !important;

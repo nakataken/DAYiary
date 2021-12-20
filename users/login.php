@@ -27,12 +27,15 @@
     
     
 ?>
-<div class="reg-div container-fluid d-flex flex-row align-items-center mt-5">
-    <div class="container col-lg-6 d-lg-block d-none">
-        <img src="../public/img/dayiary_login.png" alt="log-illus" class="col-10">
+<div class="reg-div container-fluid d-flex flex-row align-items-center mb-5">
+    <div class="container d-lg-block d-none col-lg-6">
+        <div class="col-10 ms-auto">
+        <img src="../public/img/dayiary_login.png" alt="log-illus" class="col-12">
+
+        </div>
     </div>
-    <div class="right-div container d-flex flex-column col-lg-6 col-md-8 col-10 ">
-        <div class="d-flex flex-column col-xxl-7 col-xl-8 col-lg-10 col-12  mx-auto">   
+    <div class="right-div container d-flex flex-column col-lg-6 col-md-8 col-10">
+        <div class="d-flex flex-column col-xxl-7 col-xl-8 col-lg-10 col-12  mx-auto ">   
             <h1 class="m-0">Welcome back!</h1>
             <h2 class="m-0">Log in to your account</h2>
             <form class="mt-5" method="POST">

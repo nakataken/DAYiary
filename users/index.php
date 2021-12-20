@@ -58,7 +58,7 @@
     <div class="right-div container col-lg-6 col-8">
         <div class="d-flex flex-column  col-xl-8 col-lg-10 col-12 mx-auto ">
             <h1 class="m-0">Hello, <?php echo $_SESSION['username']; ?>!</h1>
-            <h2 class="m-0">have something in mind?</h2>
+            <h2 class="col-10 m-0">Share something on your diary today</h2>
             <a href="/DAYiary/users/createDiary.php" class="col-md-8 col-12 mt-5"><button type="submit" class="btn col-12 mt-3">WRITE ON MY DIARY</button></a>
         </div>
     </div>

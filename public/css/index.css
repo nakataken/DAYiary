@@ -113,7 +113,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 
 .home-div {
   background-color: #F5F5F5;
-  min-height: 90vh;
+  min-height: 95vh;
 }
 .home-div .right-div h1 {
   font-family: "Hammersmith One", sans-serif;
@@ -121,6 +121,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   font-weight: 600;
   font-size: 3rem;
   letter-spacing: 0.05em;
+  font-size: 70px !important;
 }
 .home-div .right-div h2 {
   font-family: "Montserrat", sans-serif;
@@ -140,6 +141,15 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .home-div .right-div button:active {
   background-color: #FFE993 !important;
+}
+.home-div .left-div {
+  display: inline-block;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .records-div {
@@ -385,8 +395,102 @@ nav ul .dropdown .dropdown-menu li a:hover {
   box-shadow: none !important;
 }
 
+.profile-div {
+  min-height: 100vh;
+}
+.profile-div .left-div {
+  background-color: #DEDFFE;
+  border-radius: 20px;
+  overflow: hidden !important;
+}
+.profile-div .left-div .top-div {
+  background-color: #554D9B;
+}
+.profile-div .left-div .top-div .dropdown button {
+  background-color: transparent !important;
+}
+.profile-div .left-div .top-div .dropdown button img {
+  height: 25px;
+  width: 25px;
+}
+.profile-div .left-div .top-div .dropdown .dropdown-menu {
+  background-color: #F5F5F5 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+.profile-div .left-div .top-div .dropdown .dropdown-menu li {
+  overflow: hidden !important;
+}
+.profile-div .left-div .top-div .dropdown .dropdown-menu li a {
+  font-family: "Montserrat", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+}
+.profile-div .left-div .top-div .dropdown .dropdown-menu li a:hover {
+  background-color: #FFA9DC !important;
+  transition: 1s;
+}
+.profile-div .left-div .top-div .circle {
+  background-color: #FFA9DC;
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50%;
+}
+.profile-div .left-div .top-div .circle h3 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #F5F5F5;
+  font-weight: 500;
+  font-size: 3rem;
+  font-size: 70px !important;
+  line-height: 0;
+}
+.profile-div .left-div .top-div p {
+  font-family: "Hammersmith One", sans-serif;
+  color: #F5F5F5;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+}
+.profile-div .left-div .bot-div .name {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+}
+.profile-div .left-div .bot-div .date {
+  font-family: "Gochi Hand", cursive;
+  color: #503c3c;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+}
+.profile-div .left-div .bot-div button {
+  color: #F5F5F5;
+  background-color: #FFA9DC;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #554D9B;
+}
+.profile-div .left-div .bot-div label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.profile-div .left-div .bot-div input {
+  border-radius: 20px !important;
+}
+
 footer {
   background-color: #554D9B;
+}
+footer .logo {
+  width: 100px;
 }
 footer p {
   font-family: "Gochi Hand", cursive;
@@ -452,6 +556,28 @@ footer h3 a:hover {
   }
   50% {
     opacity: 0.9;
+  }
+}
+@-webkit-keyframes example {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes example {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 ._1 {
