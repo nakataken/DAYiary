@@ -87,23 +87,37 @@
 ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h1 class="display-5">DASHBOARD</h1>
+<div class="admin container-fluid mb-5 ">
 
-<div class="">
-    <?php if(isset($totalUsers)) { ?>
-        <span>Total Users - <?php echo $totalUsers; ?></span>
-    <?php } ?>
-    <?php if(isset($totalDiaries)) { ?>
-        <span>Total Diary Entries - <?php echo $totalDiaries; ?></span>
-    <?php } ?>
-</div>
+    <div class="admin-1 container mx-auto row mt-5">
+        <h1 class=" col-12">DASHBOARD</h1>
+        <?php if(isset($totalUsers)) { ?>
+            <div class="col-md-6  p-2">
+                <div class="acard py-5 col-12">
+                    <h2 class="text-center"><?php echo $totalUsers;?></h2>
+                    <p  class="text-center" >Total Users</p>
+                </div>
+            </div>
+        <?php } ?>
+        <?php if(isset($totalDiaries)) { ?>
+            <div class="col-md-6 p-2">
+                <div class="acard py-5 col-12">
+                    <h2 class="text-center"><?php echo $totalDiaries; ?></h2>
+                    <p  class="text-center" >Total Diary Entries</p>
+                </div>
+            </div>
+            
+        <?php } ?>
+    </div>
 
-<!-- Line Chart -->
-<div class="container">
-    <div class="" style="width:1000px; height:500px;">
-        <canvas id="lineChart" width="100" height="50"></canvas>
+    <!-- Line Chart -->
+    <div class="container my-5">
+        <div class="col-lg-10 col-12 mx-auto">
+            <canvas id="lineChart" width="100" height="50"></canvas>
+        </div>
     </div>
 </div>
+
 
 <!-- Script for Line Chart -->
 <script>

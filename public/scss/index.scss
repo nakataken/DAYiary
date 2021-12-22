@@ -126,6 +126,7 @@ nav{
             @include primary-btn(small,btn,$color2);
             color: $color1 !important;
             letter-spacing: 0.05em;
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
         button:active{
             background-color: $color4 !important;
@@ -495,6 +496,33 @@ footer{
         }
     }
 }
+
+//admin
+.admin{
+
+    .admin-1{
+        h1{
+            @include title-text($color1, medium, h1, $f1);
+    
+        }
+        .acard{
+            background-color: $plain;
+            border-radius: 20px;
+            h2{
+                @include title-text($color1, medium, tle, $f1);
+
+            }
+            p{
+                @include title-text($color1, large, lbl, $f2);
+
+            }
+        }
+    }
+    
+}
+
+
+
 
 @keyframes blinker {
     10% {

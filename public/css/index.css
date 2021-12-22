@@ -138,6 +138,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   box-shadow: none !important;
   color: #554D9B !important;
   letter-spacing: 0.05em;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
 .home-div .right-div button:active {
   background-color: #FFE993 !important;
@@ -533,6 +534,29 @@ footer h3 a {
 footer h3 a:hover {
   text-decoration: none !important;
   color: #FFE993;
+}
+
+.admin .admin-1 h1 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.admin .admin-1 .acard {
+  background-color: #DEDFFE;
+  border-radius: 20px;
+}
+.admin .admin-1 .acard h2 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 3rem;
+}
+.admin .admin-1 .acard p {
+  font-family: "Montserrat", sans-serif;
+  color: #554D9B;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 @-webkit-keyframes blinker {
