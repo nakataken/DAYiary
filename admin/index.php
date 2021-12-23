@@ -36,24 +36,6 @@
             $dayLabel[] = getDay($day);
         }
 
-        // Pie Chart
-        $total_status_heart = "SELECT * FROM diary_table WHERE STATUS='Heart'";
-        if($rs=$conn->query($total_status_heart)) {
-            $totalHeart = $rs->num_rows;
-        }
-        $total_status_happy = "SELECT * FROM diary_table WHERE STATUS='Happy'";
-        if($rs=$conn->query($total_status_happy)) {
-            $totalHappy = $rs->num_rows;
-        }
-        $total_status_sad = "SELECT * FROM diary_table WHERE STATUS='Sad'";
-        if($rs=$conn->query($total_status_sad)) {
-            $totalSad = $rs->num_rows;
-        }
-        $total_status_neutral = "SELECT * FROM diary_table WHERE STATUS='Neutral'";
-        if($rs=$conn->query($total_status_neutral)) {
-            $totalNeutral = $rs->num_rows;
-        }
-
     } else {
         header("location:./login.php");
     }

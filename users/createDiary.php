@@ -7,7 +7,6 @@
         header("location:./login.php");
     }
 
-    // Ibahin nalang design, temporary lang yung table
     if(isset($_SESSION['id'])) {
         if(isset($_POST['content'])) {
             $user_id = $_SESSION['id'];
@@ -91,9 +90,7 @@
 </div>
 
 <script>
-
     function myFunction(value){
-       
         var element = document.getElementById(value);
         var el = parseInt(value);
 
@@ -105,11 +102,9 @@
                 val.classList.remove("react_selected");
             }
         }
-
     }
 
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-   
     date =  new Date();
     y = date.getFullYear();
     m = month[date.getMonth()];

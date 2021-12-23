@@ -33,7 +33,6 @@
                 }
             } else { 
                 $output .= noresult();
-  
             }
         }
     } else {
