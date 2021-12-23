@@ -100,7 +100,7 @@
             </div>
         <?php } ?>
         <?php if(isset($totalDiaries)) { ?>
-            <div class="col-md-6 p-2">
+            <div class="col-md-6 p-2"></div></div>
                 <div class="acard py-5 col-12">
                     <h2 class="text-center"><?php echo $totalDiaries; ?></h2>
                     <p  class="text-center" >Total Diary Entries</p>
