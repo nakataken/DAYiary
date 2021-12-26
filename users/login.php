@@ -6,7 +6,7 @@
     if(!isset($_SESSION['username'])) {
         if(isset($_POST['username'])) {
             
-            $check_sql = "SELECT USERNAME, PASSWORD FROM user_table where USERNAME='".$_POST['username']."'";
+            $check_sql = "SELECT USERNAME, EMAIL, PASSWORD FROM user_table where USERNAME='".$_POST['username']."' OR EMAIL='".$_POST['username']."' ";
             if($rs=$conn->query($check_sql)) {
                 if($row=$rs->fetch_assoc()) {
                     $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);
@@ -40,7 +40,7 @@
             <h2 class="m-0">Log in to your account</h2>
             <form class="mt-5" method="POST">
                 <div class="form-group mb-3">
-                    <label for="username">Username:</label>
+                    <label for="username">Username or email:</label>
                     <input type="text" name="username" class="form-control" required>
                 </div>
                 <div class="form-group mb-5">
@@ -54,12 +54,13 @@
                 
                 <button type="submit" class="btn col-12 mt-3">Login</button>
             </form>
-            
-            <h2 class="text-center my-5">Don’t have an account? <a href="/DAYiary/users/register.php">Sign Up Now </a></h2>
+            <a class="text-center mt-5" href="/DAYiary/users/forgotPassword.php">Forgot password?</a>
+            <h2 class="text-center mt-2 mb-5">Don’t have an account? <a href="/DAYiary/users/register.php">Sign Up Now </a></h2>
             
         </div>
 
     </div>
 </div>
 
-<?php require_once "./includes/footer.php"; ?>
+</body>
+</html>

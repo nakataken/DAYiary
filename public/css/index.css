@@ -63,7 +63,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 
 .reg-div {
   background-color: #F5F5F5;
-  min-height: 90vh !important;
+  min-height: 80vh !important;
 }
 .reg-div .right-div h1 {
   font-family: "Hammersmith One", sans-serif;
@@ -79,6 +79,12 @@ nav ul .dropdown .dropdown-menu li a:hover {
 .reg-div .right-div h2 a {
   text-decoration: none;
   color: #554D9B;
+}
+.reg-div .right-div a {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 .reg-div .right-div .form-group label {
   font-family: "Hammersmith One", sans-serif;
@@ -597,6 +603,65 @@ footer h3 a:hover {
   color: #554D9B;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.verification {
+  background-color: #F5F5F5;
+  margin-top: 20vh;
+}
+.verification h1 {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.verification p {
+  font-family: "Montserrat", sans-serif;
+  color: #FFA9DC;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.verification .form-group label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+}
+.verification .form-group label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #554D9B;
+  font-size: 1.2rem;
+}
+.verification .form-group .form-control, .verification .form-group input, .verification .form-group textarea {
+  background-color: #EEEDF0 !important;
+  border: solid 0px #554D9B;
+  border-radius: 20px;
+}
+.verification .form-group input:focus, .verification .form-group textarea:focus {
+  outline: none !important;
+}
+.verification .form-group .error-meessage {
+  color: red;
+  font-size: 1rem;
+}
+.verification .button_1 {
+  color: #F5F5F5;
+  background-color: #554D9B;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.verification .button_1:active {
+  background-color: #FFA9DC !important;
+  color: #554D9B;
+}
+.verification .button_2 {
+  background-color: #F5F5F5;
+  color: #554D9B;
+}
+.verification .button_2:hover {
+  color: #FFA9DC;
 }
 
 @-webkit-keyframes blinker {

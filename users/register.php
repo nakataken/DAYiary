@@ -2,11 +2,14 @@
 
     $title = "Register";
     require_once "./includes/header.php";
+
     if(!isset($_SESSION['username'])){
-        if(isset($_POST['username'])) {
+        if(isset($_POST['username']) && isset($_POST['email'])) {
+         
             $name = $_POST['name'];
             $bdate = $_POST['bdate'];
             $username = $_POST['username'];
+            $email =  $_POST['email'];
             $pass = $_POST["pass"];
             $confPass = $_POST["confPass"];
     
@@ -31,32 +34,43 @@
                 $passError.="Password didn't match.";
                 $passValidated = false;
             }
-            
-            if($userValidated && $passValidated) {
-                $check_sql = "SELECT USERNAME FROM user_table where USERNAME='$username'";
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailError = "Invalid email format";
+                $emailValidated = false;
+            }
+            else{
+                $emailValidated = true;
+            }
+            if($emailValidated && $userValidated && $passValidated){
+                $check_sql = "SELECT EMAIL FROM user_table where EMAIl ='$email'";
                 if($rs=$conn->query($check_sql)) {
                     if($rs->num_rows==0) {
-                        $insert_sql = "INSERT INTO user_table SET NAME='$name',USERNAME='$username',password='$encrypted',birthdate='$bdate'";
-                        if(!$conn->query($insert_sql)) {
-                            echo '<script>alert("'.$conn->error.'")</script>';
-                        } else {
-                            echo '<script>alert("Registration Successful.")</script>'; 
-                            $_SESSION['username'] = $username;
-                            header("location:./index.php");
+                        $check_sql = "SELECT USERNAME, EMAIL FROM user_table where USERNAME='$username'";
+                        if($rs=$conn->query($check_sql)) {
+                            if($rs->num_rows==0) {
+                                    $_SESSION['code'] = rand(10000,50000); 
+                                    $_SESSION['user_info']= array($name, $bdate , $username, $email, $encrypted);
+                                    include 'verification.php';
+                                    email_ver();
+                                    header("location:./verification.php");
+                            } else {
+                                $userError.="Username already used.";
+                                $userValidated = false; 
+                            }
                         }
-                    } else {
-                        $userError.="Username already used.";
-                        $userValidated = false; 
+                    }
+                    else{
+                        $emailError ="E-mail already used.";
+                        $emailValidated = false; 
                     }
                 }
             }
         }
-     
     }
     else{
        header("location:./index.php");
     }
-    
 
 ?>
 
@@ -67,7 +81,7 @@
         </div>
     </div>
     <div class="right-div container col-lg-6 col-8">
-        <div class="d-flex flex-column  col-xxl-7 col-xl-8 col-lg-10 col-12 mx-auto">
+        <div class="d-flex flex-column   col-xl-8 col-lg-10 col-12 mx-auto">
             <h1 class="m-0">Welcome to DAYiary!</h1>
             <h2 class="m-0">Create your account</h2>
             <form class="mt-5" method="POST">
@@ -85,6 +99,15 @@
                     <div>
                         <?php if(isset($userError)) {?>
                         <p class="text-danger"> <?php echo $userError; ?></p>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="username">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                    <div>
+                        <?php if(isset($emailError)) {?>
+                        <p class="text-danger"> <?php echo $emailError; ?></p>
                         <?php } ?>
                     </div>
                 </div>
@@ -109,4 +132,5 @@
 
 <script src="../public/currentDate.js"></script>
 
-<?php require_once "./includes/footer.php"; ?>
+</body>
+</html>

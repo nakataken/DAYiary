@@ -11,6 +11,7 @@
             }
         }
     }
+    
     $block ="d-block";
     $toggler ="collapse navbar-collapse";
     if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php' || $_SERVER['REQUEST_URI'] == '/DAYiary/users/login.php'){
@@ -49,7 +50,7 @@
                 <ul class="navbar-nav ms-auto my-auto d-flex flex-md-row flex-column align-items-end ">
                     <?php if(!isset($_SESSION['username'])) { ?>
                         
-                        <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php'){?>
+                        <?php if($_SERVER['REQUEST_URI'] == '/DAYiary/users/register.php' || $_SERVER['REQUEST_URI'] == '/DAYiary/users/verification.php'){?>
                             <li class="nav-item">
                                 <a class="nav-link " href="/DAYiary/users/login.php"> <button type="submit" class=" reg-btn btn px-5">Login</button></a>
                             </li>

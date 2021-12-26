@@ -64,7 +64,7 @@ nav{
 .reg-div{
 
     background-color: $background-color;
-    min-height: 90vh !important;
+    min-height: 80vh !important;
 
     .right-div{
     //    @include flex_start();
@@ -79,7 +79,10 @@ nav{
                 color: $color1;
             }
         }
-
+        a{
+            @include title-text($color1, small, h2, $f1);
+            text-decoration: none;
+        }
         .form-group{
             label{
                 @include title-text($color1, small, lbl, $f1);
@@ -557,7 +560,50 @@ footer{
 }
 
 
-
+.verification{
+    background-color: $background-color;
+    margin-top: 20vh ;
+    h1{
+        @include title-text($color1, medium, h, $f1);
+    }
+    p{
+        @include title-text($color2, medium, reg, $f2);
+    }
+    .form-group{
+        label{
+            @include title-text($color1, small, lbl, $f1);
+        }
+        label{
+            @include title-text($color1, small, lbl, $f1);
+        }
+        .form-control, input, textarea{
+            @include input-field();
+        }
+        input:focus, textarea:focus{
+            outline: none !important;
+        }
+        .error-meessage{
+            color: red;
+            font-size: fontsize(reg);
+        }
+    }
+    .button_1{
+        @include primary-btn(small,btn,$color1);
+        filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+    }
+    .button_1:active{
+        background-color: $color2 !important;
+        color: $color1;
+    }
+    .button_2{
+        background-color:  $background-color;
+        color: $color1;
+    }
+    .button_2:hover{
+        color: $color2;
+    }
+    
+}
 
 
 @keyframes blinker {
