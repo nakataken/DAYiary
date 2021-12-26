@@ -1,13 +1,15 @@
 <?php 
 
     error_reporting(0);
-
+    
     require_once "./includes/header.php";
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
     function forgot_pass(){ 
-        $_SESSION['CREATED'] = time();
+        if (!isset($_SESSION['CREATED'])) {
+            $_SESSION['CREATED'] = time();
+        }
         
         require 'PHPMailer/Exception.php';
         require 'PHPMailer/PHPMailer.php';
@@ -43,30 +45,28 @@
         }
     }
  
-    if(isset($_POST['email_submit']) && isset($_POST['email'])){
+    if(isset($_POST['email'])){
+       
         $email = $_POST['email'];
-            $check_sql = "SELECT EMAIL FROM user_table where EMAIl ='$email'";
-            if($rs=$conn->query($check_sql)) {
+        $check_sql = "SELECT EMAIL FROM user_table where EMAIL ='$email'";
+        if($rs=$conn->query($check_sql)) {
             if($rs->num_rows==0) {
                 $_SESSION['emailError'] ="Account doesn't exist.";
                 $emailValidated = false; 
-               
-            }
-            else{
+            } else{
                 $emailValidated = true;
                 $codeValidated = false; 
                 $_SESSION['code'] = rand(10000,50000);
                 $_SESSION['email'] = $_POST['email'];
                 forgot_pass();
-                
             }
-            
+        
         }
     }
 
     if(isset($_POST['ver_code'])){
-        if (time() - $_SESSION['CREATED'] > 600) {
-            echo '<script>alert("Code expired")</script>'; 
+        if (time() - $_SESSION['CREATED'] >= 600) {
+            echo '<script>alert("Code expired '.time().' : '.$_SESSION['CREATED'].'")</script>'; 
         }
         else{
             $code = $_POST['ver_code'];
@@ -125,12 +125,13 @@
     if($emailValidated == false){
         $result = get_email();
     }
+
     if( $emailValidated == true && $codeValidated == false){
         $result = get_code();
     }
 
     if($emailValidated == true && $codeValidated == true && $passValidated == false){
-
+        
         $result = get_newPassword();
     }
 
@@ -155,12 +156,12 @@
             <form class="mt-5" method="POST" class="">
                 <div class="form-group mb-3">
                     <label for="ver_code">email</label>
-                    <input type="text" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" required>
                     <div>            
                     <p class="error-meessage"> '.$_SESSION['emailError'].'   </p>     
                     </div>
                 </div>
-                <button type="submit" class="btn button_1 col-12 mt-3" name="email_submit">Submit</button>
+                <button type="submit" class="btn button_1 col-12 mt-3">Submit</button>
             </form>
         </div>
         ';
@@ -177,7 +178,7 @@
             <form class="mt-5" method="POST" class="">
                 <div class="form-group mb-3">
                     <label for="ver_code">Code</label>
-                    <input type="text" name="ver_code" class="form-control">
+                    <input type="text" name="ver_code" class="form-control" required>
                     <div>
                     <p class="error-meessage"> '.$_SESSION['codeError'].'   </p> 
                     </div>
