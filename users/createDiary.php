@@ -31,8 +31,8 @@
 ?>
 
 <div class="create-div container-fluid d-flex flex-row align-items-center ">
-    <div class="col-12 px-5 mx-auto">
-        <div class="bot-div col-lg-8 col-12 mx-auto">
+    <div class="col-12 px-md-5 px-3 mx-auto">
+        <div class="bot-div col-lg-8 col-12 mx-auto ">
             
             <form  method="POST">
                 <div class="d-flex flex-row mb-3 p-0">

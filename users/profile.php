@@ -15,6 +15,7 @@
                 $name = $row['NAME'];
                 $bdate = $row['BIRTHDATE'];
                 $username = $row['USERNAME'];
+                $email = $row['EMAIL'];
                 $pass = $row['PASSWORD'];
             }
         }
@@ -111,8 +112,11 @@
             <div class="px-2 mt-4">
                 <p class="date text-center m-0">Name:</p>
                 <p class="name text-center m-0"><?=  $name; ?></p>
+                <p class="date text-center mt-2 mb-0">Email:</p>
+                <p class="name text-center m-0"><?=  $email; ?></p>
                 <p class="date text-center mt-2 mb-0">Birthday:</p>
                 <p class="name text-center m-0"><?=  $dateformat; ?></p>
+
             </div>
 
            

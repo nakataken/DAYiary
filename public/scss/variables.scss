@@ -5,11 +5,11 @@
 //font-family: 'Gochi Hand', cursive;
 
 
-$color1:#554D9B;
+$color1:#594EC4;
 $color2:#FFA9DC;
 $color3:#B2B0F7;
 $color4:#FFE993;
-$background-color: #F5F5F5;
+$background-color: #FFFFFF;
 $text-color:#503c3c;
 $plain: #DEDFFE;
 
@@ -36,25 +36,16 @@ $font-weight:(
     "bold": 800,
 );
 
-
 $font-size:(
-    "tle":3rem,
-    "h1":2rem,
-    "h2":1.2rem,
-    "lbl":1.2rem,
-    "btn":1.2rem, //19px
-    "reg":1rem, //16px
-    "h":1.5rem,
-);
+        "tle":3rem,
+        "h1":2rem,
+        "h2":1.2rem,
+        "lbl":1.2rem,
+        "btn":1.2rem, //19px
+        "reg":1rem, //16px
+        "h":1.5rem,
+    );
 
-
-
-@function pow($circle: true) {
-    @if $circle {
-      $color_bg: $color1;
-    }
-    @return $color_bg;
-}
 
 @function weight($weight-name){
     @return map-get($font-weight, $weight-name);

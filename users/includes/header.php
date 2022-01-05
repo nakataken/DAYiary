@@ -39,7 +39,7 @@
 </head>
 <body class="main">
 <header>
-    <nav class="navbar navbar-expand-md   px-5 pt-3">
+    <nav class="navbar navbar-expand-md   px-md-5 px-2 pt-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
             <button  class="<?=$block?> navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

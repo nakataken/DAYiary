@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-md   px-5 pt-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
+                <a class="navbar-brand" href="/DAYiary/admin/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
                 <button  class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon col-12 my-auto"><img src="./../public/img/menu_btn.png" class="mx-auto col-12 my-auto"></span>
                 </button>
@@ -27,13 +27,13 @@
                     <ul class="navbar-nav ms-auto my-auto d-flex flex-md-row flex-column align-items-end ">
                     
                         <li class="nav-item">
-                            <a class="nav-link " href="./index.php">Dashboard</a>
+                            <a class="nav-link mx-3" href="./index.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="./usersTable.php">Users table</a>
+                            <a class="nav-link mx-3" href="./usersTable.php">Users table</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="./logout.php">Logout</a>
+                            <a class="nav-link mx-3 " href="./logout.php">Logout</a>
                         </li>
                         
                     </ul>

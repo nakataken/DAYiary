@@ -4,7 +4,7 @@
 
 
 .main{ 
-    background-color: $background-color;
+    background-color: #FFFFFF;
 }
 
 textarea, input, button{
@@ -15,8 +15,9 @@ textarea, input, button{
 //header
 nav{
     .logo{
-        height: 50px;
+        height: 40px;
     }
+   
     ul{
         li{
             line-height: 40px;
@@ -56,7 +57,11 @@ nav{
                 
             }
         }
+        .nav-link:hover , .profile-btn:hover{
+            color:$color2 !important;
+        }
     }
+
 }
 
 //registration
@@ -111,28 +116,97 @@ nav{
     
 }
 
+.verification{
+    background-color: $background-color;
+    margin-top: 20vh ;
+    h1{
+        @include title-text($color1, medium, h, $f1);
+    }
+    p{
+        @include title-text($color2, medium, reg, $f2);
+    }
+    .form-group{
+        label{
+            @include title-text($color1, small, lbl, $f1);
+        }
+        label{
+            @include title-text($color1, small, lbl, $f1);
+        }
+        .form-control, input, textarea{
+            @include input-field();
+        }
+        input:focus, textarea:focus{
+            outline: none !important;
+        }
+        .error-meessage{
+            color: red;
+            font-size: fontsize(reg);
+        }
+    }
+    .button_1{
+        @include primary-btn(small,btn,$color1);
+        filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+    }
+    .button_1:active{
+        background-color: $color2 !important;
+        color: $color1;
+    }
+    .button_2{
+        background-color:  $background-color;
+        color: $color1;
+    }
+    .button_2:hover{
+        color: $color2;
+    }
+    
+}
+
 //home
 .home-div{
     background-color: $background-color;
-    min-height: 95vh;
+    min-height: 85vh;
     
     .right-div{
-        h1{
-            @include title-text($color1, large, tle, $f1);
-            letter-spacing: 0.05em;
-            font-size: 70px !important;
+        @media screen and (min-width: 0px){
+            h1{
+                @include title-text($color1, large, h2, $f1);
+                letter-spacing: 0.05em;
+                font-size: 35px !important;
+            }
+            h2{
+                @include title-text($color2, large, h2, $f2);
+            }
         }
-        h2{
-            @include title-text($color2, large, h, $f2);
+        
+        @media screen and (min-width: 800px){
+            h1{
+                @include title-text($color1, large, tle, $f1);
+                letter-spacing: 0.05em;
+                font-size: 50px !important;
+            }
         }
+        @media screen and (min-width: 1000px){
+            h1{
+                @include title-text($color1, large, tle, $f1);
+                letter-spacing: 0.05em;
+                font-size: 70px !important;
+            }
+            h2{
+                @include title-text($color2, large, h, $f2);
+            }
+        }
+        
+        
+        
+        
         button{
-            @include primary-btn(small,btn,$color2);
-            color: $color1 !important;
+            @include primary-btn(small,btn,$color1);
+            color: $background-color !important;
             letter-spacing: 0.05em;
             filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
         button:active{
-            background-color: $color4 !important;
+            background-color: $color2 !important;
         }
     }
     .left-div{
@@ -144,17 +218,16 @@ nav{
     
 }
 
-
 .records-div{
-    background-color: $plain;
-    min-height: 100vh;
+    background-color: $background-color;
+    min-height: 100vh !important;
 
     .head-div{
         background-color: $color1;
-        border-radius: 35px;
+        //border-radius: 35px;
         filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         h3{
-            @include title-text($color4, small, h, $f1);
+            @include title-text($background-color, small, h, $f1);
         }
         input{
             border: none !important;
@@ -164,17 +237,17 @@ nav{
         }
         
         .btn{
-            @include primary-btn(small,btn,$color2);
+            @include primary-btn(small,btn,$background-color);
             color: $color1;
         }
         .btn:active{
-            @include primary-btn(small,btn,$color4);
+            @include primary-btn(small,btn,$color2);
             color: $color1;
         }
     }
     .display-rec{
-        border-bottom: 1px solid rgba($color: $color1, $alpha: 0.5);
-
+        //border-bottom: 1px solid rgba($plain, $alpha: 0.5);
+       // background-color: $plain;
         h3{
             @include title-text($color1, large, h, $f1);
             font-weight: 600 !important;
@@ -183,7 +256,7 @@ nav{
         }
     
         h2{
-            @include title-text($text-color, large, reg, $f2);
+            @include title-text($color1, large, reg, $f2);
 
         }
         .dropdown{
@@ -195,13 +268,13 @@ nav{
                 }
             }
             .dropdown-menu{
-                background-color: $background-color !important;
+                background-color: $color1!important;
                 border: none !important;
                 overflow: hidden !important;
                 li{
                     overflow: hidden !important;
                     a{
-                        @include title-text($color1, small, lbl, $f2);
+                        @include title-text($background-color, small, lbl, $f2);
                     }
                     a:hover{
                         background-color: $color2 !important;
@@ -214,7 +287,7 @@ nav{
         }
         p{  
             min-height: 5vh;
-            @include title-text($text-color, small, reg, $f2);
+            @include title-text($color1, small, reg, $f2);
         }
         .react{
             background-color: $background-color;
@@ -255,23 +328,61 @@ nav{
         
 
     }
+
+    .Heart{
+        border-radius: 27px;
+        background: linear-gradient(262.96deg, rgba(234, 146, 120, 0.06) 0.61%, rgba(234, 146, 120, 0.3) 96.39%);
+    }
+    .Happy{
+        border-radius: 27px;
+        background: linear-gradient(262.96deg, rgba(255, 233, 147, 0.06) 0.61%, rgba(255, 233, 147, 0.3) 96.39%);
+    }
+    .Sad{
+        border-radius: 27px;
+        background: linear-gradient(262.96deg, rgba(122, 189, 234, 0.06) 0.61%, rgba(122, 189, 234, 0.271892) 96.39%);
+    }
+    .Neutral{
+        border-radius: 27px;
+        background: linear-gradient(262.96deg, rgba(247, 166, 181, 0.06) 0.61%, rgba(247, 163, 179, 0.3) 96.39%);
+    }
     .result_message{
-        h1{
-            @include title-text($color1, large, tle, $f1);
+        @media screen and (min-width: 0px){
+            h1{
+                @include title-text($color1, large, h1, $f1);
+            }
+            
+            h2{
+                a{
+                    @include title-text($color1, large, h2, $f2);
+                    text-decoration: none !important;
+                }
+            }
+            h3{
+                a{
+                    @include title-text($color2, medium, h2, $f3);
+                    text-decoration: none !important;
+                }
+            }
+        }
+        @media screen and (min-width: 800px){
+            h1{
+                @include title-text($color1, large, tle, $f1);
+            }
+            
+            h2{
+                a{
+                    @include title-text($color1, medium, h1, $f3);
+                    text-decoration: none !important;
+                }
+            }
+            h3{
+                a{
+                    @include title-text($color2, medium, h2, $f3);
+                    text-decoration: none !important;
+                }
+            }
         }
         
-        h2{
-            a{
-                @include title-text($color1, medium, h1, $f3);
-                text-decoration: none !important;
-            }
-        }
-        h3{
-            a{
-                @include title-text($color2, medium, h2, $f3);
-                text-decoration: none !important;
-            }
-        }
         
 
     }
@@ -280,15 +391,13 @@ nav{
 //create div
 .create-div{
     background-color: $background-color;
-    min-height: 90vh;
-
-    .top-div{
-        background-color: $color1;
-        border-radius: 20px;
-        h2{
-            @include title-text($plain, medium, h1, $f1);
-        }
+    @media screen and (min-width: 0px){
+        min-height: 80vh;
     }
+    @media screen and (min-width: 800px){
+        min-height: 90vh;
+    }
+
     .bot-div{
         .character{
             height: 40px;
@@ -305,7 +414,7 @@ nav{
         }
 
         h2{
-            @include title-text($text-color, small, h, $f3);
+            @include title-text($text-color, medium, h2, $f1);
             font-weight: 300 !important;
         }
         
@@ -373,7 +482,6 @@ nav{
 }
 
 //profile
-
 .profile-div{
     min-height: 100vh;
     .left-div{
@@ -429,13 +537,13 @@ nav{
         }
         .bot-div{
             .name{
-                @include title-text($color1, medium, h, $f1);
+                @include title-text($text-color, large, h2, $f2);
                 line-height: 1.6rem;
                 text-transform:uppercase;
 
             }
             .date{
-                @include title-text($text-color, medium, h, $f3);
+                @include title-text($color1, medium, h2, $f1);
                 line-height: 1.6rem;
 
             }
@@ -456,16 +564,12 @@ nav{
     }
 }
 
-
 //footer
 footer{
     background-color: $color1;
 
-    .logo{
-        width: 100px;
-    }
     p{
-        @include title-text($background-color, medium, h, $f3);
+        @include title-text($background-color, medium, h2, $f1);
         line-height: 0;
         letter-spacing: 1px;
     }
@@ -473,7 +577,7 @@ footer{
         width: 40px;
         height: 40px;
         border-radius: 25px;
-        background-color: $plain ;
+        background-color: $background-color ;
         text-decoration: none !important;
         @include title-text($color1, large, h2, $f1);
         
@@ -501,8 +605,6 @@ footer{
 }
 
 //admin
-
-
 .admin-login{
     min-height: 100vh;
     h2{
@@ -558,53 +660,30 @@ footer{
     }
     
 }
-
-
-.verification{
-    background-color: $background-color;
-    margin-top: 20vh ;
-    h1{
-        @include title-text($color1, medium, h, $f1);
+.admin_usertable{
+  
+    h3{
+        @include title-text( $background-color, medium, h1, $f1);
     }
-    p{
-        @include title-text($color2, medium, reg, $f2);
-    }
-    .form-group{
-        label{
-            @include title-text($color1, small, lbl, $f1);
-        }
-        label{
-            @include title-text($color1, small, lbl, $f1);
-        }
-        .form-control, input, textarea{
-            @include input-field();
-        }
-        input:focus, textarea:focus{
-            outline: none !important;
-        }
-        .error-meessage{
-            color: red;
-            font-size: fontsize(reg);
-        }
-    }
-    .button_1{
-        @include primary-btn(small,btn,$color1);
-        filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
-    }
-    .button_1:active{
-        background-color: $color2 !important;
+    .btn{
+        @include primary-btn(small,reg, $background-color);
         color: $color1;
     }
-    .button_2{
-        background-color:  $background-color;
-        color: $color1;
+    input{
+        border-radius: 20px;
     }
-    .button_2:hover{
-        color: $color2;
+    .card{
+        border-color: $color1 !important;
+        border-radius: 0;
+        min-height: 70vh;
+        max-height: 70vh;
+        overflow: scroll !important;
     }
-    
+    th{
+        color: $text-color !important;
+
+    }
 }
-
 
 @keyframes blinker {
     10% {

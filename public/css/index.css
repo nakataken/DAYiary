@@ -9,7 +9,7 @@
 }
 
 .main {
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
 }
 
 textarea, input, button {
@@ -18,7 +18,7 @@ textarea, input, button {
 }
 
 nav .logo {
-  height: 50px;
+  height: 40px;
 }
 nav ul li {
   line-height: 40px;
@@ -26,48 +26,51 @@ nav ul li {
 }
 nav ul li a {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B !important;
+  color: #594EC4 !important;
   font-size: 1.2rem;
 }
 nav ul .profile-btn {
-  color: #554D9B !important;
+  color: #594EC4 !important;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
 }
 nav ul .reg-btn {
-  color: #F5F5F5;
-  background-color: #554D9B;
+  color: #FFFFFF;
+  background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1rem;
   border-radius: 20px;
   box-shadow: none !important;
-  color: #F5F5F5 !important;
+  color: #FFFFFF !important;
 }
 nav ul .reg-btn:active {
   background-color: #FFA9DC !important;
 }
 nav ul .dropdown .dropdown-menu {
-  background-color: #F5F5F5 !important;
-  border: 1px solid #554D9B !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #594EC4 !important;
   overflow: hidden !important;
 }
 nav ul .dropdown .dropdown-menu li a {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-size: 1.2rem;
 }
 nav ul .dropdown .dropdown-menu li a:hover {
   background-color: #FFA9DC !important;
   transition: 1s;
 }
+nav ul .nav-link:hover, nav ul .profile-btn:hover {
+  color: #FFA9DC !important;
+}
 
 .reg-div {
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
   min-height: 80vh !important;
 }
 .reg-div .right-div h1 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 2rem;
 }
@@ -78,22 +81,22 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .reg-div .right-div h2 a {
   text-decoration: none;
-  color: #554D9B;
+  color: #594EC4;
 }
 .reg-div .right-div a {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-size: 1.2rem;
   text-decoration: none;
 }
 .reg-div .right-div .form-group label {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-size: 1.2rem;
 }
 .reg-div .right-div .form-group .form-control, .reg-div .right-div .form-group input, .reg-div .right-div .form-group textarea {
   background-color: #EEEDF0 !important;
-  border: solid 0px #554D9B;
+  border: solid 0px #594EC4;
   border-radius: 20px;
 }
 .reg-div .right-div .form-group input:focus, .reg-div .right-div .form-group textarea:focus {
@@ -104,8 +107,8 @@ nav ul .dropdown .dropdown-menu li a:hover {
   font-size: 1rem;
 }
 .reg-div .right-div button {
-  color: #F5F5F5;
-  background-color: #554D9B;
+  color: #FFFFFF;
+  background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
@@ -114,40 +117,127 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .reg-div .right-div button:active {
   background-color: #FFA9DC !important;
-  color: #554D9B;
+  color: #594EC4;
 }
 
-.home-div {
-  background-color: #F5F5F5;
-  min-height: 95vh;
+.verification {
+  background-color: #FFFFFF;
+  margin-top: 20vh;
 }
-.home-div .right-div h1 {
+.verification h1 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
-  font-weight: 600;
-  font-size: 3rem;
-  letter-spacing: 0.05em;
-  font-size: 70px !important;
-}
-.home-div .right-div h2 {
-  font-family: "Montserrat", sans-serif;
-  color: #FFA9DC;
-  font-weight: 600;
+  color: #594EC4;
+  font-weight: 500;
   font-size: 1.5rem;
 }
-.home-div .right-div button {
-  color: #F5F5F5;
-  background-color: #FFA9DC;
+.verification p {
+  font-family: "Montserrat", sans-serif;
+  color: #FFA9DC;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.verification .form-group label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #594EC4;
+  font-size: 1.2rem;
+}
+.verification .form-group label {
+  font-family: "Hammersmith One", sans-serif;
+  color: #594EC4;
+  font-size: 1.2rem;
+}
+.verification .form-group .form-control, .verification .form-group input, .verification .form-group textarea {
+  background-color: #EEEDF0 !important;
+  border: solid 0px #594EC4;
+  border-radius: 20px;
+}
+.verification .form-group input:focus, .verification .form-group textarea:focus {
+  outline: none !important;
+}
+.verification .form-group .error-meessage {
+  color: red;
+  font-size: 1rem;
+}
+.verification .button_1 {
+  color: #FFFFFF;
+  background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
-  color: #554D9B !important;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.verification .button_1:active {
+  background-color: #FFA9DC !important;
+  color: #594EC4;
+}
+.verification .button_2 {
+  background-color: #FFFFFF;
+  color: #594EC4;
+}
+.verification .button_2:hover {
+  color: #FFA9DC;
+}
+
+.home-div {
+  background-color: #FFFFFF;
+  min-height: 85vh;
+}
+@media screen and (min-width: 0px) {
+  .home-div .right-div h1 {
+    font-family: "Hammersmith One", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    font-size: 35px !important;
+  }
+  .home-div .right-div h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #FFA9DC;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .home-div .right-div h1 {
+    font-family: "Hammersmith One", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    font-size: 50px !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .home-div .right-div h1 {
+    font-family: "Hammersmith One", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    font-size: 70px !important;
+  }
+  .home-div .right-div h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #FFA9DC;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+.home-div .right-div button {
+  color: #FFFFFF;
+  background-color: #594EC4;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #FFFFFF !important;
   letter-spacing: 0.05em;
   filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
 .home-div .right-div button:active {
-  background-color: #FFE993 !important;
+  background-color: #FFA9DC !important;
 }
 .home-div .left-div {
   display: inline-block;
@@ -160,17 +250,16 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 
 .records-div {
-  background-color: #DEDFFE;
-  min-height: 100vh;
+  background-color: #FFFFFF;
+  min-height: 100vh !important;
 }
 .records-div .head-div {
-  background-color: #554D9B;
-  border-radius: 35px;
+  background-color: #594EC4;
   filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
 .records-div .head-div h3 {
   font-family: "Hammersmith One", sans-serif;
-  color: #FFE993;
+  color: #FFFFFF;
   font-size: 1.5rem;
 }
 .records-div .head-div input {
@@ -180,29 +269,26 @@ nav ul .dropdown .dropdown-menu li a:hover {
   outline: none !important;
 }
 .records-div .head-div .btn {
-  color: #F5F5F5;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+  color: #594EC4;
+}
+.records-div .head-div .btn:active {
+  color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
-  color: #554D9B;
-}
-.records-div .head-div .btn:active {
-  color: #F5F5F5;
-  background-color: #FFE993;
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 1.2rem;
-  border-radius: 20px;
-  box-shadow: none !important;
-  color: #554D9B;
-}
-.records-div .display-rec {
-  border-bottom: 1px solid rgba(85, 77, 155, 0.5);
+  color: #594EC4;
 }
 .records-div .display-rec h3 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 1.5rem;
   font-weight: 600 !important;
@@ -211,7 +297,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .records-div .display-rec h2 {
   font-family: "Montserrat", sans-serif;
-  color: #503c3c;
+  color: #594EC4;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -223,7 +309,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   width: 25px;
 }
 .records-div .display-rec .dropdown .dropdown-menu {
-  background-color: #F5F5F5 !important;
+  background-color: #594EC4 !important;
   border: none !important;
   overflow: hidden !important;
 }
@@ -232,7 +318,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .records-div .display-rec .dropdown .dropdown-menu li a {
   font-family: "Montserrat", sans-serif;
-  color: #554D9B;
+  color: #FFFFFF;
   font-size: 1.2rem;
 }
 .records-div .display-rec .dropdown .dropdown-menu li a:hover {
@@ -242,11 +328,11 @@ nav ul .dropdown .dropdown-menu li a:hover {
 .records-div .display-rec p {
   min-height: 5vh;
   font-family: "Montserrat", sans-serif;
-  color: #503c3c;
+  color: #594EC4;
   font-size: 1rem;
 }
 .records-div .display-rec .react {
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
   border-radius: 20px;
   width: 50px;
 }
@@ -255,7 +341,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   height: 25px;
 }
 .records-div .display-rec .modify .btn {
-  color: #F5F5F5;
+  color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
@@ -265,7 +351,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   width: 50px;
 }
 .records-div .display-rec .react_div {
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
   border-radius: 20px;
   filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
@@ -280,42 +366,81 @@ nav ul .dropdown .dropdown-menu li a:hover {
   width: 25px;
 }
 .records-div .display-rec .react_div .Heart1, .records-div .display-rec .react_div .Happy2, .records-div .display-rec .react_div .Sad3, .records-div .display-rec .react_div .Neutral4 {
-  background-color: #554D9B !important;
+  background-color: #594EC4 !important;
 }
-.records-div .result_message h1 {
-  font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
-  font-weight: 600;
-  font-size: 3rem;
+.records-div .Heart {
+  border-radius: 27px;
+  background: linear-gradient(262.96deg, rgba(234, 146, 120, 0.06) 0.61%, rgba(234, 146, 120, 0.3) 96.39%);
 }
-.records-div .result_message h2 a {
-  font-family: "Gochi Hand", cursive;
-  color: #554D9B;
-  font-weight: 500;
-  font-size: 2rem;
-  text-decoration: none !important;
+.records-div .Happy {
+  border-radius: 27px;
+  background: linear-gradient(262.96deg, rgba(255, 233, 147, 0.06) 0.61%, rgba(255, 233, 147, 0.3) 96.39%);
 }
-.records-div .result_message h3 a {
-  font-family: "Gochi Hand", cursive;
-  color: #FFA9DC;
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-decoration: none !important;
+.records-div .Sad {
+  border-radius: 27px;
+  background: linear-gradient(262.96deg, rgba(122, 189, 234, 0.06) 0.61%, rgba(122, 189, 234, 0.271892) 96.39%);
+}
+.records-div .Neutral {
+  border-radius: 27px;
+  background: linear-gradient(262.96deg, rgba(247, 166, 181, 0.06) 0.61%, rgba(247, 163, 179, 0.3) 96.39%);
+}
+@media screen and (min-width: 0px) {
+  .records-div .result_message h1 {
+    font-family: "Hammersmith One", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  .records-div .result_message h2 a {
+    font-family: "Montserrat", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+  }
+  .records-div .result_message h3 a {
+    font-family: "Gochi Hand", cursive;
+    color: #FFA9DC;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+  }
+}
+@media screen and (min-width: 800px) {
+  .records-div .result_message h1 {
+    font-family: "Hammersmith One", sans-serif;
+    color: #594EC4;
+    font-weight: 600;
+    font-size: 3rem;
+  }
+  .records-div .result_message h2 a {
+    font-family: "Gochi Hand", cursive;
+    color: #594EC4;
+    font-weight: 500;
+    font-size: 2rem;
+    text-decoration: none !important;
+  }
+  .records-div .result_message h3 a {
+    font-family: "Gochi Hand", cursive;
+    color: #FFA9DC;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+  }
 }
 
 .create-div {
-  background-color: #F5F5F5;
-  min-height: 90vh;
+  background-color: #FFFFFF;
 }
-.create-div .top-div {
-  background-color: #554D9B;
-  border-radius: 20px;
+@media screen and (min-width: 0px) {
+  .create-div {
+    min-height: 80vh;
+  }
 }
-.create-div .top-div h2 {
-  font-family: "Hammersmith One", sans-serif;
-  color: #DEDFFE;
-  font-weight: 500;
-  font-size: 2rem;
+@media screen and (min-width: 800px) {
+  .create-div {
+    min-height: 90vh;
+  }
 }
 .create-div .bot-div .character {
   height: 40px;
@@ -326,21 +451,22 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .create-div .bot-div h3 {
   font-family: "Montserrat", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.05em;
   line-height: 1em;
 }
 .create-div .bot-div h2 {
-  font-family: "Gochi Hand", cursive;
+  font-family: "Hammersmith One", sans-serif;
   color: #503c3c;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   font-weight: 300 !important;
 }
 .create-div .bot-div textarea {
   background-color: #EEEDF0 !important;
-  border: solid 0px #554D9B;
+  border: solid 0px #594EC4;
   border-radius: 20px;
   background-color: #DEDFFE !important;
 }
@@ -378,15 +504,15 @@ nav ul .dropdown .dropdown-menu li a:hover {
   z-index: 0;
 }
 .create-div .bot-div ul .react_selected {
-  background-color: #554D9B !important;
+  background-color: #594EC4 !important;
   transition: 1s;
 }
 .create-div .bot-div ul .Heart1, .create-div .bot-div ul .Happy2, .create-div .bot-div ul .Sad3, .create-div .bot-div ul .Neutral4 {
-  background-color: #554D9B !important;
+  background-color: #594EC4 !important;
 }
 .create-div .bot-div .save-btn {
-  color: #F5F5F5;
-  background-color: #554D9B;
+  color: #FFFFFF;
+  background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
@@ -394,7 +520,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
 }
 .create-div .bot-div .save-btn:active {
-  color: #F5F5F5;
+  color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
@@ -411,7 +537,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   overflow: hidden !important;
 }
 .profile-div .left-div .top-div {
-  background-color: #554D9B;
+  background-color: #594EC4;
 }
 .profile-div .left-div .top-div .dropdown button {
   background-color: transparent !important;
@@ -421,7 +547,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
   width: 25px;
 }
 .profile-div .left-div .top-div .dropdown .dropdown-menu {
-  background-color: #F5F5F5 !important;
+  background-color: #FFFFFF !important;
   border: none !important;
   overflow: hidden !important;
 }
@@ -430,7 +556,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .profile-div .left-div .top-div .dropdown .dropdown-menu li a {
   font-family: "Montserrat", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-size: 1.2rem;
 }
 .profile-div .left-div .top-div .dropdown .dropdown-menu li a:hover {
@@ -445,7 +571,7 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .profile-div .left-div .top-div .circle h3 {
   font-family: "Hammersmith One", sans-serif;
-  color: #F5F5F5;
+  color: #FFFFFF;
   font-weight: 500;
   font-size: 3rem;
   font-size: 70px !important;
@@ -453,39 +579,39 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 .profile-div .left-div .top-div p {
   font-family: "Hammersmith One", sans-serif;
-  color: #F5F5F5;
+  color: #FFFFFF;
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.6rem;
   text-transform: uppercase;
 }
 .profile-div .left-div .bot-div .name {
-  font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #503c3c;
+  font-weight: 600;
+  font-size: 1.2rem;
   line-height: 1.6rem;
   text-transform: uppercase;
 }
 .profile-div .left-div .bot-div .date {
-  font-family: "Gochi Hand", cursive;
-  color: #503c3c;
+  font-family: "Hammersmith One", sans-serif;
+  color: #594EC4;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.6rem;
 }
 .profile-div .left-div .bot-div button {
-  color: #F5F5F5;
+  color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
-  color: #554D9B;
+  color: #594EC4;
 }
 .profile-div .left-div .bot-div label {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 500;
   font-size: 1.2rem;
 }
@@ -494,16 +620,13 @@ nav ul .dropdown .dropdown-menu li a:hover {
 }
 
 footer {
-  background-color: #554D9B;
-}
-footer .logo {
-  width: 100px;
+  background-color: #594EC4;
 }
 footer p {
-  font-family: "Gochi Hand", cursive;
-  color: #F5F5F5;
+  font-family: "Hammersmith One", sans-serif;
+  color: #FFFFFF;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 0;
   letter-spacing: 1px;
 }
@@ -511,16 +634,16 @@ footer .initial {
   width: 40px;
   height: 40px;
   border-radius: 25px;
-  background-color: #DEDFFE;
+  background-color: #FFFFFF;
   text-decoration: none !important;
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 1.2rem;
 }
 footer .initial:hover {
   background-color: #FFA9DC;
-  color: #554D9B;
+  color: #594EC4;
   box-shadow: 0px 0px 16px 4px rgba(255, 169, 220, 0.8);
   transition: 1s;
   -webkit-animation: pulse 3s linear infinite;
@@ -547,18 +670,18 @@ footer h3 a:hover {
 }
 .admin-login h2 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 2rem;
 }
 .admin-login .form-group label {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-size: 1.2rem;
 }
 .admin-login .form-group .form-control, .admin-login .form-group input, .admin-login .form-group textarea {
   background-color: #EEEDF0 !important;
-  border: solid 0px #554D9B;
+  border: solid 0px #594EC4;
   border-radius: 20px;
 }
 .admin-login .form-group input:focus, .admin-login .form-group textarea:focus {
@@ -569,8 +692,8 @@ footer h3 a:hover {
   font-size: 1rem;
 }
 .admin-login button {
-  color: #F5F5F5;
-  background-color: #554D9B;
+  color: #FFFFFF;
+  background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
   border-radius: 20px;
@@ -579,12 +702,12 @@ footer h3 a:hover {
 }
 .admin-login button:active {
   background-color: #FFA9DC !important;
-  color: #554D9B;
+  color: #594EC4;
 }
 
 .admin .admin-1 h1 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 500;
   font-size: 2rem;
 }
@@ -594,74 +717,44 @@ footer h3 a:hover {
 }
 .admin .admin-1 .acard h2 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 500;
   font-size: 3rem;
 }
 .admin .admin-1 .acard p {
   font-family: "Montserrat", sans-serif;
-  color: #554D9B;
+  color: #594EC4;
   font-weight: 600;
   font-size: 1.2rem;
 }
 
-.verification {
-  background-color: #F5F5F5;
-  margin-top: 20vh;
-}
-.verification h1 {
+.admin_usertable h3 {
   font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
+  color: #FFFFFF;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
-.verification p {
-  font-family: "Montserrat", sans-serif;
-  color: #FFA9DC;
-  font-weight: 500;
+.admin_usertable .btn {
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  font-family: "Hammersmith One", sans-serif;
   font-size: 1rem;
-}
-.verification .form-group label {
-  font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
-  font-size: 1.2rem;
-}
-.verification .form-group label {
-  font-family: "Hammersmith One", sans-serif;
-  color: #554D9B;
-  font-size: 1.2rem;
-}
-.verification .form-group .form-control, .verification .form-group input, .verification .form-group textarea {
-  background-color: #EEEDF0 !important;
-  border: solid 0px #554D9B;
-  border-radius: 20px;
-}
-.verification .form-group input:focus, .verification .form-group textarea:focus {
-  outline: none !important;
-}
-.verification .form-group .error-meessage {
-  color: red;
-  font-size: 1rem;
-}
-.verification .button_1 {
-  color: #F5F5F5;
-  background-color: #554D9B;
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
-  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+  color: #594EC4;
 }
-.verification .button_1:active {
-  background-color: #FFA9DC !important;
-  color: #554D9B;
+.admin_usertable input {
+  border-radius: 20px;
 }
-.verification .button_2 {
-  background-color: #F5F5F5;
-  color: #554D9B;
+.admin_usertable .card {
+  border-color: #594EC4 !important;
+  border-radius: 0;
+  min-height: 70vh;
+  max-height: 70vh;
+  overflow: scroll !important;
 }
-.verification .button_2:hover {
-  color: #FFA9DC;
+.admin_usertable th {
+  color: #503c3c !important;
 }
 
 @-webkit-keyframes blinker {
@@ -710,7 +803,7 @@ footer h3 a:hover {
   }
 }
 ._1 {
-  background-color: #554D9B !important;
+  background-color: #594EC4 !important;
 }
 
 ._2 {

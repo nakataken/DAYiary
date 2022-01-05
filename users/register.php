@@ -80,7 +80,7 @@
             <img src="../public/img/dayiary_signup.png" alt="log-illus" class="col-12">
         </div>
     </div>
-    <div class="right-div container col-lg-6 col-8">
+    <div class="right-div container col-lg-6 col-10">
         <div class="d-flex flex-column   col-xl-8 col-lg-10 col-12 mx-auto">
             <h1 class="m-0">Welcome to DAYiary!</h1>
             <h2 class="m-0">Create your account</h2>

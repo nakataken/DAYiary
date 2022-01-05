@@ -52,28 +52,30 @@
         }
     }
 ?>
-<div class="home-div container-fluid  d-flex flex-row align-items-center">
-    
-    <div class="right-div container col-lg-6 col-8">
-        <div class="d-flex flex-column  col-xl-8 col-lg-10 col-12 mx-auto ">
-            <h1 class="m-0">Hello, <?php echo $_SESSION['username']; ?>!</h1>
-            <h2 class="col-10 m-0">Share something on your diary today</h2>
-            <a href="/DAYiary/users/createDiary.php" class="col-md-8 col-12 mt-5"><button type="submit" class="btn col-12 mt-3">WRITE ON MY DIARY</button></a>
-        </div>
-    </div>
-    <div class="left-div container col-lg-5 d-lg-block d-none p-0">
+<div class="home-div container-fluid  d-flex flex-lg-row flex-column align-items-center">
+    <div class="left-div container col-lg-5 col-md-6  p-0">
         <img src="../public/img/dayiary-01.png" alt="log-illus" class="illus col-12">
     </div>
+    <div class="right-div container col-xl-5 col-lg-6 col-12 ms-auto">
+        <div class="d-flex flex-column  col-lg-10 col-12 ">
+            <h1 class="m-0 text-center">Hello, <?php echo $_SESSION['username']; ?>!</h1>
+            <h2 class="text-center m-0">Share something on your diary today</h2>
+            <a href="/DAYiary/users/createDiary.php" class="col-md-8 col-12 mt-5 mx-auto"><button type="submit" class="btn col-12 mt-3">WRITE ON MY DIARY</button></a>
+        </div>
+    </div>
+    
 </div>
 
-<div class="records-div container-fluid pb-5">
+<div class="records-div container-fluid pb-5 px-0 ">
     <div class="p-4"></div>
-    <div class="head-div container d-flex flex-row justify-content-between py-3 px-4 mx-auto ">
-        <h3 class="col-6 my-auto">My Diary</h3>
-        <form method="POST" class="col-lg-4 col-md-6 col-6 d-flex flex-row flex-wrap gx-5 ms-auto">
-            <input  class="col-6 px-3" name="date" id="datefield" type="date" max="" placeholder="all">
-            <button  class="btn col-5 ms-2" type="submit" name="filter"  onclick="getDatefunction()">Filter</button>
-        </form>
+    <div class="head-div container-fluid ">
+        <div class="d-flex flex-row justify-content-between py-3 px-2 mx-auto col-lg-8 ">
+            <h3 class="col-6 my-auto">My Diary</h3>
+            <form method="POST" class="col-lg-4 col-md-6 col-6 d-flex flex-row flex-wrap gx-5 ms-auto">
+                <input  class="col-6 px-3" name="date" id="datefield" type="date" max="" placeholder="all">
+                <button  class="btn col-5 ms-2" type="submit" name="filter"  onclick="getDatefunction()">Filter</button>
+            </form>
+        </div>
     </div>
     <?php echo $output;?>
     

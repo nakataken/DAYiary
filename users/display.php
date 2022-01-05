@@ -7,7 +7,7 @@
         $day = date('l', $dateholder);
         $result = '
         
-        <div class="display-rec container col-xl-6 col-md-8 col-11 mt-5" id="list'.$id.'">
+        <div class="display-rec '.$status.' container col-xl-6 col-md-8 col-11 mt-5 p-5" id="list'.$id.'">
                 <div class="d-flex flex-row">
                     <div class="">
                         <h3 class="my-0">'.$day.'</h3>
@@ -30,10 +30,11 @@
                         </ul>
                     </div>
                 </div>
+              
                 <div class="my-1">
                     <p>'.$content.'</p>
                 </div>
-                <div class="d-flex flex-row flex-wrap justify-content-between  mb-4" >
+                <div class="d-flex flex-row flex-wrap justify-content-between" >
                     <div class="react_div d-flex flex-row justify-content-center col-lg-6 col-md-8 col-12 p-0">
                         <div class="'.$status.'1 react-btn btn  col-3 p-0" >
                             <div class=" lbl col-12 d-flex flex-row adivgn-items-center">
@@ -72,7 +73,7 @@
             <h1 class="text-center">Oops! No results found</h1>
            <h2 class="text-center"> <a href="/DAYiary/users/createDiary.php">Want someting more to look back? Write more</a></h2>
             <h3 class="text-center"><a href="/DAYiary/users/">back to start</a></h3>
-            <div class="col-4 mx-auto">
+            <div class="col-lg-4 col-12 mx-auto">
             <img src="../public/img/dayiary_noresult.png" alt="log-illus" class="illus col-12">
             </div>
             
@@ -89,7 +90,7 @@
             
             <h2 class="text-center"><a href="/DAYiary/users/createDiary.php">write your first diary entry</a></h2>
             
-            <div class="col-lg-4 col-6 mx-auto">
+            <div class="col-lg-4 col-12 mx-auto">
                 <img src="../public/img/dayiary_noentry.png" alt="log-illus" class="illus col-12">
             </div>
         </div>
