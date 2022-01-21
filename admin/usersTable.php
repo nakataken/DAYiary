@@ -25,13 +25,13 @@
         if(isset($_POST['search'])) {
             $num = 0;
             $output = "";
-            $find_sql = "SELECT USERNAME, NAME, BIRTHDATE FROM user_table WHERE USERNAME LIKE '%".$_POST['search']."%'";
+            $find_sql = "SELECT USERNAME,EMAIL, NAME, BIRTHDATE FROM user_table WHERE USERNAME LIKE '%".$_POST['search']."%'";
 
             if($rs=$conn->query($find_sql)) {
                 if($rs->num_rows>0) {
                     while($rows=$rs->fetch_assoc()) {
                         $num++;
-                        $output.='<tr><td>'.$num.'</td><td>'.$rows['USERNAME'].'</td><td>'.$rows['NAME'].'</td><td>'.$rows['BIRTHDATE'].'</td></tr>';
+                        $output.='<tr><td>'.$num.'</td><td>'.$rows['USERNAME'].'</td><td>'.$rows['EMAIL'].'</td><td>'.$rows['NAME'].'</td><td>'.$rows['BIRTHDATE'].'</td></tr>';
                     }
                 } else {
                     $output = '<tr><td class="text-center" colspan="5">No record found!</td></tr>';
