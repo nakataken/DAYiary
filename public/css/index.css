@@ -331,6 +331,15 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #594EC4;
   font-size: 1rem;
 }
+.records-div .display-rec .text-elipsiss {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
 .records-div .display-rec .react {
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -368,21 +377,25 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .records-div .display-rec .react_div .Heart1, .records-div .display-rec .react_div .Happy2, .records-div .display-rec .react_div .Sad3, .records-div .display-rec .react_div .Neutral4 {
   background-color: #594EC4 !important;
 }
-.records-div .Heart {
+.records-div .Heart_ {
   border-radius: 27px;
   background: linear-gradient(262.96deg, rgba(234, 146, 120, 0.06) 0.61%, rgba(234, 146, 120, 0.3) 96.39%);
 }
-.records-div .Happy {
+.records-div .Happy_ {
   border-radius: 27px;
   background: linear-gradient(262.96deg, rgba(255, 233, 147, 0.06) 0.61%, rgba(255, 233, 147, 0.3) 96.39%);
 }
-.records-div .Sad {
+.records-div .Sad_ {
   border-radius: 27px;
   background: linear-gradient(262.96deg, rgba(122, 189, 234, 0.06) 0.61%, rgba(122, 189, 234, 0.271892) 96.39%);
 }
-.records-div .Neutral {
+.records-div .Neutral_ {
   border-radius: 27px;
   background: linear-gradient(262.96deg, rgba(247, 166, 181, 0.06) 0.61%, rgba(247, 163, 179, 0.3) 96.39%);
+}
+.records-div ._ {
+  border-radius: 27px;
+  background: linear-gradient(262.96deg, rgba(89, 78, 196, 0.06) 0.61%, rgba(89, 78, 196, 0.3) 96.39%);
 }
 @media screen and (min-width: 0px) {
   .records-div .result_message h1 {
@@ -427,6 +440,42 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
     font-size: 1.2rem;
     text-decoration: none !important;
   }
+}
+.records-div .page_div a:hover {
+  background-color: #FFA9DC;
+  border-radius: 20px;
+}
+.records-div .page_div .arrow_next {
+  text-decoration: none !important;
+  font-family: "Hammersmith One", sans-serif;
+  color: #594EC4;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center !important;
+  height: 2.5rem !important;
+  background-color: #dbd8d8;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.records-div .page_div .page_body {
+  background-color: #dbd8d8;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+}
+.records-div .page_div .page_body .page {
+  text-decoration: none !important;
+  font-family: "Hammersmith One", sans-serif;
+  color: #594EC4;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+.records-div .page_div .page_body .active {
+  background-color: #594EC4;
+  border-radius: 20px;
+  color: white;
 }
 
 .create-div {

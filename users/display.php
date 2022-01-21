@@ -6,8 +6,7 @@
         $dateformat =date('F j, Y ', $dateholder);
         $day = date('l', $dateholder);
         $result = '
-        
-        <div class="display-rec '.$status.' container col-xl-6 col-md-8 col-11 mt-5 p-5" id="list'.$id.'">
+        <div class="display-rec '.$status.'_ container col-xl-6 col-md-8 col-11 mt-5 p-5" id="list'.$id.'">
                 <div class="d-flex flex-row">
                     <div class="">
                         <h3 class="my-0">'.$day.'</h3>
@@ -31,8 +30,8 @@
                     </div>
                 </div>
               
-                <div class="my-1">
-                    <p>'.$content.'</p>
+                <div class="my-1 text-elipsis">
+                    <p class="text-elipsis">'.$content.'</p>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-between" >
                     <div class="react_div d-flex flex-row justify-content-center col-lg-6 col-md-8 col-12 p-0">

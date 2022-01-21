@@ -289,6 +289,14 @@ nav{
             min-height: 5vh;
             @include title-text($color1, small, reg, $f2);
         }
+        .text-elipsiss{
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 5; /* number of lines to show */
+                    line-clamp: 5; 
+            -webkit-box-orient: vertical;
+        }
         .react{
             background-color: $background-color;
             border-radius: 20px;
@@ -328,22 +336,26 @@ nav{
         
 
     }
-
-    .Heart{
+    
+    .Heart_{
         border-radius: 27px;
         background: linear-gradient(262.96deg, rgba(234, 146, 120, 0.06) 0.61%, rgba(234, 146, 120, 0.3) 96.39%);
     }
-    .Happy{
+    .Happy_{
         border-radius: 27px;
         background: linear-gradient(262.96deg, rgba(255, 233, 147, 0.06) 0.61%, rgba(255, 233, 147, 0.3) 96.39%);
     }
-    .Sad{
+    .Sad_{
         border-radius: 27px;
         background: linear-gradient(262.96deg, rgba(122, 189, 234, 0.06) 0.61%, rgba(122, 189, 234, 0.271892) 96.39%);
     }
-    .Neutral{
+    .Neutral_{
         border-radius: 27px;
         background: linear-gradient(262.96deg, rgba(247, 166, 181, 0.06) 0.61%, rgba(247, 163, 179, 0.3) 96.39%);
+    }
+    ._{
+        border-radius: 27px;
+        background: linear-gradient(262.96deg, rgba(89, 78, 196, 0.06) 0.61%, rgba(89, 78, 196, 0.3) 96.39%);    
     }
     .result_message{
         @media screen and (min-width: 0px){
@@ -385,6 +397,40 @@ nav{
         
         
 
+    }
+    
+    
+    .page_div{
+        a:hover{
+            background-color: $color2;
+            border-radius: 20px;
+        }
+        .arrow_next{
+            text-decoration: none !important;
+            @include title-text($color1, medium, h2, $f1);
+            text-align: center !important;
+            height: 2.5rem !important;
+            background-color: rgb(219, 216, 216);
+            border-radius: 20px;
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+        }
+        .page_body{
+            background-color: rgb(219, 216, 216);
+            border-radius: 20px;
+            filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
+            .page{
+                text-decoration: none !important;
+                @include title-text($color1, medium, h2, $f1);
+                text-align: center !important;
+                width:2.5rem !important;
+                height: 2.5rem !important;
+            }   
+            .active{
+                background-color: $color1;
+                border-radius: 20px;
+                color: white;
+            }
+        }
     }
 }
 

@@ -16,6 +16,8 @@
                     $createdAt = $row['CREATED_AT'];
                     $content = $row['CONTENT'];
                     $status = $row['STATUS'];
+                    $dateholder = strtotime($createdAt);
+                    $dateformat =date('F j, Y ', $dateholder);
                 }
             }
         }
@@ -43,12 +45,12 @@
                     </div>
                     <div class="ms-2">
                         <h3 class="my-0"><?php echo $_SESSION['username']; ?></h3>
-                        <h2><span id="date"><?php echo $createdAt; ?></span></h2>
+                        <h2><span id="date"><?php echo $dateformat; ?></span></h2>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <textarea class="p-sm-5 p-3 col-12" name="content" id="content" cols="100" rows="5" placeholder="" required><?php echo $content; ?></textarea>
+                    <textarea class="p-sm-4 p-3 col-12" name="content" id="content" cols="100" rows="5" placeholder="" required><?php echo $content; ?></textarea>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-between" >
                     <ul class="d-flex flex-row justify-content-center col-md-4 col-sm-6 col-12 p-0">

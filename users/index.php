@@ -15,6 +15,22 @@
     require_once "./includes/header.php";
     include "display.php";
 
+    $records_per_page =5;
+    if (isset ($_GET['page']) ) {  
+        $page = $_GET['page'];  
+    } else {  
+        $page = 1;  
+    } 
+    $start_from  = ($page-1) * $records_per_page;
+
+    $page_query = "SELECT * FROM diary_table  WHERE USER_ID='".$_SESSION['id']."'";        
+    if($rs=$conn->query($page_query)) {
+        $rowcount = mysqli_num_rows($rs);
+    }
+
+    $total_pages = ceil($rowcount/$records_per_page);
+
+
     if(!isset($_SESSION['username'])) {
         header("location:./login.php");
     }
@@ -29,16 +45,18 @@
                 while($rows=$rs->fetch_assoc()) {
                     $num++;
                     $content = $rows['CONTENT'];
+                    
                     $output.= resultdisplay($rows['CREATED_AT'],$content,$rows['STATUS'],$rows['ID']);
                 }
             } else { 
                 $output .= noresult();
             }
         }
-    } else {
+    } 
+    else {
         $num = 0;
         $output = "";
-        $view_sql = "SELECT * FROM diary_table WHERE USER_ID=".$_SESSION['id'];
+        $view_sql = "SELECT * FROM diary_table  WHERE USER_ID='".$_SESSION['id']."' LIMIT ".$start_from ." , ".$records_per_page."" ;        
         if($rs=$conn->query($view_sql)) {
             if($rs->num_rows>0) {
                 while($rows=$rs->fetch_assoc()) {
@@ -52,6 +70,7 @@
         }
     }
 ?>
+
 <div class="home-div container-fluid  d-flex flex-lg-row flex-column align-items-center">
     <div class="left-div container col-lg-5 col-md-6  p-0">
         <img src="../public/img/dayiary-01.png" alt="log-illus" class="illus col-12">
@@ -78,6 +97,31 @@
         </div>
     </div>
     <?php echo $output;?>
+    <div class="page_div col-12 mt-5 d-flex flex-row flex-wrap justify-content-center">
+        <?php if($page !=1 ): ?>
+            <a class="arrow_next btn " href="/DAYiary/users/?page=<?=$page-1?>"><img src="https://img.icons8.com/material-rounded/24/594EC4/back--v1.png"/></a>
+        <?php else:?>
+            <a class="arrow_next btn " href="/DAYiary/users/?page=<?=$page?>"><img src="https://img.icons8.com/material-rounded/24/594EC4/back--v1.png"/></a>
+        <?php endif;?>
+        <div class="d-flex flex-row flex-wrap justify-content-center page_body mx-2">
+       
+
+            <?php for($i=0; $i<$total_pages; $i++):?>
+                <?php if($page == $i+1){
+                    $type_class= "active"; }
+                else{
+                    $type_class="";
+                }
+                ?>
+                <a class="page p-2 <?=$type_class?> " href="/DAYiary/users/?page=<?=$i+1?>"><?= $i+1 ?></a>
+            <?php endfor; ?>
+        </div>
+        <?php if($page != $total_pages ): ?>
+            <a class="arrow_next btn " href="/DAYiary/users/?page=<?=$page+1?>"><img src="https://img.icons8.com/material-rounded/24/594EC4/forward.png"/></a>
+        <?php else:?>
+            <a class="arrow_next btn " href="/DAYiary/users/?page=<?=$page?>"><img src="https://img.icons8.com/material-rounded/24/594EC4/forward--v1.png"/></a>
+        <?php endif; ?>
+    </div>
     
 </div>
 <script>
