@@ -25,11 +25,11 @@
                                 Delete
                                 </a>
                             </li>
-                           
+                        
                         </ul>
                     </div>
                 </div>
-              
+            
                 <div class="my-1 text-elipsis">
                     <p class="text-elipsis">'.$content.'</p>
                 </div>
@@ -102,7 +102,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" >
-       function myClick(value){
+    function myClick(value){
         if (confirm("Are you sure you want to remove this in your diary?")) {
             $.ajax({
                 type: "GET",
@@ -113,10 +113,8 @@
                 }
             });
         }
-          
-       }
-
-  
- </script>
+        
+    }
+</script>
 
 

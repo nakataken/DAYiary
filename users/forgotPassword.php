@@ -44,9 +44,8 @@
         //   echo "Mailer Error: " . $mail->ErrorInfo;
         }
     }
- 
+
     if(isset($_POST['email'])){
-       
         $email = $_POST['email'];
         $check_sql = "SELECT EMAIL FROM user_table where EMAIL ='$email'";
         if($rs=$conn->query($check_sql)) {
@@ -219,8 +218,6 @@
 
         return $disp;
     }
-   
-
 ?>
 
 

@@ -7,7 +7,7 @@
 
 
     if(isset($_SESSION['id'])) {
-        $select_sql = "SELECT * FROM user_table WHERE ID =".$_SESSION['id'];
+        $select_sql = "SELECT * FROM dms_user_table WHERE ID =".$_SESSION['id'];
         $date = date('Y-m-d');
 
         if($rs=$conn->query($select_sql)) {
@@ -64,7 +64,7 @@
             }
 
             if($passValidated) {
-                $update_sql = 'UPDATE user_table SET PASSWORD="'.$encrypted.'", MODIFIED_AT="'.$date.'" WHERE ID='.$_SESSION['id'];
+                $update_sql = 'UPDATE dms_user_table SET PASSWORD="'.$encrypted.'", MODIFIED_AT="'.$date.'" WHERE ID='.$_SESSION['id'];
                 echo $update_sql;
                 if($conn->query($update_sql)) { 
                     echo '<script>alert("Password changed successfully.")</script>'; 
@@ -106,7 +106,6 @@
                     <h3 class="text-center col-12 my-auto">M</h3>
             </div>
             <p class="text-center name mt-3"><?=  $username; ?></p>
-           
         </div>
         <div class="bot-div mb-5">
             <div class="px-2 mt-4">
@@ -119,7 +118,7 @@
 
             </div>
 
-           
+        
             <form class="col-lg-6 col-12 d-none d-flex flex-column mt-5 px-5 mx-auto" method="POST" id="pass_verification">
                 <label for="pass">Enter your password: </label>
                 <input  class="form-control mt-2"   type="password" name="pass" required>

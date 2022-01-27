@@ -9,7 +9,7 @@
         // $select_sql_desc = "SELECT USERNAME, NAME, BIRTHDATE FROM user_table ORDER BY DESC";
         $num = 0;
         $output = "";
-        $select_sql = "SELECT USERNAME, EMAIL, NAME, BIRTHDATE FROM user_table";
+        $select_sql = "SELECT USERNAME, EMAIL, NAME, BIRTHDATE FROM dms_user_table";
 
         if($rs=$conn->query($select_sql)) {
             if($rs->num_rows>0) {
@@ -25,7 +25,7 @@
         if(isset($_POST['search'])) {
             $num = 0;
             $output = "";
-            $find_sql = "SELECT USERNAME,EMAIL, NAME, BIRTHDATE FROM user_table WHERE USERNAME LIKE '%".$_POST['search']."%'";
+            $find_sql = "SELECT USERNAME,EMAIL, NAME, BIRTHDATE FROM dms_user_table WHERE USERNAME LIKE '%".$_POST['search']."%'";
 
             if($rs=$conn->query($find_sql)) {
                 if($rs->num_rows>0) {
@@ -59,7 +59,6 @@
             </form>
         </div>
         <div class="card p-4">
-           
             <div class="card-body ">
                 <table class="table text-center">
                     <thead>

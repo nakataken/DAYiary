@@ -10,7 +10,7 @@
         if(!isset($_GET['token'])) {
             header("location:./index.php");
         } else {
-            $select_sql = "SELECT * FROM diary_table WHERE ID=".$_GET['token'];
+            $select_sql = "SELECT * FROM dms_diary_table WHERE ID=".$_GET['token'];
             if($rs=$conn->query($select_sql)) {
                 if($row=$rs->fetch_assoc()) {
                     $createdAt = $row['CREATED_AT'];
@@ -23,7 +23,7 @@
         }
 
         if(isset($_POST['content'])) {
-            $update_sql = 'UPDATE diary_table SET CONTENT="'.$_POST['content'].'", STATUS="'.$_POST['status'].'", MODIFIED_AT="'.$date.'" WHERE ID='.$_GET['token'];
+            $update_sql = 'UPDATE dms_diary_table SET CONTENT="'.$_POST['content'].'", STATUS="'.$_POST['status'].'", MODIFIED_AT="'.$date.'" WHERE ID='.$_GET['token'];
             if($conn->query($update_sql)) {
                 header("location:./index.php");
             } else {
@@ -96,7 +96,6 @@
 <script>
 
     function myFunction(value){
-       
         var element = document.getElementById(value);
         var el = parseInt(value);
 

@@ -3,9 +3,9 @@
     require "../config/config.php";
     $title = "Dashboard";
     require_once "./includes/header.php";
-
+    
     if(isset($_SESSION['adminUsername'])) {
-        $check_sql = "SELECT ID FROM admin_table where USERNAME='".$_SESSION['adminUsername']."'";
+        $check_sql = "SELECT ID FROM dms_admin_table where USERNAME='".$_SESSION['adminUsername']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
                 $_SESSION['adminId'] = $row['ID'];
@@ -13,13 +13,13 @@
         }
 
         // Total Users
-        $total_user_sql = "SELECT * FROM user_table";
+        $total_user_sql = "SELECT * FROM dms_user_table";
         if($rs=$conn->query($total_user_sql)) {
             $totalUsers = $rs->num_rows;
         }
 
         // Total Diary Entries
-        $total_diary_sql = "SELECT * FROM diary_table";
+        $total_diary_sql = "SELECT * FROM dms_diary_table";
         if($rs=$conn->query($total_diary_sql)) {
             $totalDiaries = $rs->num_rows;
         }
@@ -48,7 +48,7 @@
             date_sub($date,date_interval_create_from_date_string($num_of_day));
         }
 
-        $total_diary_day = "SELECT * FROM diary_table WHERE CREATED_AT = '".date_format($date,"Y-m-d")."'";
+        $total_diary_day = "SELECT * FROM dms_diary_table WHERE CREATED_AT = '".date_format($date,"Y-m-d")."'";
 
         if($rs=$conn->query($total_diary_day)) {
             $totalDay = $rs->num_rows;
@@ -70,7 +70,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="admin container-fluid mb-5 ">
-
     <div class="admin-1 container mx-auto row mt-5">
         <h1 class=" col-12">DASHBOARD</h1>
         <?php if(isset($totalUsers)) { ?>
@@ -89,13 +88,21 @@
                 </div>
             </div>
         <?php } ?>
-      
+    
     </div>
 
     <!-- Line Chart -->
     <div class="container my-5">
         <div class="col-lg-10 col-12 mx-auto">
             <canvas id="lineChart" width="100" height="50"></canvas>
+        </div>
+    </div>
+    <!-- Generate Report -->
+    <div class="admin-1 container mx-auto row mt-5">
+        <div class="col-md-6 p-2">
+            <div class="acard py-5 col-12">
+                <a href="/DAYiary/admin/report/generate.php" class="text-center">Generate Report</a>
+            </div>
         </div>
     </div>
 </div>

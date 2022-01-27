@@ -5,7 +5,7 @@
     $errorMessage = "";
 
     if(isset($_POST['username'])) {
-        $check_sql = "SELECT USERNAME, PASSWORD FROM admin_table WHERE USERNAME='".$_POST['username']."'";
+        $check_sql = "SELECT USERNAME, PASSWORD FROM dms_admin_table WHERE USERNAME='".$_POST['username']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
                 $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);

@@ -5,7 +5,6 @@
 
     if(!isset($_SESSION['username'])){
         if(isset($_POST['username']) && isset($_POST['email'])) {
-         
             $name = $_POST['name'];
             $bdate = $_POST['bdate'];
             $username = $_POST['username'];
@@ -43,10 +42,10 @@
                 $emailValidated = true;
             }
             if($emailValidated && $userValidated && $passValidated){
-                $check_sql = "SELECT EMAIL FROM user_table where EMAIl ='$email'";
+                $check_sql = "SELECT EMAIL FROM dms_user_table where EMAIl ='$email'";
                 if($rs=$conn->query($check_sql)) {
                     if($rs->num_rows==0) {
-                        $check_sql = "SELECT USERNAME, EMAIL FROM user_table where USERNAME='$username'";
+                        $check_sql = "SELECT USERNAME, EMAIL FROM dms_user_table where USERNAME='$username'";
                         if($rs=$conn->query($check_sql)) {
                             if($rs->num_rows==0) {
                                     $_SESSION['code'] = rand(10000,50000); 
@@ -122,7 +121,6 @@
                     <p class="error-meessage"><?php echo $passError; ?></p>
                     <?php } ?>
                 </div>
-  
                 <button type="submit" class="btn col-12 mt-3">Sign up</button>
                 <h2 class="text-center my-5">Already a member? <a href="/DAYiary/users/login.php">Log in </a></h2>
             </form>

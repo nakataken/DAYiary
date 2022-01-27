@@ -23,7 +23,7 @@
     } 
     $start_from  = ($page-1) * $records_per_page;
 
-    $page_query = "SELECT * FROM diary_table  WHERE USER_ID='".$_SESSION['id']."'";        
+    $page_query = "SELECT * FROM dms_diary_table  WHERE USER_ID='".$_SESSION['id']."'";        
     if($rs=$conn->query($page_query)) {
         $rowcount = mysqli_num_rows($rs);
     }
@@ -38,7 +38,7 @@
         $output = "";
         $num = 0;
         $create = "";
-        $select_sql = "SELECT * FROM diary_table WHERE CREATED_AT='".$_POST['date']."' && USER_ID=".$_SESSION['id'];
+        $select_sql = "SELECT * FROM dms_diary_table WHERE CREATED_AT='".$_POST['date']."' && USER_ID=".$_SESSION['id'];
         
         if($rs=$conn->query($select_sql)) {
             if($rs->num_rows>0) {
@@ -56,7 +56,7 @@
     else {
         $num = 0;
         $output = "";
-        $view_sql = "SELECT * FROM diary_table  WHERE USER_ID='".$_SESSION['id']."' LIMIT ".$start_from ." , ".$records_per_page."" ;        
+        $view_sql = "SELECT * FROM dms_diary_table  WHERE USER_ID='".$_SESSION['id']."' LIMIT ".$start_from ." , ".$records_per_page."" ;        
         if($rs=$conn->query($view_sql)) {
             if($rs->num_rows>0) {
                 while($rows=$rs->fetch_assoc()) {

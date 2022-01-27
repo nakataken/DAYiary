@@ -6,7 +6,7 @@
     if(isset($_SESSION['id'])) {
         if(isset($_GET['token'])) {
             $id=$_GET['token'];
-            $delete_sql = "DELETE FROM diary_table WHERE ID=".$id;
+            $delete_sql = "DELETE FROM dms_diary_table WHERE ID=".$id;
             if($conn->query($delete_sql)) {
                 header("location:./index.php");
             } else {

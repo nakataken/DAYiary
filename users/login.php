@@ -8,7 +8,7 @@
     if(!isset($_SESSION['username'])) {
         if(isset($_POST['username'])) {
             
-            $check_sql = "SELECT USERNAME, EMAIL, PASSWORD FROM user_table where USERNAME='".$_POST['username']."' OR EMAIL='".$_POST['username']."' ";
+            $check_sql = "SELECT USERNAME, EMAIL, PASSWORD FROM dms_user_table where USERNAME='".$_POST['username']."' OR EMAIL='".$_POST['username']."' ";
             if($rs=$conn->query($check_sql)) {
                 if($row=$rs->fetch_assoc()) {
                     $decrypted = password_verify($_POST['pass'],$row['PASSWORD']);

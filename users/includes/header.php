@@ -3,7 +3,7 @@
     require "../config/config.php";
 
     if(isset($_SESSION['username'])) {
-        $check_sql = "SELECT ID, NAME FROM user_table WHERE USERNAME='".$_SESSION['username']."'";
+        $check_sql = "SELECT ID, NAME FROM dms_user_table WHERE USERNAME='".$_SESSION['username']."'";
         if($rs=$conn->query($check_sql)) {
             if($row=$rs->fetch_assoc()) {
                 $_SESSION['id'] = $row['ID'];

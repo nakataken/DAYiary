@@ -16,7 +16,7 @@
             $check_sql = "SELECT ID FROM user_table where ID='$user_id'";
             if($rs=$conn->query($check_sql)) {
                 if($rs->num_rows!=0) {
-                    $insert_sql = "INSERT INTO diary_table SET USER_ID='$user_id',CONTENT='$content',STATUS='$status'";
+                    $insert_sql = "INSERT INTO dms_diary_table SET USER_ID='$user_id',CONTENT='$content',STATUS='$status'";
                     if(!$conn->query($insert_sql)) {
                         echo '<script>alert("'.$conn->error.'")</script>';
                     } else {

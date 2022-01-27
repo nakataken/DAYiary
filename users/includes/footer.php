@@ -10,7 +10,6 @@
             <p class="col-12 text-center">THE TEAM BEHIND DAYIARY</p>
         </div>
         <div class="d-flex flex-row flex-wrap justify-content-center mx-auto mb-5">
-               
                 <a  class="initial p-2 text-center me-3" href="https://www.linkedin.com/in/ken-nakata/"> K</a>
                 <a  class="initial p-2 text-center me-3" href="https://www.linkedin.com/in/rhemamiranda/"> R</a>
                 <a  class="initial p-2 text-center  me-3" href=""> C</a>
