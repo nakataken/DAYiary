@@ -36,6 +36,13 @@
             $dayLabel[] = getDay($day);
         }
 
+        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['generate'])) {
+            $_SESSION['totalUsers'] = $totalUsers;
+            $_SESSION['totalDiaries'] = $totalDiaries;
+            $_SESSION['totalDay'] = $totalDay;
+            $_SESSION['dayLabel'] = $dayLabel;
+            header("location:./report/generate.php");
+        }
     } else {
         header("location:./login.php");
     }
@@ -101,7 +108,10 @@
     <div class="admin-1 container mx-auto row mt-5">
         <div class="col-md-6 p-2">
             <div class="acard py-5 col-12">
-                <a href="/DAYiary/admin/report/generate.php" class="text-center">Generate Report</a>
+                <form method="POST">
+                    <input type="submit" name="generate" value="Generate Report">
+                </form>
+                <!-- <a href="/DAYiary/admin/report/generate.php" class="text-center">Generate Report</a> -->
             </div>
         </div>
     </div>
