@@ -35,16 +35,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
+    <link rel="icon" href="../public/img/link-icon.png">
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
+
 <body class="main">
-<header>
+<header class="px-md-5">
     <nav class="navbar navbar-expand-md   px-md-5 px-2 pt-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
+            <a class="navbar-brand" href="/DAYiary/users/"><img src="../public/img/dayiary_ud.png" alt="logo" class="logo"></a>
             <button  class="<?=$block?> navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon col-12 my-auto"><img src="./../public/img/menu_btn.png" class="mx-auto col-12 my-auto"></span>
             </button>
@@ -73,6 +76,9 @@
                     </li>
                     <li class="nav-item">
                         <a  class="nav-link mx-3"  href="/DAYiary/users/createDiary.php">Diary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="/DAYiary/users/view.php">View Diary</a>
                     </li>
                     <li class="nav-item d-md-block d-none">
                         <div class="dropdown  ms-auto nav-link">

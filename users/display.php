@@ -1,7 +1,8 @@
 <?php
+   
     $result="";
     function resultdisplay($date, $content,$status,$id){
-
+   
         $dateholder = strtotime($date);
         $dateformat =date('F j, Y ', $dateholder);
         $day = date('l', $dateholder);
@@ -29,10 +30,12 @@
                         </ul>
                     </div>
                 </div>
-            
-                <div class="my-1 text-elipsis">
-                    <p class="text-elipsis">'.$content.'</p>
+
+                
+                <div class="my-1">
+                    <p class="">'.$content.'</p>
                 </div>
+                
                 <div class="d-flex flex-row flex-wrap justify-content-between" >
                     <div class="react_div d-flex flex-row justify-content-center col-lg-6 col-md-8 col-12 p-0">
                         <div class="'.$status.'1 react-btn btn  col-3 p-0" >
@@ -71,7 +74,7 @@
         <div class="result_message container mx-auto mt-5">
             <h1 class="text-center">Oops! No results found</h1>
            <h2 class="text-center"> <a href="/DAYiary/users/createDiary.php">Want someting more to look back? Write more</a></h2>
-            <h3 class="text-center"><a href="/DAYiary/users/">back to start</a></h3>
+            <h3 class="text-center"><a href="/DAYiary/users/view.php">back to start</a></h3>
             <div class="col-lg-4 col-12 mx-auto">
             <img src="../public/img/dayiary_noresult.png" alt="log-illus" class="illus col-12">
             </div>
@@ -116,5 +119,4 @@
         
     }
 </script>
-
 

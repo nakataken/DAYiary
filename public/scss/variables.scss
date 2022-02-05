@@ -80,7 +80,7 @@ $font-size:(
 @mixin primary-btn ($weight-name,$fontsize-name, $color-name){
     color: $background-color;
     background-color: $color-name;
-    font-family: 'Hammersmith One', sans-serif;
+    font-family: 'Hammersmith One', sans-serif, Arial, Helvetica, sans-serif;
     font-weight: weight($weight-name);
     font-size: fontsize($fontsize-name);
     border-radius: 20px;
@@ -88,7 +88,7 @@ $font-size:(
 }
 
 @mixin title-text($color-name, $weight-name, $fontsize-name, $fontstyle-name){
-    font-family: $fontstyle-name;
+    font-family: $fontstyle-name, Arial, Helvetica, sans-serif;
     color: $color-name;
     font-weight: weight($weight-name);
     font-size: fontsize($fontsize-name);

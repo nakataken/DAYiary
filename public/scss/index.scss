@@ -4,7 +4,7 @@
 
 
 .main{ 
-    background-color: #FFFFFF;
+    background-color: white ;
 }
 
 textarea, input, button{
@@ -14,8 +14,9 @@ textarea, input, button{
 
 //header
 nav{
+    background:transparent !important;
     .logo{
-        height: 40px;
+        height: 43px;
     }
    
     ul{
@@ -163,18 +164,18 @@ nav{
 
 //home
 .home-div{
-    background-color: $background-color;
+    background-color: $background-color !important;
     min-height: 85vh;
     
     .right-div{
         @media screen and (min-width: 0px){
             h1{
-                @include title-text($color1, large, h2, $f1);
+                @include title-text($color1, large, h1, $f1);
                 letter-spacing: 0.05em;
                 font-size: 35px !important;
             }
             h2{
-                @include title-text($color2, large, h2, $f2);
+                @include title-text($text-color, medium, reg, $f2);
             }
         }
         
@@ -184,6 +185,9 @@ nav{
                 letter-spacing: 0.05em;
                 font-size: 50px !important;
             }
+            h2{
+                @include title-text($text-color, large, h2, $f2);
+            }
         }
         @media screen and (min-width: 1000px){
             h1{
@@ -192,22 +196,38 @@ nav{
                 font-size: 70px !important;
             }
             h2{
-                @include title-text($color2, large, h, $f2);
+                @include title-text($text-color, medium, h2, $f2);
             }
         }
-        
-        
-        
-        
+        h2{
+            line-height: 20px !important;
+        }
+        img{
+            width: 100px !important;
+        }
         button{
-            @include primary-btn(small,btn,$color1);
-            color: $background-color !important;
-            letter-spacing: 0.05em;
+            @include title-text($text-color, medium, h2, $f2);
+            border-radius: 10px !important;
             filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
-        button:active{
-            background-color: $color2 !important;
+
+        .button_1{
+            background-color: $color1 !important;
+            color: $background-color !important;
         }
+        .button_2{
+            background-color: $color2 !important;
+            color: $color1;
+        }
+        .button_1:active{
+            background-color: $color2 !important;
+            color: $color1;
+        }
+        .button_2:active{
+            background-color: $color1 !important;
+            color: $background-color;
+        }
+       
     }
     .left-div{
         display: inline-block;
@@ -223,22 +243,23 @@ nav{
     min-height: 100vh !important;
 
     .head-div{
-        background-color: $color1;
-        //border-radius: 35px;
+      //  background-color: $color1;
+        border-radius: 5px  !important;
         filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         h3{
-            @include title-text($background-color, small, h, $f1);
+            @include title-text($color1, small, h1, $f1);
         }
         input{
-            border: none !important;
+            border: 2px solid $color1 !important;
+
             border-radius: 20px;
             color: $text-color !important;
             outline: none !important;
         }
         
         .btn{
-            @include primary-btn(small,btn,$background-color);
-            color: $color1;
+            @include primary-btn(small,btn,$color1);
+            color: $background-color;
         }
         .btn:active{
             @include primary-btn(small,btn,$color2);
@@ -289,14 +310,7 @@ nav{
             min-height: 5vh;
             @include title-text($color1, small, reg, $f2);
         }
-        .text-elipsiss{
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 5; /* number of lines to show */
-                    line-clamp: 5; 
-            -webkit-box-orient: vertical;
-        }
+        
         .react{
             background-color: $background-color;
             border-radius: 20px;
@@ -522,9 +536,7 @@ nav{
         .save-btn:active{
             @include primary-btn(small,btn,$color2);
         }
-      
     }
-    
 }
 
 //profile
@@ -706,6 +718,7 @@ footer{
     }
     
 }
+
 .admin_usertable{
   
     h3{
@@ -747,12 +760,4 @@ footer{
     0%   {transform: translateY(0px)}
     50%  {transform: translateY(10px)}
     100% {transform: translateY(0px)}
-}
-
-._1{
-    background-color: $color1 !important;
-}
-
-._2{
-    background-color: pink;
 }
