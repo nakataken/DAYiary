@@ -24,18 +24,18 @@ nav{
             line-height: 40px;
             text-align: center;
            a{ 
-               @include title-text($color1 !important, small, h2, $f1);
+               @include title-text($color1 !important, regular, h2, $f1);
             }
         }
         .profile-btn{
             color: $color1 $i;
             font-family: 'Hammersmith One', sans-serif;
-            font-weight: weight(small);
+            font-weight: weight(regular);
             font-size: fontsize(h2);
 
         }
         .reg-btn{
-            @include primary-btn(small,reg,$color1);
+            @include primary-btn(regular,reg,$color1);
             color: $background-color !important;
         }
         .reg-btn:active{
@@ -48,7 +48,7 @@ nav{
                 overflow: hidden !important;
                 li{
                     a{
-                        @include title-text($color1, small, h2, $f1);
+                        @include title-text($color1, regular, h2, $f1);
                     }
                     a:hover{
                         background-color: $color2 !important;
@@ -78,7 +78,7 @@ nav{
             @include title-text($color1, large, h1, $f1);
         }
         h2{
-            @include title-text($color2, small, h2, $f1);
+            @include title-text($color2, regular, h2, $f1);
 
             a{
                 text-decoration: none;
@@ -86,12 +86,12 @@ nav{
             }
         }
         a{
-            @include title-text($color1, small, h2, $f1);
+            @include title-text($color1, regular, h2, $f1);
             text-decoration: none;
         }
         .form-group{
             label{
-                @include title-text($color1, small, lbl, $f1);
+                @include title-text($color1, regular, lbl, $f1);
             }
             .form-control, input, textarea{
                 @include input-field();
@@ -105,7 +105,7 @@ nav{
             }
         }
         button{
-            @include primary-btn(small,btn,$color1);
+            @include primary-btn(regular,btn,$color1);
             filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
         button:active{
@@ -128,10 +128,10 @@ nav{
     }
     .form-group{
         label{
-            @include title-text($color1, small, lbl, $f1);
+            @include title-text($color1, regular, lbl, $f1);
         }
         label{
-            @include title-text($color1, small, lbl, $f1);
+            @include title-text($color1, regular, lbl, $f1);
         }
         .form-control, input, textarea{
             @include input-field();
@@ -145,7 +145,7 @@ nav{
         }
     }
     .button_1{
-        @include primary-btn(small,btn,$color1);
+        @include primary-btn(regular,btn,$color1);
         filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
     }
     .button_1:active{
@@ -247,7 +247,7 @@ nav{
         border-radius: 5px  !important;
         filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         h3{
-            @include title-text($color1, small, h1, $f1);
+            @include title-text($color1, regular, h1, $f1);
         }
         input{
             border: 2px solid $color1 !important;
@@ -258,11 +258,11 @@ nav{
         }
         
         .btn{
-            @include primary-btn(small,btn,$color1);
+            @include primary-btn(regular,btn,$color1);
             color: $background-color;
         }
         .btn:active{
-            @include primary-btn(small,btn,$color2);
+            @include primary-btn(regular,btn,$color2);
             color: $color1;
         }
     }
@@ -295,7 +295,7 @@ nav{
                 li{
                     overflow: hidden !important;
                     a{
-                        @include title-text($background-color, small, lbl, $f2);
+                        @include title-text($background-color, regular, lbl, $f2);
                     }
                     a:hover{
                         background-color: $color2 !important;
@@ -308,7 +308,7 @@ nav{
         }
         p{  
             min-height: 5vh;
-            @include title-text($color1, small, reg, $f2);
+            @include title-text($color1, regular, reg, $f2);
         }
         
         .react{
@@ -322,7 +322,7 @@ nav{
                 height: 25px;
             }
             .btn{
-                @include primary-btn(small,btn,$color2);
+                @include primary-btn(regular,btn,$color2);
                 background-color: $color3 !important;
                 width: 50px;
             }
@@ -530,11 +530,11 @@ nav{
         }
 
         .save-btn{
-            @include primary-btn(small,btn, $color1);
+            @include primary-btn(regular,btn, $color1);
             filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
         }
         .save-btn:active{
-            @include primary-btn(small,btn,$color2);
+            @include primary-btn(regular,btn,$color2);
         }
     }
 }
@@ -563,7 +563,7 @@ nav{
                     li{
                         overflow: hidden !important;
                         a{
-                            @include title-text($color1, small, lbl, $f2);
+                            @include title-text($color1, regular, lbl, $f2);
                         }
                         a:hover{
                             background-color: $color2 !important;
@@ -606,7 +606,7 @@ nav{
 
             }
             button{
-                @include primary-btn(small,btn, $color2);
+                @include primary-btn(regular,btn, $color2);
                 color: $color1;
             }
             label{
@@ -672,7 +672,7 @@ footer{
 
     .form-group{
         label{
-            @include title-text($color1, small, lbl, $f1);
+            @include title-text($color1, regular, lbl, $f1);
         }
         .form-control, input, textarea{
             @include input-field();
@@ -686,7 +686,7 @@ footer{
         }
     }
     button{
-        @include primary-btn(small,btn,$color1);
+        @include primary-btn(regular,btn,$color1);
         filter: drop-shadow(0px 4px 4px rgba(128, 127, 127, 0.25));
     }
     button:active{
@@ -716,6 +716,13 @@ footer{
             }
         }
     }
+    .report{
+        @include primary-btn(regular,btn, $color1);
+
+    }
+    .report:hover{
+        color: $color2 !important;
+    }
     
 }
 
@@ -725,7 +732,7 @@ footer{
         @include title-text( $background-color, medium, h1, $f1);
     }
     .btn{
-        @include primary-btn(small,reg, $background-color);
+        @include primary-btn(regular,reg, $background-color);
         color: $color1;
     }
     input{

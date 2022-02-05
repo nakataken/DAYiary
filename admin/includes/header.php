@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-md   px-5 pt-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/DAYiary/admin/"><img src="../public/img/logo.png" alt="logo" class="logo"></a>
+                <a class="navbar-brand" href="/DAYiary/admin/"><img src="../public/img/dayiary_ud.png" alt="logo" class="logo"></a>
                 <button  class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon col-12 my-auto"><img src="./../public/img/menu_btn.png" class="mx-auto col-12 my-auto"></span>
                 </button>

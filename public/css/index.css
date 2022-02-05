@@ -30,17 +30,20 @@ nav ul li {
 nav ul li a {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4 !important;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 nav ul .profile-btn {
   color: #594EC4 !important;
   font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 nav ul .reg-btn {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -57,6 +60,7 @@ nav ul .dropdown .dropdown-menu {
 nav ul .dropdown .dropdown-menu li a {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 nav ul .dropdown .dropdown-menu li a:hover {
@@ -80,6 +84,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .reg-div .right-div h2 {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #FFA9DC;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .reg-div .right-div h2 a {
@@ -89,12 +94,14 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .reg-div .right-div a {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
   text-decoration: none;
 }
 .reg-div .right-div .form-group label {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .reg-div .right-div .form-group .form-control, .reg-div .right-div .form-group input, .reg-div .right-div .form-group textarea {
@@ -113,6 +120,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -142,11 +150,13 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .verification .form-group label {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .verification .form-group label {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .verification .form-group .form-control, .verification .form-group input, .verification .form-group textarea {
@@ -165,6 +175,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -285,6 +296,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .records-div .head-div h3 {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 2rem;
 }
 .records-div .head-div input {
@@ -297,6 +309,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -306,6 +319,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -344,6 +358,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .records-div .display-rec .dropdown .dropdown-menu li a {
   font-family: "Montserrat", sans-serif, Arial, Helvetica, sans-serif;
   color: #FFFFFF;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .records-div .display-rec .dropdown .dropdown-menu li a:hover {
@@ -354,6 +369,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   min-height: 5vh;
   font-family: "Montserrat", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1rem;
 }
 .records-div .display-rec .react {
@@ -369,6 +385,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -579,6 +596,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -588,6 +606,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -622,6 +641,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
 .profile-div .left-div .top-div .dropdown .dropdown-menu li a {
   font-family: "Montserrat", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .profile-div .left-div .top-div .dropdown .dropdown-menu li a:hover {
@@ -669,6 +689,7 @@ nav ul .nav-link:hover, nav ul .profile-btn:hover {
   color: #FFFFFF;
   background-color: #FFA9DC;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -742,6 +763,7 @@ footer h3 a:hover {
 .admin-login .form-group label {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
   color: #594EC4;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .admin-login .form-group .form-control, .admin-login .form-group input, .admin-login .form-group textarea {
@@ -760,6 +782,7 @@ footer h3 a:hover {
   color: #FFFFFF;
   background-color: #594EC4;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 20px;
   box-shadow: none !important;
@@ -792,6 +815,18 @@ footer h3 a:hover {
   font-weight: 600;
   font-size: 1.2rem;
 }
+.admin .report {
+  color: #FFFFFF;
+  background-color: #594EC4;
+  font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  box-shadow: none !important;
+}
+.admin .report:hover {
+  color: #FFA9DC !important;
+}
 
 .admin_usertable h3 {
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
@@ -803,6 +838,7 @@ footer h3 a:hover {
   color: #FFFFFF;
   background-color: #FFFFFF;
   font-family: "Hammersmith One", sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   border-radius: 20px;
   box-shadow: none !important;

@@ -105,15 +105,10 @@
         </div>
     </div>
     <!-- Generate Report -->
-    <div class="admin-1 container mx-auto row mt-5">
-        <div class="col-md-6 p-2">
-            <div class="acard py-5 col-12">
+    <div class="container mx-auto mt-5">
                 <form method="POST">
-                    <input type="submit" name="generate" value="Generate Report">
+                    <input class="btn px-5 report" type="submit" name="generate" value="Generate Report" >
                 </form>
-                <!-- <a href="/DAYiary/admin/report/generate.php" class="text-center">Generate Report</a> -->
-            </div>
-        </div>
     </div>
 </div>
 
