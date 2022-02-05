@@ -4,7 +4,9 @@
     $title = "Home";
     require_once "./includes/header.php";
     include "display.php";
-
+    if(!isset($_SESSION['username'])) {
+        header("location:./login.php");
+    }
 ?>
 
 <div class="home-div container-fluid  d-flex flex-lg-row row-reverse flex-column align-items-center mb-5">
